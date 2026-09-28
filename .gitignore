@@ -1,0 +1,12 @@
+node_modules/
+dist/
+data/
+datasources/**
+!datasources/README.md
+.env
+*.log
+.DS_Store
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm

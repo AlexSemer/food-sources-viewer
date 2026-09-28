@@ -1,0 +1,16 @@
+{
+  "name": "food-sources-viewer",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local per-source food composition browser. Not the product database.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@fsv/api & npm run dev --workspace=@fsv/web && wait",
+    "dev:api": "npm run dev --workspace=@fsv/api",
+    "dev:web": "npm run dev --workspace=@fsv/web",
+    "ingest": "npm run start --workspace=@fsv/ingest --"
+  }
+}

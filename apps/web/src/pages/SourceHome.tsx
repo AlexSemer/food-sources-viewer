@@ -1,6 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { getJson } from "../api";
+import { ViewToggle } from "../ViewToggle";
+import { AllTables } from "./AllTables";
 
 type SourceInfo = {
   id: string;
@@ -17,7 +19,7 @@ type SourceInfo = {
 type TablesRes = {
   source: SourceInfo;
   meta: Record<string, string>;
-  tables: { name: string; rows: number }[];
+  tables: { name: string; rows: number; columns?: number }[];
 };
 
 type FoodsRes = {
@@ -34,6 +36,7 @@ const cell = (v: unknown) => (v == null ? "" : String(v));
 
 export function SourceHome() {
   const { sourceId } = useParams();
+  const view = useSearchParams()[0].get("view") === "all" ? "all" : "single";
   const [tables, setTables] = useState<TablesRes | null>(null);
   const [foods, setFoods] = useState<FoodsRes | null>(null);
   const [q, setQ] = useState("");
@@ -59,12 +62,12 @@ export function SourceHome() {
   }, [sourceId]);
 
   useEffect(() => {
-    if (!sourceId || !tables?.source.implemented) return;
+    if (!sourceId || !tables?.source.implemented || view === "all") return;
     const params = new URLSearchParams({ q: query, type, page: String(page) });
     getJson<FoodsRes>(`/api/sources/${encodeURIComponent(sourceId)}/foods?${params}`)
       .then(setFoods)
       .catch((e: Error) => setError(e.message));
-  }, [sourceId, tables, query, type, page]);
+  }, [sourceId, tables, query, type, page, view]);
 
   function onSearch(e: FormEvent) {
     e.preventDefault();
@@ -76,7 +79,7 @@ export function SourceHome() {
   if (!tables) return <p>Loading…</p>;
   const src = tables.source;
 
-  return (
+  const heading = (
     <>
       <h1>{src.label}</h1>
       <p>
@@ -85,6 +88,22 @@ export function SourceHome() {
         {tables.meta.loaded_at ? <span className="muted"> loaded {tables.meta.loaded_at}</span> : null}
       </p>
       {tables.meta.raw_path ? <p className="muted">raw: {tables.meta.raw_path}</p> : null}
+      <ViewToggle sourceId={src.id} view={view} />
+    </>
+  );
+
+  if (view === "all") {
+    return (
+      <>
+        {heading}
+        <AllTables sourceId={src.id} tables={tables.tables} foodTable={src.foodTable} />
+      </>
+    );
+  }
+
+  return (
+    <>
+      {heading}
 
       <h2>Tables</h2>
       <table>

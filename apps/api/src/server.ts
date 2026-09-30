@@ -13,6 +13,25 @@ const PORT = Number(process.env.PORT ?? 3001);
 const LARGE_TABLE = 500_000;
 /** Filtered counts stop here and report `totalCapped`. */
 const COUNT_CAP = 10_000;
+/** Upper bound for the optional per-request search time budget (`timeout` query param, ms). */
+const MAX_TIMEOUT_MS = 30_000;
+
+/*
+ * node:sqlite is synchronous, so one slow LIKE scan (e.g. 4.5M OFF products) blocks every other request.
+ * A table-page request may pass `timeout`; its search query then carries `fsv_budget()`, which SQLite
+ * calls for each scanned row and which aborts the statement once the deadline has passed.
+ */
+let budgetDeadline = Infinity;
+let budgetTicks = 0;
+let budgetHit = false;
+
+function budgetFn(): number {
+  if ((++budgetTicks & 1023) === 0 && Date.now() > budgetDeadline) {
+    budgetHit = true;
+    throw new Error("search time budget exceeded");
+  }
+  return 1;
+}
 
 type DbInfo = {
   db: DatabaseSync;
@@ -96,6 +115,7 @@ function openDb(sourceId: string): DbInfo {
   const path = resolve(dataRoot, source.dbFile);
   if (!existsSync(path)) throw httpError(404, `No database yet. Run: npm run ingest -- ${source.id}`);
   const db = new DatabaseSync(path, { readOnly: true });
+  db.function("fsv_budget", { deterministic: false, directOnly: true }, budgetFn);
   const meta = metaOf(db);
   let counts: Record<string, number> = {};
   try {
@@ -349,12 +369,39 @@ function tablePage(sourceId: string, table: string, url: URL) {
     clauses.push(`(${searched.map((c) => `${qi(c)} LIKE ?`).join(" OR ")})`);
     for (const _ of searched) params.push(`%${q}%`);
   }
+  const timeoutMs = Math.floor(Number(url.searchParams.get("timeout") ?? 0)) || 0;
+  const budgetMs = q && timeoutMs > 0 ? Math.min(timeoutMs, MAX_TIMEOUT_MS) : 0;
+  if (budgetMs) clauses.unshift("fsv_budget()"); // first, so it runs for every scanned row
   const where = clauses.length ? `WHERE ${clauses.join(" AND ")}` : "";
-  const { total, capped } = clauses.length
-    ? cappedCount(info, ident, where, params)
-    : { total: rowCount(info, table), capped: false };
-  const rows = all(info.db.prepare(`SELECT * FROM ${ident} ${where} LIMIT ? OFFSET ?`), ...params, pageSize, (page - 1) * pageSize);
-  return { columns: cols, rows, total, totalCapped: capped, page, pageSize, searchedColumns };
+  const offset = (page - 1) * pageSize;
+  const rows: Record<string, unknown>[] = [];
+  let total = 0;
+  let capped = false;
+  let timedOut = false;
+  budgetDeadline = budgetMs ? Date.now() + budgetMs : Infinity;
+  budgetHit = false;
+  try {
+    const stmt = info.db.prepare(`SELECT * FROM ${ident} ${where} LIMIT ? OFFSET ?`);
+    stmt.setReadBigInts(true);
+    for (const r of stmt.iterate(...params, pageSize, offset)) rows.push(r as Record<string, unknown>);
+    if (!clauses.length) {
+      total = rowCount(info, table);
+    } else if (rows.length < pageSize && (rows.length > 0 || page === 1)) {
+      total = offset + rows.length; // the scan already reached the end, so this is exact
+    } else {
+      ({ total, capped } = cappedCount(info, ident, where, params));
+    }
+  } catch (err) {
+    if (!budgetHit) throw err;
+    // Out of time: report what was found so far as a lower bound.
+    timedOut = true;
+    total = offset + rows.length;
+    capped = true;
+  } finally {
+    budgetDeadline = Infinity;
+    budgetHit = false;
+  }
+  return { columns: cols, rows, total, totalCapped: capped, page, pageSize, searchedColumns, timedOut };
 }
 
 function handle(req: IncomingMessage, res: ServerResponse): void {
@@ -408,7 +455,8 @@ function handle(req: IncomingMessage, res: ServerResponse): void {
       json(res, 200, {
         source: getSource(parts[2]),
         meta: info.meta,
-        tables: [...info.tables.keys()].map((name) => ({ name, rows: rowCount(info, name) })),
+        // Row counts come from `_meta.counts` (written at ingest), so no COUNT(*) on big tables here.
+        tables: [...info.tables].map(([name, cols]) => ({ name, rows: rowCount(info, name), columns: cols.length })),
       });
       return;
     }

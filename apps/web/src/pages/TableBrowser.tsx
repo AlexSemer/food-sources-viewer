@@ -1,6 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { getJson } from "../api";
+import { ViewToggle } from "../ViewToggle";
+import { DataTable } from "../DataTable";
 
 type TableRes = {
   columns: string[];
@@ -57,6 +59,7 @@ export function TableBrowser() {
       <p>
         <Link to={`/s/${sourceId}`}>{sourceId}</Link> / {table}
       </p>
+      <ViewToggle sourceId={sourceId!} view="single" />
       {col && val !== null ? (
         <p className="muted">
           {col} = {val} ·{" "}
@@ -77,24 +80,7 @@ export function TableBrowser() {
         <p className="muted">Large table: the filter searches indexed columns only ({data.searchedColumns.join(", ")}).</p>
       ) : null}
       <div style={{ overflowX: "auto" }}>
-        <table>
-          <thead>
-            <tr>
-              {data.columns.map((c) => (
-                <th key={c}>{c}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data.rows.map((row, i) => (
-              <tr key={i}>
-                {data.columns.map((c) => (
-                  <td key={c}>{row[c] == null ? "" : String(row[c])}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <DataTable sourceId={sourceId!} table={table!} columns={data.columns} rows={data.rows} />
       </div>
       <div className="row">
         <button type="button" disabled={page <= 1} onClick={() => update({ page: String(page - 1) })}>

@@ -161,3 +161,83 @@ body.col-resizing, body.col-resizing * { cursor: col-resize !important; user-sel
 .cell.truncated { cursor: zoom-in; }
 .data-table tr.wrapped .cell { white-space: pre-wrap; overflow-wrap: anywhere; overflow: visible; cursor: zoom-out; }
 .data-table tr.wrapped td { background: #fbf9f4; }
+/* Composite view: one row per main food, sticky header + sticky identity columns */
+main:has(.composite), main:has(.relations) { max-width: none; }
+.composite-filters input { min-width: 260px; }
+.composite-filters select { max-width: 320px; }
+.composite-bar { align-items: center; }
+.composite-bar .timing { margin-left: auto; font-size: 12px; }
+.composite-bar .csv { display: inline-flex; gap: 6px; align-items: center; }
+.composite-bar button[aria-pressed="true"] { background: #1f4d3a; color: #f4f1ea; }
+a.button { display: inline-block; padding: 6px 12px; background: #1f4d3a; color: #f4f1ea; text-decoration: none; }
+a.button:hover { background: #2c6a50; }
+.picker { position: relative; }
+.picker summary { cursor: pointer; padding: 6px 10px; background: white; border: 1px solid #ddd4c4; }
+.picker-body {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  width: min(900px, 90vw);
+  max-height: 60vh;
+  overflow: auto;
+  background: white;
+  border: 1px solid #b9ad97;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 8px 12px;
+}
+.picker-body fieldset { border: 1px solid #eee; margin: 6px 0; columns: 3 240px; font-size: 13px; }
+.picker-body label { display: block; break-inside: avoid; }
+.composite-body {
+  background: white;
+  border: 1px solid #ddd4c4;
+  overflow: auto;
+  max-height: calc(100vh - 260px);
+  min-height: 200px;
+}
+.composite-body.stale table { opacity: 0.5; }
+.composite-body table { width: max-content; min-width: 100%; font-size: 12px; }
+.composite-body th, .composite-body td { padding: 4px 8px; }
+.composite-body th { white-space: nowrap; }
+.composite-body .data-table thead th { position: sticky; top: 0; z-index: 2; }
+.composite-body .data-table .sticky-col { position: sticky; z-index: 1; background: white; }
+.composite-body .data-table thead th.sticky-col { z-index: 3; background: #efe8db; }
+.composite-body .data-table .sticky-last { box-shadow: inset -2px 0 0 #ddd4c4; }
+.composite-body .data-table tr.wrapped td.sticky-col { background: #fbf9f4; }
+.composite-body td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.composite-body td.rel .cell { max-width: 360px; }
+.composite-body .data-table.compact td.notes .cell { max-width: 200px; }
+.composite-body .data-table.compact td.sticky-col .cell { max-width: 190px; }
+.composite-body .data-table.compact td.num .cell { max-width: 120px; }
+.composite-body th.num .th-inner { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+.missing { color: #aaa; }
+.composite-docs { margin-top: 12px; background: white; border: 1px solid #ddd4c4; padding: 8px 12px; font-size: 13px; }
+.composite-docs summary { cursor: pointer; font-weight: 600; }
+.composite-docs table { width: auto; }
+.composite-docs th { white-space: nowrap; }
+
+/* Relations view */
+.relations-diagram { background: white; border: 1px solid #ddd4c4; overflow: auto; max-height: 80vh; }
+.relations-diagram svg { display: block; font-size: 11px; font-family: inherit; }
+.relations .edge path { stroke: #7a9a88; stroke-width: 1.5; fill: none; }
+.relations .split { font-size: 12px; fill: #666; font-style: italic; }
+.relations .edge.fair path { stroke: #c8913a; }
+.relations .edge.poor path { stroke: #b04a4a; stroke-dasharray: 4 3; }
+.relations .edge.nm path { stroke-dasharray: 2 3; }
+.relations .edge rect { fill: white; stroke: #ddd4c4; }
+.relations .edge text { fill: #333; }
+.relations .edge.dim { opacity: 0.12; }
+.relations .node { cursor: pointer; }
+.relations .node rect { fill: #f7f3ea; stroke: #b9ad97; }
+.relations .node.level0 rect { fill: #1f4d3a; stroke: #1f4d3a; }
+.relations .node.level0 text { fill: #f4f1ea; font-weight: 600; }
+.relations .node.level1 rect { fill: #e4efe8; stroke: #1f4d3a; }
+.relations .node.focus rect { stroke: #c8913a; stroke-width: 3; }
+.relations .node .name { font-size: 12px; font-weight: 600; }
+.relations .node .count { font-size: 10px; fill: #666; }
+.relations .node.level0 .count { fill: #d7e6dc; }
+.relations-list { margin-top: 12px; }
+.relations-list td.good { color: #1f4d3a; font-weight: 600; }
+.relations-list td.fair { color: #8a5a00; font-weight: 600; }
+.relations-list td.poor { color: #8b1e1e; font-weight: 600; }
+.relations-list tr.dim { opacity: 0.35; }

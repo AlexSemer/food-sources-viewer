@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 import type { SourceDef } from "@fsv/shared";
 import { dataRoot, ensureDataDir } from "./paths.ts";
+import { prepareComposite } from "./compositePrep.ts";
 
 /** Quote an SQLite identifier. */
 export function qi(name: string): string {
@@ -120,6 +121,8 @@ export function finalizeIngestDb(
   extra: Record<string, string> = {},
 ): FinalizeResult {
   const { db, source } = h;
+  // Composite-view helpers (indexes, _composite_nutrients, _compound_rank); see compositePrep.ts.
+  prepareComposite(db, source);
   const counts = tableCounts(db);
 
   db.exec(`DROP TABLE IF EXISTS _meta`);

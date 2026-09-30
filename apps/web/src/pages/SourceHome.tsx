@@ -1,8 +1,10 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { getJson } from "../api";
-import { ViewToggle } from "../ViewToggle";
+import { parseView, ViewToggle } from "../ViewToggle";
 import { AllTables } from "./AllTables";
+import { Composite } from "./Composite";
+import { Relations } from "./Relations";
 
 type SourceInfo = {
   id: string;
@@ -36,7 +38,7 @@ const cell = (v: unknown) => (v == null ? "" : String(v));
 
 export function SourceHome() {
   const { sourceId } = useParams();
-  const view = useSearchParams()[0].get("view") === "all" ? "all" : "single";
+  const view = parseView(useSearchParams()[0].get("view"));
   const [tables, setTables] = useState<TablesRes | null>(null);
   const [foods, setFoods] = useState<FoodsRes | null>(null);
   const [q, setQ] = useState("");
@@ -62,7 +64,7 @@ export function SourceHome() {
   }, [sourceId]);
 
   useEffect(() => {
-    if (!sourceId || !tables?.source.implemented || view === "all") return;
+    if (!sourceId || !tables?.source.implemented || view !== "single") return;
     const params = new URLSearchParams({ q: query, type, page: String(page) });
     getJson<FoodsRes>(`/api/sources/${encodeURIComponent(sourceId)}/foods?${params}`)
       .then(setFoods)
@@ -91,6 +93,24 @@ export function SourceHome() {
       <ViewToggle sourceId={src.id} view={view} />
     </>
   );
+
+  if (view === "composite") {
+    return (
+      <>
+        {heading}
+        <Composite sourceId={src.id} />
+      </>
+    );
+  }
+
+  if (view === "relations") {
+    return (
+      <>
+        {heading}
+        <Relations sourceId={src.id} />
+      </>
+    );
+  }
 
   if (view === "all") {
     return (

@@ -1,4 +1,14 @@
-import { memo, useEffect, useRef, useState, type CSSProperties, type MouseEvent, type PointerEvent as ReactPointerEvent } from "react";
+import {
+  memo,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent,
+  type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+} from "react";
 import { layoutKey, useStoredState } from "./layout";
 
 const MIN_COL = 40;
@@ -27,6 +37,16 @@ type Props = {
   rows: Record<string, unknown>[];
   /** Panel look: cells stay on one line and are capped at a default width until resized. */
   compact?: boolean;
+  /** Header text per column (default: the column name). */
+  labels?: Record<string, string>;
+  /** Header tooltip per column (default: the label). */
+  titles?: Record<string, string>;
+  /** The first N columns stay on the left while scrolling horizontally. */
+  stickyCols?: number;
+  /** Custom cell content (default: the value as text). */
+  renderCell?: (col: string, value: unknown, row: Record<string, unknown>) => ReactNode;
+  /** Extra class per column (e.g. numeric alignment). */
+  colClass?: (col: string) => string | undefined;
 };
 
 /**
@@ -34,11 +54,46 @@ type Props = {
  * content. Widths are remembered per source + table. A resized column truncates; hovering a truncated
  * cell shows the full value and clicking it wraps that row (click again to unwrap).
  */
-export const DataTable = memo(function DataTable({ sourceId, table, columns, rows, compact = false }: Props) {
+export const DataTable = memo(function DataTable({
+  sourceId,
+  table,
+  columns,
+  rows,
+  compact = false,
+  labels,
+  titles,
+  stickyCols = 0,
+  renderCell,
+  colClass,
+}: Props) {
   const [widths, setWidths] = useStoredState<Record<string, number>>(layoutKey(sourceId, table, "cols"));
   const tableRef = useRef<HTMLTableElement>(null);
   const [wrapped, setWrapped] = useState<ReadonlySet<number>>(() => new Set());
   useEffect(() => setWrapped(new Set()), [rows]);
+
+  // Sticky-left columns: --sl<i> = summed width of the sticky columns before i; follows resizes.
+  useLayoutEffect(() => {
+    const el = tableRef.current;
+    if (!el || stickyCols <= 0) return;
+    const ths = [...el.querySelectorAll<HTMLTableCellElement>("thead th")].slice(0, stickyCols);
+    const apply = () => {
+      let left = 0;
+      ths.forEach((th, i) => {
+        el.style.setProperty(`--sl${i}`, `${left}px`);
+        left += th.getBoundingClientRect().width;
+      });
+    };
+    apply();
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(apply);
+    for (const th of ths) ro.observe(th);
+    return () => ro.disconnect();
+  }, [stickyCols, columns]);
+
+  const label = (c: string) => labels?.[c] ?? c;
+  const stickyClass = (i: number) => (i < stickyCols ? (i === stickyCols - 1 ? "sticky-col sticky-last" : "sticky-col") : undefined);
+  const stickyStyle = (i: number): CSSProperties | undefined => (i < stickyCols ? { left: `var(--sl${i})` } : undefined);
+  const cls = (...xs: (string | undefined)[]) => xs.filter(Boolean).join(" ") || undefined;
 
   // Each resized column i gets a CSS variable --cw<i>; dragging updates it directly, without re-rendering.
   const vars: Record<string, string> = {};
@@ -81,7 +136,7 @@ export const DataTable = memo(function DataTable({ sourceId, table, columns, row
 
   function autoFit(col: string, i: number, th: HTMLElement) {
     const sample = tableRef.current?.querySelector<HTMLElement>(`tbody td:nth-child(${i + 1}) .cell`) ?? th;
-    let max = textWidth(col, th) + 8; // + room for the resize handle
+    let max = textWidth(label(col), th) + 8; // + room for the resize handle
     for (const r of rows) {
       const t = cellText(r[col]);
       if (t) max = Math.max(max, textWidth(t.length > 300 ? t.slice(0, 300) : t, sample));
@@ -121,9 +176,13 @@ export const DataTable = memo(function DataTable({ sourceId, table, columns, row
           {columns.map((c, i) => {
             const sized = !!widths[c];
             return (
-              <th key={c} style={sized ? { width: `calc(var(--cw${i}) + ${CELL_PAD_X}px)` } : undefined}>
-                <div className={sized ? "th-inner sized" : "th-inner"} style={sized ? { width: `var(--cw${i})` } : undefined} title={c}>
-                  {c}
+              <th
+                key={c}
+                className={cls(stickyClass(i), colClass?.(c))}
+                style={{ ...(sized ? { width: `calc(var(--cw${i}) + ${CELL_PAD_X}px)` } : {}), ...stickyStyle(i) }}
+              >
+                <div className={sized ? "th-inner sized" : "th-inner"} style={sized ? { width: `var(--cw${i})` } : undefined} title={titles?.[c] ?? label(c)}>
+                  {label(c)}
                 </div>
                 <span
                   className="col-resize"
@@ -142,9 +201,9 @@ export const DataTable = memo(function DataTable({ sourceId, table, columns, row
             {columns.map((c, i) => {
               const sized = !!widths[c];
               return (
-                <td key={c}>
+                <td key={c} className={cls(stickyClass(i), colClass?.(c))} style={stickyStyle(i)}>
                   <div className={sized ? "cell sized" : "cell"} style={sized ? { width: `var(--cw${i})` } : undefined}>
-                    {cellText(row[c])}
+                    {renderCell ? renderCell(c, row[c], row) : cellText(row[c])}
                   </div>
                 </td>
               );

@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
  */
 const PREFIX = "fsv.layout.v1:";
 
-export type LayoutKind = "panel" | "cols";
+export type LayoutKind = "panel" | "cols" | "picker";
 
 export const layoutKey = (sourceId: string, table: string, kind: LayoutKind) => `${PREFIX}${sourceId}:${kind}:${table}`;
 

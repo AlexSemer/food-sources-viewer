@@ -8,6 +8,8 @@ import { usdaLoader } from "./usdaFdc.ts";
 import { ingestOff } from "./off.ts";
 import { ingestFoodb } from "./foodb.ts";
 import { xlsxLoader, xlsxSourceIds } from "./xlsxSources.ts";
+import { prepareExisting } from "./compositePrep.ts";
+import { writeRelations } from "./relationsCache.ts";
 
 const implemented: Partial<Record<SourceId, () => Promise<FinalizeResult>>> = {
   "usda-foundation": ingestUsdaFoundation,
@@ -28,8 +30,32 @@ function fmtBytes(n: number): string {
 
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
+  // Maintenance subcommands on existing dbs (no re-ingest):
+  //   prep <ids|all>       composite-view indexes / helper tables (compositePrep.ts)
+  //   relations <ids|all>  recompute the relationship map cache data/_relations/<id>.json
+  if (args[0] === "prep" || args[0] === "relations") {
+    const rest = args.slice(1);
+    const ids = rest.includes("all") ? sources.map((s) => s.id) : rest;
+    if (!ids.length) throw new Error(`Usage: npm run ingest -- ${args[0]} <source-id...|all>`);
+    for (const id of ids) {
+      const source = getSource(id);
+      if (!source) throw new Error(`Unknown source: ${id}`);
+      const t0 = Date.now();
+      console.log(`\n=== ${args[0]} ${id} ===`);
+      if (args[0] === "prep") {
+        const done = prepareExisting(source);
+        console.log(done.length ? `  done in ${((Date.now() - t0) / 1000).toFixed(1)}s` : "  nothing to prepare for this source");
+      } else {
+        const doc = writeRelations(source);
+        console.log(`  ${doc.edges.length} joins, ${doc.notes.length} notes in ${doc.ms} ms`);
+      }
+    }
+    return;
+  }
   if (args.length === 0) {
     console.log("Usage: npm run ingest -- <source-id...|all>");
+    console.log("       npm run ingest -- prep <source-id...|all>        (composite-view indexes on existing dbs)");
+    console.log("       npm run ingest -- relations <source-id...|all>   (recompute the relationship maps)");
     console.log(
       sources.map((s) => `  ${s.id.padEnd(20)} ${implemented[s.id] ? "ready" : "stub"}`).join("\n"),
     );
@@ -55,6 +81,12 @@ async function main(): Promise<void> {
       const res = await run();
       result = { id, ok: true, seconds: (Date.now() - t0) / 1000, bytes: res.bytes, tables: Object.keys(res.counts).length };
       console.log(`wrote ${res.path} (${fmtBytes(res.bytes)}) in ${result.seconds.toFixed(1)}s`);
+      try {
+        const doc = writeRelations(source);
+        console.log(`relations: ${doc.edges.length} joins (${doc.ms} ms)`);
+      } catch (err) {
+        console.warn(`relations failed (the API computes them on demand): ${err instanceof Error ? err.message : err}`);
+      }
     } catch (err) {
       result = { id, ok: false, seconds: (Date.now() - t0) / 1000, error: err instanceof Error ? err.message : String(err) };
       console.error(`FAILED ${id}: ${result.error}`);

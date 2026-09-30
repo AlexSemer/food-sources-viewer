@@ -1,76 +1,30 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { existsSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-import { DatabaseSync, type StatementSync } from "node:sqlite";
+import { resolve } from "node:path";
 import { getSource, sources, type SourceDef } from "@fsv/shared";
+import {
+  all,
+  cappedCount,
+  dataRoot,
+  eqParams,
+  findCol,
 
-const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
-const dataRoot = resolve(repoRoot, "data");
+  httpError,
+  openDb,
+  qi,
+  rowCount,
+  withBudget,
+  type DbInfo,
+} from "./db.ts";
+import { compositeCsv, compositeMeta, compositePage } from "./composite.ts";
+import { relationsFor } from "./relations.ts";
+
 const PORT = Number(process.env.PORT ?? 3001);
 
 /** Above this many rows, the free-text table filter only searches indexed columns. */
 const LARGE_TABLE = 500_000;
-/** Filtered counts stop here and report `totalCapped`. */
-const COUNT_CAP = 10_000;
 /** Upper bound for the optional per-request search time budget (`timeout` query param, ms). */
 const MAX_TIMEOUT_MS = 30_000;
-
-/*
- * node:sqlite is synchronous, so one slow LIKE scan (e.g. 4.5M OFF products) blocks every other request.
- * A table-page request may pass `timeout`; its search query then carries `fsv_budget()`, which SQLite
- * calls for each scanned row and which aborts the statement once the deadline has passed.
- */
-let budgetDeadline = Infinity;
-let budgetTicks = 0;
-let budgetHit = false;
-
-function budgetFn(): number {
-  if ((++budgetTicks & 1023) === 0 && Date.now() > budgetDeadline) {
-    budgetHit = true;
-    throw new Error("search time budget exceeded");
-  }
-  return 1;
-}
-
-type DbInfo = {
-  db: DatabaseSync;
-  meta: Record<string, string>;
-  counts: Record<string, number>;
-  /** table -> columns, in sqlite_master order */
-  tables: Map<string, string[]>;
-  /** table -> columns that lead an index */
-  indexed: Map<string, Set<string>>;
-  foodTypes?: string[];
-  lastUsed: number;
-};
-
-const openDbs = new Map<string, DbInfo>();
-
-/**
- * Handles are closed after a short idle period. On Windows an open SQLite file cannot be replaced,
- * so this lets `npm run ingest` swap in a fresh db while the dev server keeps running.
- */
-const IDLE_CLOSE_MS = 15_000;
-setInterval(() => {
-  const now = Date.now();
-  for (const [id, info] of openDbs) {
-    if (now - info.lastUsed > IDLE_CLOSE_MS) {
-      openDbs.delete(id);
-      try {
-        info.db.close();
-      } catch {
-        /* already closed */
-      }
-    }
-  }
-}, 5_000).unref();
-
-function httpError(status: number, message: string): Error {
-  return Object.assign(new Error(message), { status });
-}
-
-const qi = (name: string) => `"${name.replaceAll('"', '""')}"`;
 
 function json(res: ServerResponse, status: number, body: unknown): void {
   res.writeHead(status, {
@@ -82,92 +36,6 @@ function json(res: ServerResponse, status: number, body: unknown): void {
       typeof v === "bigint" ? (v >= Number.MIN_SAFE_INTEGER && v <= Number.MAX_SAFE_INTEGER ? Number(v) : v.toString()) : v,
     ),
   );
-}
-
-/** Rows with INTEGERs read as BigInt, so values beyond 2^53 survive (serialized as strings). */
-function all(stmt: StatementSync, ...params: (string | number | null)[]): Record<string, unknown>[] {
-  stmt.setReadBigInts(true);
-  return stmt.all(...params) as Record<string, unknown>[];
-}
-
-function get(stmt: StatementSync, ...params: (string | number | null)[]): Record<string, unknown> | undefined {
-  stmt.setReadBigInts(true);
-  return stmt.get(...params) as Record<string, unknown> | undefined;
-}
-
-function metaOf(db: DatabaseSync): Record<string, string> {
-  try {
-    const rows = db.prepare("SELECT key, value FROM _meta").all() as { key: string; value: string }[];
-    return Object.fromEntries(rows.map((r) => [r.key, r.value]));
-  } catch {
-    return {};
-  }
-}
-
-function openDb(sourceId: string): DbInfo {
-  const source = getSource(sourceId);
-  if (!source) throw httpError(404, "unknown source");
-  const cached = openDbs.get(sourceId);
-  if (cached) {
-    cached.lastUsed = Date.now();
-    return cached;
-  }
-  const path = resolve(dataRoot, source.dbFile);
-  if (!existsSync(path)) throw httpError(404, `No database yet. Run: npm run ingest -- ${source.id}`);
-  const db = new DatabaseSync(path, { readOnly: true });
-  db.function("fsv_budget", { deterministic: false, directOnly: true }, budgetFn);
-  const meta = metaOf(db);
-  let counts: Record<string, number> = {};
-  try {
-    counts = JSON.parse(meta.counts ?? "{}");
-  } catch {
-    counts = {};
-  }
-  const tables = new Map<string, string[]>();
-  const indexed = new Map<string, Set<string>>();
-  const names = db
-    .prepare(`SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name`)
-    .all() as { name: string }[];
-  for (const { name } of names) {
-    tables.set(name, (db.prepare(`PRAGMA table_info(${qi(name)})`).all() as { name: string }[]).map((c) => c.name));
-    const lead = new Set<string>();
-    for (const ix of db.prepare(`PRAGMA index_list(${qi(name)})`).all() as { name: string }[]) {
-      const first = (db.prepare(`PRAGMA index_info(${qi(ix.name)})`).all() as { seqno: number; name: string }[]).find(
-        (c) => c.seqno === 0,
-      );
-      if (first?.name) lead.add(first.name);
-    }
-    indexed.set(name, lead);
-  }
-  const info: DbInfo = { db, meta, counts, tables, indexed, lastUsed: Date.now() };
-  openDbs.set(sourceId, info);
-  return info;
-}
-
-function rowCount(info: DbInfo, table: string): number {
-  if (info.counts[table] === undefined) {
-    info.counts[table] = (info.db.prepare(`SELECT COUNT(*) AS n FROM ${qi(table)}`).get() as { n: number }).n;
-  }
-  return info.counts[table];
-}
-
-function cappedCount(info: DbInfo, from: string, where: string, params: (string | number)[]): { total: number; capped: boolean } {
-  const n = (
-    info.db.prepare(`SELECT COUNT(*) AS n FROM (SELECT 1 FROM ${from} ${where} LIMIT ${COUNT_CAP + 1})`).get(...params) as {
-      n: number;
-    }
-  ).n;
-  return n > COUNT_CAP ? { total: COUNT_CAP, capped: true } : { total: n, capped: false };
-}
-
-/** Values from the URL are text; xlsx cells may hold numbers. Match either representation. */
-function eqParams(value: string): [string, string | number] {
-  return [value, /^-?\d+(\.\d+)?$/.test(value) && value.length < 16 ? Number(value) : value];
-}
-
-function findCol(cols: string[] | undefined, wanted: string): string | undefined {
-  if (!cols) return undefined;
-  return cols.find((c) => c === wanted) ?? cols.find((c) => c.toLowerCase() === wanted.toLowerCase());
 }
 
 function parseUrl(req: IncomingMessage): URL {
@@ -378,29 +246,26 @@ function tablePage(sourceId: string, table: string, url: URL) {
   let total = 0;
   let capped = false;
   let timedOut = false;
-  budgetDeadline = budgetMs ? Date.now() + budgetMs : Infinity;
-  budgetHit = false;
-  try {
-    const stmt = info.db.prepare(`SELECT * FROM ${ident} ${where} LIMIT ? OFFSET ?`);
-    stmt.setReadBigInts(true);
-    for (const r of stmt.iterate(...params, pageSize, offset)) rows.push(r as Record<string, unknown>);
-    if (!clauses.length) {
-      total = rowCount(info, table);
-    } else if (rows.length < pageSize && (rows.length > 0 || page === 1)) {
-      total = offset + rows.length; // the scan already reached the end, so this is exact
-    } else {
-      ({ total, capped } = cappedCount(info, ident, where, params));
-    }
-  } catch (err) {
-    if (!budgetHit) throw err;
-    // Out of time: report what was found so far as a lower bound.
-    timedOut = true;
-    total = offset + rows.length;
-    capped = true;
-  } finally {
-    budgetDeadline = Infinity;
-    budgetHit = false;
-  }
+  ({ timedOut } = withBudget(
+    budgetMs,
+    () => {
+      const stmt = info.db.prepare(`SELECT * FROM ${ident} ${where} LIMIT ? OFFSET ?`);
+      stmt.setReadBigInts(true);
+      for (const r of stmt.iterate(...params, pageSize, offset)) rows.push(r as Record<string, unknown>);
+      if (!clauses.length) {
+        total = rowCount(info, table);
+      } else if (rows.length < pageSize && (rows.length > 0 || page === 1)) {
+        total = offset + rows.length; // the scan already reached the end, so this is exact
+      } else {
+        ({ total, capped } = cappedCount(info, ident, where, params));
+      }
+    },
+    () => {
+      // Out of time: report what was found so far as a lower bound.
+      total = offset + rows.length;
+      capped = true;
+    },
+  ));
   return { columns: cols, rows, total, totalCapped: capped, page, pageSize, searchedColumns, timedOut };
 }
 
@@ -477,6 +342,33 @@ function handle(req: IncomingMessage, res: ServerResponse): void {
       const source = getSource(parts[2]);
       if (!source) throw httpError(404, "unknown source");
       json(res, 200, foodDetail(source, parts[4]));
+      return;
+    }
+
+    if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "relations" && !parts[4]) {
+      json(res, 200, relationsFor(parts[2], url.searchParams.get("refresh") === "1"));
+      return;
+    }
+
+    if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "composite" && parts[4] === "meta") {
+      json(res, 200, compositeMeta(parts[2], url));
+      return;
+    }
+
+    if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "composite" && !parts[4]) {
+      json(res, 200, compositePage(parts[2], url));
+      return;
+    }
+
+    if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "composite.csv" && !parts[4]) {
+      compositeCsv(parts[2], url, req, res).catch((err) => {
+        if (!res.headersSent) {
+          json(res, (err as { status?: number }).status ?? 500, { error: err instanceof Error ? err.message : "error" });
+        } else {
+          console.error("csv export failed:", err);
+          res.destroy(err instanceof Error ? err : undefined);
+        }
+      });
       return;
     }
 

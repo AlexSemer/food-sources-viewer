@@ -398,7 +398,7 @@ export function Composite({ sourceId }: { sourceId: string }) {
           </ul>
         ) : null}
         <p className="muted">
-          Everything stays within this source: no cross-source mapping, no unit conversion. Missing values are shown as "-". Columns:{" "}
+          Everything stays within this source: no cross-source mapping, no unit conversion unless stated above. Missing values are shown as "-". Columns:{" "}
           {counts.identity} identity, {counts.nutrient} nutrient / component, {counts.related} related.
         </p>
       </details>

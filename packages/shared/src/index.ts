@@ -51,6 +51,11 @@ export type SourceDef = {
   foodTable: string;
   foodIdField: string;
   foodNameField: string;
+  /**
+   * foodTable is long-format: several rows per foodIdField (e.g. one per product × component). The Foods list
+   * then shows one row per id; the food page lists all of the id's rows in either case.
+   */
+  foodIdRepeats?: boolean;
   /** Extra foodTable columns shown in the food search results. */
   foodListFields?: string[];
   /** Optional equality filter column for the food search (USDA data_type). */
@@ -280,6 +285,7 @@ export const sources: SourceDef[] = [
     foodTable: "Main_extract",
     foodIdField: "Product ID",
     foodNameField: "Full product name",
+    foodIdRepeats: true,
     foodListFields: ["Country name", "Brand Name", "Supplement group name"],
   }),
   xlsx({

@@ -100,15 +100,17 @@ function listFoods(source: SourceDef, url: URL) {
     clauses.push(`${nc} > ''`); // rows with a name; also lets SQLite walk the (name, id) index
   }
   const where = `WHERE ${clauses.join(" AND ")}`;
+  // Long-format food tables: one row (the first) per food id.
+  const group = source.foodIdRepeats ? ` GROUP BY ${idc}` : "";
   // Phase 1 walks the narrow (name, id) index; phase 2 fetches the page's rows.
   const rowids = (
-    info.db.prepare(`SELECT rowid AS r FROM ${t} ${where} ORDER BY ${nc} LIMIT ? OFFSET ?`).all(
+    info.db.prepare(`SELECT ${group ? "MIN(rowid)" : "rowid"} AS r FROM ${t} ${where}${group} ORDER BY ${group ? `MIN(${nc}), ${idc}` : nc} LIMIT ? OFFSET ?`).all(
       ...params,
       pageSize,
       (page - 1) * pageSize,
     ) as { r: number }[]
   ).map((x) => x.r);
-  const { total, capped } = cappedCount(info, t, where, params);
+  const { total, capped } = cappedCount(info, t, `${where}${group}`, params);
 
   const listFields = (source.foodListFields ?? []).map((f) => findCol(cols, f)).filter((f): f is string => !!f);
   const selectCols = [source.foodIdField, source.foodNameField, ...(types ? [source.foodTypeField!] : []), ...listFields].filter(
@@ -175,6 +177,14 @@ function foodDetail(source: SourceDef, foodId: string) {
   );
   if (matches.length === 0) throw httpError(404, "food not found");
   const food = matches[0];
+  // Several foodTable rows share this id (long-format table, or a non-unique id): list all of them.
+  const sameId: ReturnType<typeof relatedFor> = [];
+  if (matches.length > 1) {
+    const where = `WHERE ${qi(source.foodIdField)} IN (?, ?)`;
+    const total = (info.db.prepare(`SELECT COUNT(*) AS n FROM ${qi(source.foodTable)} ${where}`).get(...p) as { n: number }).n;
+    const rows = all(info.db.prepare(`SELECT * FROM ${qi(source.foodTable)} ${where} ORDER BY rowid LIMIT 500`), ...p);
+    sameId.push({ table: source.foodTable, field: source.foodIdField, total, columns: cols, rows });
+  }
 
   let nutrients: Record<string, unknown>[] | undefined;
   if (source.usdaNutrients && info.tables.has("food_nutrient") && info.tables.has("nutrient")) {
@@ -201,9 +211,9 @@ function foodDetail(source: SourceDef, foodId: string) {
     idField: source.foodIdField,
     nameField: source.foodNameField,
     food,
-    otherMatches: matches.length - 1,
+    otherMatches: sameId.length ? sameId[0].total - 1 : 0,
     nutrients,
-    related: relatedFor(info, source, food),
+    related: [...sameId, ...relatedFor(info, source, food)],
   };
 }
 

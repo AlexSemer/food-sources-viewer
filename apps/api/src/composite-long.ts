@@ -26,6 +26,32 @@ import {
 /* ------------------------------------------------------------------ FooDB */
 
 export const FOODB_TOP_COMPOUNDS = 200;
+const KJ_PER_KCAL = 4.184;
+
+/**
+ * Real unit of a FooDB Content row (orig_unit + orig_unit_expression) and the exact factor from its standard_content
+ * to that unit. Mass per mass of the food is converted to mg/100 g ("mg"); dry-weight, per-litre, molar and
+ * activity / equivalent units (µM, IU, RE, NE, α-TE, ppb ...) keep their own unit, so they are never averaged with mg.
+ */
+export function foodbUnit(u: unknown, expr: unknown): { unit: string; factor: number } {
+  const raw = [u, expr].map((x) => (x === null || x === undefined ? "" : String(x).trim())).filter(Boolean).join(" ");
+  const s = raw.toLowerCase().replace(/\s+/g, " ").replace(/µ/g, "u");
+  const dry = /dry (weight|matter)/.test(s);
+  const rest = s.replace(/(of )?dry (weight|matter)|fresh ?(weight|sample)/g, "").trim();
+  const toMg: Record<string, number> = { g: 1000, mg: 1, ug: 0.001 };
+  let m = rest.match(/^(g|mg|ug) ?\/ ?(100 ?g|kg|g)\b ?(.*)$/);
+  if (m) {
+    const per = m[2] === "kg" ? 10 : m[2] === "g" ? 0.01 : 1; // in units of 100 g
+    const basis = [dry ? "dry weight" : "", m[3]].filter(Boolean).join(" ");
+    return { unit: basis ? `mg/100 g ${basis}` : "mg", factor: toMg[m[1]] / per };
+  }
+  m = rest.match(/^(mg|ug) ?\/ ?l$/);
+  if (m) return { unit: "mg/L", factor: toMg[m[1]] };
+  if (/^umol ?\/ ?g$/.test(rest)) return { unit: dry ? "µmol/g dry weight" : "µmol/g", factor: 1 };
+  if (rest === "um") return { unit: "µM", factor: 1 };
+  if (/^(iu|kcal)( ?\/ ?100 ?g)?$/.test(rest)) return { unit: rest.startsWith("iu") ? "IU" : "kcal", factor: 1 };
+  return { unit: raw || "?", factor: 1 };
+}
 
 export function foodbSpec(ctx: Ctx): Spec {
   const mode = ctx.f.mode === "compounds" ? "compounds" : "nutrients";
@@ -49,14 +75,50 @@ export function foodbSpec(ctx: Ctx): Spec {
       );
     });
   const countMode = ctx.f.agg === "n";
+  const energyIds = () =>
+    ctx.memo("energyIds", () => q<{ id: number; name: string }>(ctx, `SELECT id, name FROM Nutrient`).filter((n) => /energy/i.test(n.name)).map((n) => Number(n.id)));
+  const compoundKey = (id: unknown, unit: string) => (unit === "mg" ? `n:${id}` : `n:${id}|${unit}`);
+  /** One column per top compound × real unit (Content.orig_unit); one scan, cached per API process. */
+  const compoundUnits = () =>
+    ctx.memo("compoundUnits", () => {
+      const out = new Map<string, { id: number; unit: string; rows: number; orig: Set<string> }>();
+      for (const r of q<{ id: number; u: string | null; e: string | null; n: number }>(
+        ctx,
+        `SELECT source_id AS id, orig_unit AS u, orig_unit_expression AS e, COUNT(*) AS n FROM Content
+         WHERE source_type = 'Compound' AND standard_content IS NOT NULL AND source_id IN (${compoundRank().map((c) => Number(c.id)).join(",") || "NULL"}) GROUP BY 1, 2, 3`,
+      )) {
+        const { unit } = foodbUnit(r.u, r.e);
+        const key = compoundKey(r.id, unit);
+        const c = out.get(key) ?? { id: Number(r.id), unit, rows: 0, orig: new Set<string>() };
+        c.rows += r.n;
+        c.orig.add([r.u ?? "-", r.e].filter(Boolean).join(" "));
+        out.set(key, c);
+      }
+      return out;
+    });
   const nutrientCols = (): Column[] => {
-    const cols =
-      mode === "nutrients"
-        ? q<{ id: number; name: string }>(ctx, `SELECT id, name FROM Nutrient`).map((n) => {
-            const unit = /energy/i.test(n.name) ? "kcal" : "mg";
-            return { key: `n:${n.id}`, name: n.name, unit, title: `Nutrient.id ${n.id}; Content.standard_content (${unit}/100 g)` };
-          })
-        : compoundRank().map((c) => ({ key: `n:${c.id}`, name: c.name ?? `Compound ${c.id}`, unit: "mg", title: `Compound.id ${c.id}; quantified in ${c.foods} foods` }));
+    let cols: { key: string; name: string; unit: string; title: string }[];
+    if (mode === "nutrients") {
+      cols = q<{ id: number; name: string }>(ctx, `SELECT id, name FROM Nutrient`).map((n) => {
+        const energy = energyIds().includes(Number(n.id));
+        const unit = energy ? "kcal" : "mg";
+        const title = energy
+          ? `Nutrient.id ${n.id}; kcal/100 g: Content.standard_content, rows that FooDB stores in kJ (standard_content = 4.184 × orig_content, or orig_unit 'mg/100 g') divided by 4.184`
+          : `Nutrient.id ${n.id}; Content.standard_content (${unit}/100 g)`;
+        return { key: `n:${n.id}`, name: n.name, unit, title };
+      });
+    } else {
+      const rank = new Map(compoundRank().map((c) => [Number(c.id), c]));
+      cols = [...compoundUnits()].map(([key, u]) => {
+        const c = rank.get(u.id);
+        return {
+          key,
+          name: c?.name ?? `Compound ${u.id}`,
+          unit: u.unit,
+          title: `Compound.id ${u.id}; quantified in ${c?.foods ?? "?"} foods; ${u.rows} rows in ${u.unit === "mg" ? "mg/100 g" : u.unit} (Content.orig_unit: ${[...u.orig].join(", ")})`,
+        };
+      });
+    }
     return finishNutrients(
       cols.map((c) => ({
         key: c.key,
@@ -141,17 +203,50 @@ export function foodbSpec(ctx: Ctx): Spec {
       });
       const ids = [...out.keys()];
       if (!ids.length) return rows;
-      const srcType = mode === "nutrients" ? "Nutrient" : "Compound";
-      const only = mode === "compounds" ? `AND source_id IN (${compoundRank().map((c) => Number(c.id)).join(",") || "NULL"})` : "";
-      for (const r of qIn<{ k: number; n: number; v: unknown }>(
-        ctx,
-        `SELECT food_id AS k, source_id AS n, ${aggFn}(standard_content) AS v FROM Content
-         WHERE food_id IN (__IDS__) AND source_type = ? AND standard_content IS NOT NULL ${only} GROUP BY food_id, source_id`,
-        ids,
-        srcType,
-      )) {
-        const row = out.get(Number(r.k));
-        if (row) row[`n:${r.n}`] = round(r.v);
+      if (mode === "nutrients") {
+        // FooDB keeps part of its energy rows in kJ under a kcal label (standard_content = 4.184 × orig_content, USDA and DTU)
+        // plus DTU copies labelled 'mg/100 g'; those are turned back into kcal before aggregating.
+        const energy = energyIds();
+        const v = energy.length
+          ? `CASE WHEN source_id IN (${energy.join(",")}) AND (orig_unit NOT LIKE 'kcal%' OR ABS(standard_content - ${KJ_PER_KCAL} * orig_content) <= 0.01 * ABS(standard_content))
+               THEN standard_content / ${KJ_PER_KCAL} ELSE standard_content END`
+          : "standard_content";
+        for (const r of qIn<{ k: number; n: number; v: unknown }>(
+          ctx,
+          `SELECT food_id AS k, source_id AS n, ${aggFn}(${v}) AS v FROM Content
+           WHERE food_id IN (__IDS__) AND source_type = 'Nutrient' AND standard_content IS NOT NULL GROUP BY food_id, source_id`,
+          ids,
+        )) {
+          const row = out.get(Number(r.k));
+          if (row) row[`n:${r.n}`] = round(r.v);
+        }
+      } else {
+        // Aggregated per food × compound × raw unit in SQL, then merged per real unit (after the exact factor).
+        const acc = new Map<number, Map<string, { n: number; s: number; lo: number; hi: number }>>();
+        for (const r of qIn<{ k: number; id: number; u: string | null; e: string | null; n: number; s: number; lo: number; hi: number }>(
+          ctx,
+          `SELECT food_id AS k, source_id AS id, orig_unit AS u, orig_unit_expression AS e, COUNT(*) AS n, SUM(standard_content) AS s,
+             MIN(standard_content) AS lo, MAX(standard_content) AS hi FROM Content
+           WHERE food_id IN (__IDS__) AND source_type = 'Compound' AND standard_content IS NOT NULL
+             AND source_id IN (${compoundRank().map((c) => Number(c.id)).join(",") || "NULL"}) GROUP BY 1, 2, 3, 4`,
+          ids,
+        )) {
+          const { unit, factor } = foodbUnit(r.u, r.e);
+          const key = compoundKey(r.id, unit);
+          if (!acc.has(r.k)) acc.set(r.k, new Map());
+          const a = acc.get(r.k)!.get(key);
+          if (a) {
+            a.n += r.n;
+            a.s += r.s * factor;
+            a.lo = Math.min(a.lo, r.lo * factor);
+            a.hi = Math.max(a.hi, r.hi * factor);
+          } else acc.get(r.k)!.set(key, { n: r.n, s: r.s * factor, lo: r.lo * factor, hi: r.hi * factor });
+        }
+        for (const [k, cells] of acc) {
+          const row = out.get(Number(k));
+          if (!row) continue;
+          for (const [key, a] of cells) row[key] = round(countMode ? a.n : ctx.f.agg === "min" ? a.lo : ctx.f.agg === "max" ? a.hi : a.s / a.n);
+        }
       }
       const push = (m: Map<number, string[]>, k: number, s: string) => {
         if (!m.has(k)) m.set(k, []);
@@ -197,13 +292,13 @@ export function foodbSpec(ctx: Ctx): Spec {
       ],
       values:
         mode === "nutrients"
-          ? `Content.standard_content (mg/100 g; energy kcal/100 g) for source_type = 'Nutrient', joined to Nutrient on Content.source_id. FooDB often has several rows per food × nutrient (from DUKE, DTU, USDA ...); the cell shows their ${countMode ? "count" : ctx.f.agg === "avg" ? "average" : ctx.f.agg + "imum"}.`
-          : `Content.standard_content (mg/100 g) for source_type = 'Compound', limited to the ${TOP} compounds quantified in the most foods (${
+          ? `Content.standard_content (mg/100 g; energy kcal/100 g) for source_type = 'Nutrient', joined to Nutrient on Content.source_id. FooDB often has several rows per food × nutrient (from DUKE, DTU, USDA ...); the cell shows their ${countMode ? "count" : ctx.f.agg === "avg" ? "average" : ctx.f.agg + "imum"}. Energy: FooDB stores part of its energy rows in kJ under a kcal or 'mg/100 g' label (standard_content = 4.184 × orig_content, and the DTU rows labelled 'mg/100 g'); these are divided by 4.184 before aggregating, so energy is always kcal/100 g.`
+          : `Content.standard_content for source_type = 'Compound', one column per compound × real unit (Content.orig_unit): mass per mass is converted exactly to mg/100 g (mg/kg ÷ 10, µg/g ÷ 10, g/kg × 100, µg/100 g ÷ 1000); per dry weight, per litre, molar (µM, µmol/g) and other units (IU, RE, NE, α-TE, ppb, kcal ...) keep their own column and are never averaged with mg. Limited to the ${TOP} compounds quantified in the most foods (${
               ctx.has("_compound_rank") ? "precomputed in _compound_rank by `npm run ingest -- prep foodb`" : "computed on first use; `npm run ingest -- prep foodb` precomputes it"
             }). Most of the 5M compound rows are presence-only (no standard_content); they are counted in 'Content rows'. Several rows per food × compound are aggregated (${ctx.f.agg}).`,
       split: SPLIT_DOC,
       related: related.map((r) => `${r.label}: ${r.title ?? ""}`),
-      notes: ["Values stay as FooDB reports them; FooDB's own sources are not reconciled, only aggregated per cell as chosen."],
+      notes: ["Values stay as FooDB reports them (apart from the unit handling above); FooDB's own sources are not reconciled, only aggregated per cell as chosen."],
     }),
   };
 }

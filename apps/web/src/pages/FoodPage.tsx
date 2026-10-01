@@ -118,7 +118,7 @@ export function FoodPage() {
       <h1>{cell(data.food[data.nameField]) || foodId}</h1>
       <p className="muted">
         {data.source.foodTable}.{data.idField} {id}
-        {data.otherMatches > 0 ? ` · ${data.otherMatches}+ more rows share this ${data.idField}` : ""}
+        {data.otherMatches > 0 ? ` · ${data.otherMatches} more rows share this ${data.idField} (listed below)` : ""}
       </p>
       <p className="muted">Values exactly as this source publishes them. No mapping.</p>
 

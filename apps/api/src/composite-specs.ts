@@ -9,7 +9,7 @@
  *    base, everything after it is the variant ("Apples, raw, with skin" -> "Apples" + "raw, with skin");
  *    a name without a comma is all base. The full original name is always kept in "Full name".
  *  - Then one column per nutrient/component, "Name (unit)", sorted alphabetically. Values are exactly as
- *    stored (no unit conversion); unit symbols are only prettified (UG/mcg -> µg, MG -> mg, ...).
+ *    stored (no unit conversion, except FooDB: kJ energy rows -> kcal, exact mass-per-mass units -> mg/100 g; see its docs); unit symbols are only prettified (UG/mcg -> µg, MG -> mg, ...).
  *  - Then related 1:N rows summarised in one cell (portions, attributes, counts, references).
  */
 import type { DatabaseSync } from "node:sqlite";

@@ -631,15 +631,17 @@ export function wideSpecFor(ctx: Ctx): Spec {
 /* ------------------------------------------------------------------ FAO/INFOODS supplement (long format) */
 
 export function supplementSpec(ctx: Ctx): Spec {
+  // Generic Component IDs (e.g. 379, 609, 123) cover many different ingredients, so columns are
+  // Component ID + Component Name in English × unit.
   const comps = () =>
     ctx.memo("comps", () =>
       q<{ id: unknown; name: unknown; u: unknown; n: number }>(
         ctx,
-        `SELECT "Component ID" AS id, MIN("Component Name in English") AS name, "Unit Name Short" AS u, COUNT(DISTINCT "Product ID") AS n FROM "Main_extract"
-         WHERE "Component Name in English" IS NOT NULL OR "Component ID" IS NOT NULL GROUP BY 1, 3`,
+        `SELECT "Component ID" AS id, "Component Name in English" AS name, "Unit Name Short" AS u, COUNT(DISTINCT "Product ID") AS n FROM "Main_extract"
+         WHERE "Component Name in English" IS NOT NULL OR "Component ID" IS NOT NULL GROUP BY 1, 2, 3`,
       ),
     );
-  const keyOf = (id: unknown, name: unknown, u: unknown) => `n:${id ?? name}|${u ?? ""}`;
+  const keyOf = (id: unknown, name: unknown, u: unknown) => `n:${id ?? ""}|${name ?? ""}|${u ?? ""}`;
   const productCols: [string, string, boolean][] = [
     ["Country name", "Country", false],
     ["Brand Name", "Brand", false],
@@ -744,7 +746,7 @@ export function supplementSpec(ctx: Ctx): Spec {
         ["Extras", "'Values per' (Tablet / Capsule / 100 ml ...), country, brand, manufacturer, barcode, package and serving size"],
       ],
       values:
-        "Amount pivoted by Component ID × Unit Name Short, labelled 'Component Name in English (unit)'. The basis is the product's 'Values per' (per tablet, capsule, 100 ml ...), not per 100 g. Two different amounts for the same component are shown as 'a / b'.",
+        "Amount pivoted by Component ID × Component Name in English × Unit Name Short (generic IDs such as 379, 609 or 123 cover many ingredients), labelled 'Component Name in English (unit)'. The basis is the product's 'Values per' (per tablet, capsule, 100 ml ...), not per 100 g. Two different amounts for the same component (e.g. vitamin C listed per chemical form in 'Component Name in Local language') are shown as 'a / b'; the product page lists every row.",
       split: SPLIT_DOC,
       related: ["Components listed: number of Main_extract rows of the product"],
       notes: ["Sports_products is a separate product list (its own per-100 g columns; its barcodes do not overlap Main_extract) and is not merged; it stays in the table view."],

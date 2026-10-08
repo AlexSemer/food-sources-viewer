@@ -1,0 +1,1039 @@
+[
+  {
+    "id": "energy",
+    "name": "Energy",
+    "category": "macro",
+    "unit": "kcal",
+    "description": "Total metabolizable energy",
+    "is_essential": true,
+    "status": "existing"
+  },
+  {
+    "id": "protein",
+    "name": "Protein",
+    "category": "macro",
+    "unit": "g",
+    "description": "Total protein (amino acid polymers)",
+    "key_functions": [
+      "tissue repair",
+      "enzyme synthesis",
+      "hormone production",
+      "immune function"
+    ],
+    "related_organs": [
+      "muscles",
+      "liver",
+      "immune",
+      "brain"
+    ],
+    "is_essential": true,
+    "status": "existing"
+  },
+  {
+    "id": "carbohydrate",
+    "name": "Carbohydrate",
+    "category": "macro",
+    "unit": "g",
+    "description": "Total available carbohydrate",
+    "related_organs": [
+      "brain",
+      "muscles"
+    ],
+    "is_essential": true,
+    "status": "existing"
+  },
+  {
+    "id": "fiber",
+    "name": "Dietary Fiber",
+    "category": "macro",
+    "unit": "g",
+    "subcategory": "non_digestible",
+    "key_functions": [
+      "gut motility",
+      "microbiome substrate",
+      "cholesterol binding",
+      "glycemic control"
+    ],
+    "related_organs": [
+      "intestines",
+      "liver",
+      "heart"
+    ],
+    "is_essential": true,
+    "status": "existing"
+  },
+  {
+    "id": "total_fat",
+    "name": "Total Fat",
+    "category": "macro",
+    "unit": "g",
+    "is_essential": true,
+    "status": "existing"
+  },
+  {
+    "id": "saturated_fat",
+    "name": "Saturated Fat",
+    "category": "fatty_acid",
+    "unit": "g",
+    "status": "existing"
+  },
+  {
+    "id": "monounsaturated_fat",
+    "name": "Monounsaturated Fat",
+    "category": "fatty_acid",
+    "unit": "g",
+    "status": "existing"
+  },
+  {
+    "id": "polyunsaturated_fat",
+    "name": "Polyunsaturated Fat",
+    "category": "fatty_acid",
+    "unit": "g",
+    "status": "existing"
+  },
+  {
+    "id": "omega3",
+    "name": "Omega-3 Fatty Acids",
+    "category": "fatty_acid",
+    "unit": "g",
+    "aliases": [
+      "n-3",
+      "\u03c9-3"
+    ],
+    "key_functions": [
+      "anti-inflammatory",
+      "neuronal membrane",
+      "retinal health"
+    ],
+    "related_organs": [
+      "brain",
+      "eyes",
+      "heart",
+      "joints"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "dha",
+    "name": "DHA (Docosahexaenoic Acid)",
+    "category": "fatty_acid",
+    "unit": "mg",
+    "related_organs": [
+      "brain",
+      "eyes"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "epa",
+    "name": "EPA (Eicosapentaenoic Acid)",
+    "category": "fatty_acid",
+    "unit": "mg",
+    "related_organs": [
+      "heart",
+      "brain"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_a",
+    "name": "Vitamin A (RAE)",
+    "category": "vitamin",
+    "subcategory": "fat_soluble",
+    "unit": "\u00b5g",
+    "aliases": [
+      "retinol activity equivalents"
+    ],
+    "key_functions": [
+      "vision",
+      "epithelial integrity",
+      "immune modulation"
+    ],
+    "related_organs": [
+      "eyes",
+      "skin",
+      "lungs",
+      "immune"
+    ],
+    "deficiency_signs": [
+      "night blindness",
+      "xerophthalmia",
+      "impaired immunity"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_b1",
+    "name": "Thiamin (B1)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "mg",
+    "related_organs": [
+      "brain",
+      "nerves",
+      "heart"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_b2",
+    "name": "Riboflavin (B2)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "mg",
+    "status": "existing"
+  },
+  {
+    "id": "vit_b3",
+    "name": "Niacin (B3)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "mg",
+    "status": "existing"
+  },
+  {
+    "id": "vit_b5",
+    "name": "Pantothenic Acid (B5)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "mg",
+    "status": "existing"
+  },
+  {
+    "id": "vit_b6",
+    "name": "Vitamin B6 (Pyridoxine)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "mg",
+    "related_organs": [
+      "brain",
+      "heart",
+      "liver"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_b7",
+    "name": "Biotin (B7)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "\u00b5g",
+    "status": "existing"
+  },
+  {
+    "id": "vit_b9",
+    "name": "Folate (B9)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "\u00b5g",
+    "aliases": [
+      "folic acid",
+      "DFE"
+    ],
+    "related_organs": [
+      "brain",
+      "blood",
+      "intestines"
+    ],
+    "key_functions": [
+      "DNA synthesis",
+      "neural tube development",
+      "homocysteine metabolism"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_b12",
+    "name": "Vitamin B12 (Cobalamin)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "\u00b5g",
+    "related_organs": [
+      "brain",
+      "nerves",
+      "blood"
+    ],
+    "bioavailability_notes": "Requires intrinsic factor; absorption declines with age and PPI use",
+    "status": "existing"
+  },
+  {
+    "id": "vit_c",
+    "name": "Vitamin C (Ascorbic Acid)",
+    "category": "vitamin",
+    "subcategory": "water_soluble",
+    "unit": "mg",
+    "key_functions": [
+      "collagen synthesis",
+      "antioxidant",
+      "iron absorption enhancer",
+      "immune support"
+    ],
+    "related_organs": [
+      "skin",
+      "eyes",
+      "heart",
+      "lungs",
+      "immune"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_d",
+    "name": "Vitamin D",
+    "category": "vitamin",
+    "subcategory": "fat_soluble",
+    "unit": "\u00b5g",
+    "aliases": [
+      "cholecalciferol",
+      "25-OH-D"
+    ],
+    "key_functions": [
+      "calcium absorption",
+      "bone health",
+      "immune modulation",
+      "mood"
+    ],
+    "related_organs": [
+      "bone",
+      "kidneys",
+      "brain",
+      "immune",
+      "heart"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_e",
+    "name": "Vitamin E",
+    "category": "vitamin",
+    "subcategory": "fat_soluble",
+    "unit": "mg",
+    "related_organs": [
+      "eyes",
+      "heart",
+      "liver",
+      "skin"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "vit_k",
+    "name": "Vitamin K",
+    "category": "vitamin",
+    "subcategory": "fat_soluble",
+    "unit": "\u00b5g",
+    "related_organs": [
+      "liver",
+      "bone",
+      "blood"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "calcium",
+    "name": "Calcium",
+    "category": "mineral",
+    "unit": "mg",
+    "related_organs": [
+      "bone",
+      "heart",
+      "nerves",
+      "muscles"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "iron",
+    "name": "Iron",
+    "category": "mineral",
+    "unit": "mg",
+    "bioavailability_notes": "Heme iron ~15-35% absorption; non-heme 2-20%. Enhanced by vitamin C, inhibited by phytates, calcium, polyphenols.",
+    "related_organs": [
+      "blood",
+      "brain",
+      "muscles",
+      "lungs"
+    ],
+    "deficiency_signs": [
+      "fatigue",
+      "pallor",
+      "reduced cognitive performance",
+      "restless legs"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "magnesium",
+    "name": "Magnesium",
+    "category": "mineral",
+    "unit": "mg",
+    "related_organs": [
+      "brain",
+      "heart",
+      "muscles",
+      "kidneys",
+      "nerves"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "zinc",
+    "name": "Zinc",
+    "category": "mineral",
+    "unit": "mg",
+    "related_organs": [
+      "immune",
+      "skin",
+      "brain",
+      "intestines"
+    ],
+    "key_functions": [
+      "enzyme cofactor",
+      "wound healing",
+      "taste & smell",
+      "immune cell function"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "selenium",
+    "name": "Selenium",
+    "category": "mineral",
+    "unit": "\u00b5g",
+    "related_organs": [
+      "thyroid",
+      "liver",
+      "immune"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "iodine",
+    "name": "Iodine",
+    "category": "mineral",
+    "unit": "\u00b5g",
+    "related_organs": [
+      "thyroid",
+      "brain"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "potassium",
+    "name": "Potassium",
+    "category": "mineral",
+    "unit": "mg",
+    "related_organs": [
+      "heart",
+      "kidneys",
+      "muscles",
+      "nerves"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "sodium",
+    "name": "Sodium",
+    "category": "mineral",
+    "unit": "mg",
+    "related_organs": [
+      "kidneys",
+      "heart",
+      "nerves"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "phosphorus",
+    "name": "Phosphorus",
+    "category": "mineral",
+    "unit": "mg",
+    "related_organs": [
+      "bone",
+      "kidneys"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "copper",
+    "name": "Copper",
+    "category": "mineral",
+    "unit": "mg",
+    "status": "existing"
+  },
+  {
+    "id": "manganese",
+    "name": "Manganese",
+    "category": "mineral",
+    "unit": "mg",
+    "status": "existing"
+  },
+  {
+    "id": "chromium",
+    "name": "Chromium",
+    "category": "mineral",
+    "unit": "\u00b5g",
+    "status": "existing"
+  },
+  {
+    "id": "molybdenum",
+    "name": "Molybdenum",
+    "category": "mineral",
+    "unit": "\u00b5g",
+    "status": "existing"
+  },
+  {
+    "id": "choline",
+    "name": "Choline",
+    "category": "other",
+    "unit": "mg",
+    "related_organs": [
+      "brain",
+      "liver"
+    ],
+    "key_functions": [
+      "acetylcholine precursor",
+      "phospholipid membranes",
+      "methyl donor"
+    ],
+    "status": "existing"
+  },
+  {
+    "id": "water",
+    "name": "Water",
+    "category": "other",
+    "unit": "g",
+    "description": "Moisture / water content",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "alcohol",
+    "name": "Alcohol (ethanol)",
+    "category": "other",
+    "unit": "g",
+    "description": "Ethanol; contributes energy",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "ash",
+    "name": "Ash",
+    "category": "other",
+    "unit": "g",
+    "description": "Total mineral residue after incineration",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "cholesterol",
+    "name": "Cholesterol",
+    "category": "other",
+    "unit": "mg",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "sugars",
+    "name": "Total sugars",
+    "category": "macro",
+    "subcategory": "available_carb",
+    "unit": "g",
+    "description": "Sum of mono- and disaccharides. Do not add to child sugar ids.",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "added_sugars",
+    "name": "Added sugars",
+    "category": "macro",
+    "subcategory": "available_carb",
+    "unit": "g",
+    "description": "Policy/label cut, not a different molecule",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "starch",
+    "name": "Starch",
+    "category": "macro",
+    "subcategory": "available_carb",
+    "unit": "g",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "salt",
+    "name": "Salt (NaCl)",
+    "category": "mineral",
+    "unit": "g",
+    "description": "Not the same as sodium",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "trans_fat",
+    "name": "Trans fat",
+    "category": "fatty_acid",
+    "unit": "g",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "ala",
+    "name": "ALA (Alpha-linolenic acid)",
+    "category": "fatty_acid",
+    "unit": "g",
+    "aliases": [
+      "18:3 n-3"
+    ],
+    "is_essential": true,
+    "status": "proposed"
+  },
+  {
+    "id": "linoleic",
+    "name": "Linoleic acid",
+    "category": "fatty_acid",
+    "unit": "g",
+    "aliases": [
+      "18:2 n-6"
+    ],
+    "is_essential": true,
+    "status": "proposed"
+  },
+  {
+    "id": "retinol",
+    "name": "Retinol (preformed vitamin A)",
+    "category": "vitamin",
+    "subcategory": "fat_soluble",
+    "unit": "\u00b5g",
+    "is_essential": true,
+    "status": "proposed"
+  },
+  {
+    "id": "beta_carotene",
+    "name": "Beta-carotene",
+    "category": "phytonutrient",
+    "unit": "\u00b5g",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "glucose",
+    "name": "Glucose",
+    "category": "macro",
+    "subcategory": "sugar",
+    "unit": "g",
+    "description": "Child of sugars. Do not sum with sugars.",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "fructose",
+    "name": "Fructose",
+    "category": "macro",
+    "subcategory": "sugar",
+    "unit": "g",
+    "description": "Child of sugars. Do not sum with sugars.",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "sucrose",
+    "name": "Sucrose",
+    "category": "macro",
+    "subcategory": "sugar",
+    "unit": "g",
+    "description": "Child of sugars. Do not sum with sugars.",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "lactose",
+    "name": "Lactose",
+    "category": "macro",
+    "subcategory": "sugar",
+    "unit": "g",
+    "description": "Child of sugars. Do not sum with sugars.",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "maltose",
+    "name": "Maltose",
+    "category": "macro",
+    "subcategory": "sugar",
+    "unit": "g",
+    "description": "Child of sugars. Do not sum with sugars.",
+    "is_essential": false,
+    "status": "proposed"
+  },
+  {
+    "id": "galactose",
+    "name": "Galactose",
+    "status": "proposed",
+    "category": "macro",
+    "unit": "g",
+    "description": "Child of sugars. Do not sum with sugars.",
+    "is_essential": false,
+    "notes": "Promoted 2026-09-28",
+    "subcategory": "sugar"
+  },
+  {
+    "id": "chloride",
+    "name": "Chloride",
+    "status": "proposed",
+    "category": "mineral",
+    "unit": "mg",
+    "description": "Electrolyte; not the same as salt or sodium.",
+    "is_essential": true,
+    "notes": "Promoted 2026-09-28",
+    "aliases": [
+      "chlorine",
+      "Cl"
+    ]
+  },
+  {
+    "id": "tryptophan",
+    "name": "Tryptophan",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Trp",
+      "W"
+    ]
+  },
+  {
+    "id": "threonine",
+    "name": "Threonine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Thr",
+      "T"
+    ]
+  },
+  {
+    "id": "isoleucine",
+    "name": "Isoleucine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Ile",
+      "I"
+    ]
+  },
+  {
+    "id": "leucine",
+    "name": "Leucine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Leu",
+      "L"
+    ]
+  },
+  {
+    "id": "lysine",
+    "name": "Lysine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Lys",
+      "K"
+    ]
+  },
+  {
+    "id": "methionine",
+    "name": "Methionine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Met",
+      "M"
+    ]
+  },
+  {
+    "id": "phenylalanine",
+    "name": "Phenylalanine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Phe",
+      "F"
+    ]
+  },
+  {
+    "id": "valine",
+    "name": "Valine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "Val",
+      "V"
+    ]
+  },
+  {
+    "id": "histidine",
+    "name": "Histidine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Essential amino acid.",
+    "is_essential": true,
+    "notes": "Do not add onto protein.",
+    "subcategory": "essential",
+    "aliases": [
+      "His",
+      "H"
+    ]
+  },
+  {
+    "id": "cystine",
+    "name": "Cystine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Disulfide dimer reported in food tables; not the same row as cysteine.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "subcategory": "sulfur",
+    "aliases": [
+      "(Cys)2"
+    ]
+  },
+  {
+    "id": "cysteine",
+    "name": "Cysteine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Sulfur amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "subcategory": "sulfur",
+    "aliases": [
+      "Cys",
+      "C"
+    ]
+  },
+  {
+    "id": "tyrosine",
+    "name": "Tyrosine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Conditionally essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "subcategory": "aromatic",
+    "aliases": [
+      "Tyr",
+      "Y"
+    ]
+  },
+  {
+    "id": "arginine",
+    "name": "Arginine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Conditionally essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "subcategory": "conditional",
+    "aliases": [
+      "Arg",
+      "R"
+    ]
+  },
+  {
+    "id": "alanine",
+    "name": "Alanine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Ala",
+      "A"
+    ]
+  },
+  {
+    "id": "aspartic_acid",
+    "name": "Aspartic acid",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Asp",
+      "D",
+      "aspartate"
+    ]
+  },
+  {
+    "id": "glutamic_acid",
+    "name": "Glutamic acid",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Glu",
+      "E",
+      "glutamate"
+    ]
+  },
+  {
+    "id": "glycine",
+    "name": "Glycine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Gly",
+      "G"
+    ]
+  },
+  {
+    "id": "proline",
+    "name": "Proline",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Pro",
+      "P"
+    ]
+  },
+  {
+    "id": "serine",
+    "name": "Serine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Ser",
+      "S"
+    ]
+  },
+  {
+    "id": "asparagine",
+    "name": "Asparagine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Non-essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "aliases": [
+      "Asn",
+      "N"
+    ]
+  },
+  {
+    "id": "glutamine",
+    "name": "Glutamine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Conditionally essential amino acid.",
+    "is_essential": false,
+    "notes": "Do not add onto protein.",
+    "subcategory": "conditional",
+    "aliases": [
+      "Gln",
+      "Q"
+    ]
+  },
+  {
+    "id": "hydroxyproline",
+    "name": "Hydroxyproline",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "g",
+    "description": "Collagen marker; not an intake essential.",
+    "is_essential": false,
+    "notes": "Do not add onto protein."
+  },
+  {
+    "id": "taurine",
+    "name": "Taurine",
+    "status": "proposed",
+    "category": "amino_acid",
+    "unit": "mg",
+    "description": "Sulfonic acid often reported with amino acids.",
+    "is_essential": false,
+    "notes": "Do not add onto protein."
+  },
+  {
+    "id": "fluoride",
+    "name": "Fluoride",
+    "status": "proposed",
+    "category": "mineral",
+    "unit": "\u00b5g",
+    "aliases": [
+      "F",
+      "fluorine"
+    ],
+    "description": "Trace mineral with AI/UL; dental enamel.",
+    "is_essential": false,
+    "notes": "Promoted 2026-09-28 critic follow-up"
+  }
+]

@@ -1,0 +1,124 @@
+family,code,alt_code,source_name,source_unit,expression,nutrient_id,status,notes,source_version
+off,acidity,,acidity,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,carbon-footprint,,carbon-footprint,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,cocoa,,cocoa,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,collagen-meat-protein-ratio,,collagen-meat-protein-ratio,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,fruits-vegetables-legumes,,fruits-vegetables-legumes,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,glycemic-index,,glycemic-index,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,ph,,ph,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,water-hardness,,water-hardness,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,added-sugars,,added-sugars,100g_or_100ml,,added_sugars,nutrient,,off-csv-2026-09-22
+off,alcohol,,alcohol,100g_or_100ml,,alcohol,nutrient,,off-csv-2026-09-22
+off,calcium,,calcium,100g_or_100ml,,calcium,nutrient,,off-csv-2026-09-22
+off,carbohydrates,,carbohydrates,100g_or_100ml,,carbohydrate,nutrient,,off-csv-2026-09-22
+off,carbohydrates-total,,carbohydrates-total,100g_or_100ml,,carbohydrate,nutrient,,off-csv-2026-09-22
+off,cholesterol,,cholesterol,100g_or_100ml,,cholesterol,nutrient,,off-csv-2026-09-22
+off,choline,,choline,100g_or_100ml,,choline,nutrient,,off-csv-2026-09-22
+off,chromium,,chromium,100g_or_100ml,,chromium,nutrient,,off-csv-2026-09-22
+off,copper,,copper,100g_or_100ml,,copper,nutrient,,off-csv-2026-09-22
+off,docosahexaenoic-acid,,docosahexaenoic-acid,100g_or_100ml,,dha,nutrient,,off-csv-2026-09-22
+off,energy,,energy,100g_or_100ml,unspecified,energy,nutrient,prefer energy-kcal / energy-kj,off-csv-2026-09-22
+off,energy-kcal,,energy-kcal,100g_or_100ml,kcal,energy,nutrient,,off-csv-2026-09-22
+off,energy-kj,,energy-kj,100g_or_100ml,kJ,energy,nutrient,,off-csv-2026-09-22
+off,eicosapentaenoic-acid,,eicosapentaenoic-acid,100g_or_100ml,,epa,nutrient,,off-csv-2026-09-22
+off,fiber,,fiber,100g_or_100ml,,fiber,nutrient,,off-csv-2026-09-22
+off,fructose,,fructose,100g_or_100ml,,fructose,nutrient,,off-csv-2026-09-22
+off,glucose,,glucose,100g_or_100ml,,glucose,nutrient,,off-csv-2026-09-22
+off,iodine,,iodine,100g_or_100ml,,iodine,nutrient,,off-csv-2026-09-22
+off,iron,,iron,100g_or_100ml,,iron,nutrient,,off-csv-2026-09-22
+off,lactose,,lactose,100g_or_100ml,,lactose,nutrient,,off-csv-2026-09-22
+off,linoleic-acid,,linoleic-acid,100g_or_100ml,,linoleic,nutrient,,off-csv-2026-09-22
+off,magnesium,,magnesium,100g_or_100ml,,magnesium,nutrient,,off-csv-2026-09-22
+off,maltose,,maltose,100g_or_100ml,,maltose,nutrient,,off-csv-2026-09-22
+off,manganese,,manganese,100g_or_100ml,,manganese,nutrient,,off-csv-2026-09-22
+off,molybdenum,,molybdenum,100g_or_100ml,,molybdenum,nutrient,,off-csv-2026-09-22
+off,monounsaturated-fat,,monounsaturated-fat,100g_or_100ml,,monounsaturated_fat,nutrient,,off-csv-2026-09-22
+off,omega-3-fat,,omega-3-fat,100g_or_100ml,,omega3,nutrient,label lump,off-csv-2026-09-22
+off,phosphorus,,phosphorus,100g_or_100ml,,phosphorus,nutrient,,off-csv-2026-09-22
+off,polyunsaturated-fat,,polyunsaturated-fat,100g_or_100ml,,polyunsaturated_fat,nutrient,,off-csv-2026-09-22
+off,potassium,,potassium,100g_or_100ml,,potassium,nutrient,,off-csv-2026-09-22
+off,proteins,,proteins,100g_or_100ml,,protein,nutrient,,off-csv-2026-09-22
+off,salt,,salt,100g_or_100ml,,salt,nutrient,,off-csv-2026-09-22
+off,saturated-fat,,saturated-fat,100g_or_100ml,,saturated_fat,nutrient,,off-csv-2026-09-22
+off,selenium,,selenium,100g_or_100ml,,selenium,nutrient,,off-csv-2026-09-22
+off,sodium,,sodium,100g_or_100ml,,sodium,nutrient,,off-csv-2026-09-22
+off,starch,,starch,100g_or_100ml,,starch,nutrient,,off-csv-2026-09-22
+off,sucrose,,sucrose,100g_or_100ml,,sucrose,nutrient,,off-csv-2026-09-22
+off,sugars,,sugars,100g_or_100ml,,sugars,nutrient,,off-csv-2026-09-22
+off,fat,,fat,100g_or_100ml,,total_fat,nutrient,,off-csv-2026-09-22
+off,trans-fat,,trans-fat,100g_or_100ml,,trans_fat,nutrient,,off-csv-2026-09-22
+off,vitamin-a,,vitamin-a,100g_or_100ml,unspecified,vit_a,nutrient,,off-csv-2026-09-22
+off,vitamin-b1,,vitamin-b1,100g_or_100ml,,vit_b1,nutrient,,off-csv-2026-09-22
+off,vitamin-b12,,vitamin-b12,100g_or_100ml,,vit_b12,nutrient,,off-csv-2026-09-22
+off,vitamin-b2,,vitamin-b2,100g_or_100ml,,vit_b2,nutrient,,off-csv-2026-09-22
+off,vitamin-pp,,vitamin-pp,100g_or_100ml,,vit_b3,nutrient,OFF name for niacin,off-csv-2026-09-22
+off,pantothenic-acid,,pantothenic-acid,100g_or_100ml,,vit_b5,nutrient,,off-csv-2026-09-22
+off,vitamin-b6,,vitamin-b6,100g_or_100ml,,vit_b6,nutrient,,off-csv-2026-09-22
+off,biotin,,biotin,100g_or_100ml,,vit_b7,nutrient,,off-csv-2026-09-22
+off,folates,,folates,100g_or_100ml,,vit_b9,nutrient,,off-csv-2026-09-22
+off,vitamin-b9,,vitamin-b9,100g_or_100ml,,vit_b9,nutrient,,off-csv-2026-09-22
+off,vitamin-c,,vitamin-c,100g_or_100ml,,vit_c,nutrient,,off-csv-2026-09-22
+off,vitamin-d,,vitamin-d,100g_or_100ml,unspecified,vit_d,nutrient,,off-csv-2026-09-22
+off,vitamin-e,,vitamin-e,100g_or_100ml,,vit_e,nutrient,,off-csv-2026-09-22
+off,phylloquinone,,phylloquinone,100g_or_100ml,,vit_k,nutrient,,off-csv-2026-09-22
+off,vitamin-k,,vitamin-k,100g_or_100ml,,vit_k,nutrient,,off-csv-2026-09-22
+off,water,,water,100g_or_100ml,,water,nutrient,,off-csv-2026-09-22
+off,zinc,,zinc,100g_or_100ml,,zinc,nutrient,,off-csv-2026-09-22
+off,added-salt,,added-salt,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,alpha-linolenic-acid,,alpha-linolenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,arachidic-acid,,arachidic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,arachidonic-acid,,arachidonic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,behenic-acid,,behenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,beta-carotene,,beta-carotene,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,beta-glucan,,beta-glucan,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,bicarbonate,,bicarbonate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,butyric-acid,,butyric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,caffeine,,caffeine,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,capric-acid,,capric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,caproic-acid,,caproic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,caprylic-acid,,caprylic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,carnitine,,carnitine,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,casein,,casein,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,cerotic-acid,,cerotic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,chloride,,chloride,100g_or_100ml,,chloride,nutrient,OFF slug kept; not an intake Nutrient yet; promoted 2026-09-28 class B,off-csv-2026-09-22
+off,chlorophyl,,chlorophyl,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,dihomo-gamma-linolenic-acid,,dihomo-gamma-linolenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,elaidic-acid,,elaidic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,energy-from-fat,,energy-from-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,erucic-acid,,erucic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,erythritol,,erythritol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,fluoride,,fluoride,100g_or_100ml,,fluoride,nutrient,OFF slug kept; not an intake Nutrient yet; promoted fluoride,off-csv-2026-09-22
+off,galactose,,galactose,100g_or_100ml,,galactose,nutrient,monosaccharide; not promoted yet (only 5 sugars locked); promoted 2026-09-28 class B,off-csv-2026-09-22
+off,gamma-linolenic-acid,,gamma-linolenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,gondoic-acid,,gondoic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,hydroxymethylbutyrate,,hydroxymethylbutyrate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,inositol,,inositol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,insoluble-fiber,,insoluble-fiber,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,isomalt,,isomalt,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,lauric-acid,,lauric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,lignoceric-acid,,lignoceric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,maltitol,,maltitol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,maltodextrins,,maltodextrins,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,mead-acid,,mead-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,melissic-acid,,melissic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,methylsulfonylmethane,,methylsulfonylmethane,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,montanic-acid,,montanic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,myristic-acid,,myristic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,nervonic-acid,,nervonic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,nitrate,,nitrate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,nucleotides,,nucleotides,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,oleic-acid,,oleic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,omega-6-fat,,omega-6-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,omega-9-fat,,omega-9-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,palmitic-acid,,palmitic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,polydextrose,,polydextrose,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,polyols,,polyols,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,psicose,,psicose,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,serum-proteins,,serum-proteins,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,silica,,silica,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,soluble-fiber,,soluble-fiber,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,sorbitol,,sorbitol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,stearic-acid,,stearic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,sulphate,,sulphate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,taurine,,taurine,100g_or_100ml,,taurine,nutrient,OFF slug kept; not an intake Nutrient yet; promoted 2026-09-28 class B,off-csv-2026-09-22
+off,unsaturated-fat,,unsaturated-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22

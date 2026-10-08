@@ -1,0 +1,41 @@
+family,code,alt_code,source_name,source_unit,expression,nutrient_id,status,notes,source_version
+foodb-nutrient,FDBN00039,39,Ash,,,ash,nutrient,,foodb-2020-04-07
+foodb-nutrient,FDBN00003,3,Carbohydrate,,,carbohydrate,nutrient,CARBOHYDRATE|CARBOHYDRATES,foodb-2020-04-07
+foodb-nutrient,FDBN00038,38,Energy,,,energy,nutrient,,foodb-2020-04-07
+foodb-nutrient,FDBN00005,5,Fiber (dietary),,,fiber,nutrient,FIBER(DIETARY),foodb-2020-04-07
+foodb-nutrient,FDBN00002,2,Proteins,,,protein,nutrient,PROTEIN|PROTEINS,foodb-2020-04-07
+foodb-nutrient,FDBN00001,1,Fat,,,total_fat,nutrient,FAT,foodb-2020-04-07
+foodb-compound,*,,(all Compound.public_id),,,,compound,Do not flatten 70k compounds into Nutrient; compound layer,foodb-2020-04-07
+foodb-nutrient,FDBN00004,4,Fatty acids,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00006,6,13:0,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00007,7,14:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00008,8,15:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00009,9,16:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00010,10,16:1 t,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00011,11,16:1 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00012,12,17:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00013,13,18:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00014,14,18:1 t,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00015,15,18:1 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00016,16,18:2 CLAs,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00017,17,18:2 i,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00018,18,18:2 t not further defined,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00019,19,"18:2 t,t",,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00020,20,18:2 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00021,21,18:3 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00022,22,18:3i,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00023,23,18:4,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00024,24,20:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00025,25,"20:2 n-6 c,c",,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00026,26,20:3 n-3,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00027,27,20:3 n-6,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00028,28,20:3 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00029,29,20:4 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00030,30,21:5,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00031,31,22:0,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00032,32,22:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00033,33,22:1 t,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00034,34,22:1 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00035,35,22:4,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00036,36,22:5 n-3,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00037,37,24:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07

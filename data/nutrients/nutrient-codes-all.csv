@@ -1,0 +1,1634 @@
+family,code,alt_code,source_name,source_unit,expression,nutrient_id,status,notes,source_version
+eurofir,NT,300,Nitrogen,g,,IGNORE,ignore,via Frida 300,frida-5.5
+eurofir,PH,432,pH,NULL,,IGNORE,ignore,via Frida 432,frida-5.5
+eurofir,SUGAD,417,Added Sugar,g,added,added_sugars,nutrient,via Frida 417,frida-5.5
+eurofir,ALC,19,Alcohol,g,,alcohol,nutrient,via Frida 19,frida-5.5
+eurofir,ASH,33,Ash,g,,ash,nutrient,via Frida 33,frida-5.5
+eurofir,CARTBTRANS,303,beta-Carotene,ug,trans,beta_carotene,nutrient,via Frida 303,frida-5.5
+eurofir,CA,108,Calcium,mg,,calcium,nutrient,via Frida 108,frida-5.5
+eurofir,CHO,172,Available carbohydrates,g,available,carbohydrate,nutrient,via Frida 172,frida-5.5
+eurofir,CHO,318,"Available carbohydrate, labelling",g,available_labelling,carbohydrate,nutrient,via Frida 318,frida-5.5
+eurofir,CHOT,170,Carbohydrate by difference,g,by_difference,carbohydrate,nutrient,via Frida 170,frida-5.5
+eurofir,CHORL,115,Cholesterol,mg,,cholesterol,nutrient,via Frida 115,frida-5.5
+eurofir,CHOLN,116,Choline,mg,,choline,nutrient,via Frida 116,frida-5.5
+eurofir,CR,117,Chromium,ug,,chromium,nutrient,via Frida 117,frida-5.5
+eurofir,CU,166,Copper,mg,,copper,nutrient,via Frida 166,frida-5.5
+eurofir,ENERC,137,Energy (kJ),kJ,metabolisable_kJ,energy,nutrient,via Frida 137,frida-5.5
+eurofir,ENERC,316,"Energy, labelling (kJ)",kJ,labelling_kJ,energy,nutrient,via Frida 316,frida-5.5
+eurofir,ENERC,356,Energy (kcal),kcal,metabolisable_kcal,energy,nutrient,via Frida 356,frida-5.5
+eurofir,ENERC,359,"Energy, labelling (kcal)",kcal,labelling_kcal,energy,nutrient,via Frida 359,frida-5.5
+eurofir,FIBT,168,Dietary fibre,g,TDF,fiber,nutrient,via Frida 168,frida-5.5
+eurofir,FRUS,146,Fructose,g,,fructose,nutrient,via Frida 146,frida-5.5
+eurofir,GLUS,149,Glucose,g,,glucose,nutrient,via Frida 149,frida-5.5
+eurofir,ID,163,Iodine,ug,,iodine,nutrient,via Frida 163,frida-5.5
+eurofir,FE,162,Iron,mg,,iron,nutrient,via Frida 162,frida-5.5
+eurofir,LACS,179,Lactose,g,,lactose,nutrient,via Frida 179,frida-5.5
+eurofir,MG,184,Magnesium,mg,,magnesium,nutrient,via Frida 184,frida-5.5
+eurofir,MALS,185,Maltose,g,,maltose,nutrient,via Frida 185,frida-5.5
+eurofir,MN,187,Manganese,mg,,manganese,nutrient,via Frida 187,frida-5.5
+eurofir,MO,190,Molybdenum,ug,,molybdenum,nutrient,via Frida 190,frida-5.5
+eurofir,P,214,Phosphorus,mg,,phosphorus,nutrient,via Frida 214,frida-5.5
+eurofir,K,165,Potassium,mg,,potassium,nutrient,via Frida 165,frida-5.5
+eurofir,PROT,218,Protein,g,total,protein,nutrient,via Frida 218,frida-5.5
+eurofir,PROT,421,Protein from Amino Acids,g,from_amino_acids,protein,nutrient,via Frida 421,frida-5.5
+eurofir,PROT,317,"Protein, labeling",g,labelling,protein,nutrient,via Frida 317,frida-5.5
+eurofir,RETOLAT,225,Retinol,ug,,retinol,nutrient,via Frida 225,frida-5.5
+eurofir,NACL,327,Salt labelling,g,labelling,salt,nutrient,via Frida 327,frida-5.5
+eurofir,SE,230,Selenium,ug,,selenium,nutrient,via Frida 230,frida-5.5
+eurofir,NA,201,Sodium,mg,,sodium,nutrient,via Frida 201,frida-5.5
+eurofir,SUCS,228,Sucrose,g,,sucrose,nutrient,via Frida 228,frida-5.5
+eurofir,FAT,141,Fat,g,,total_fat,nutrient,via Frida 141,frida-5.5
+eurofir,VITA,12,Vitamin A,ug,RE,vit_a,nutrient,via Frida 12,frida-5.5
+eurofir,THIA,37,Thiamin (Vitamin B1),mg,,vit_b1,nutrient,via Frida 37; aka Thiamine,frida-5.5
+eurofir,VITB12,38,Vitamin B12,ug,,vit_b12,nutrient,via Frida 38,frida-5.5
+eurofir,RIBF,39,Riboflavin (Vitamin B2),mg,,vit_b2,nutrient,via Frida 39,frida-5.5
+eurofir,NIAEQ,203,Niacin equivalent,mg,NE,vit_b3,nutrient,via Frida 203,frida-5.5
+eurofir,NICOTAC,294,Niacin,mg,preformed,vit_b3,nutrient,via Frida 294,frida-5.5
+eurofir,PANTAC,210,Pantothenic acid,mg,,vit_b5,nutrient,via Frida 210,frida-5.5
+eurofir,VITB6,40,Vitamin B6,mg,,vit_b6,nutrient,via Frida 40,frida-5.5
+eurofir,BIOT,42,Biotin,ug,,vit_b7,nutrient,via Frida 42,frida-5.5
+eurofir,FOL,143,Folate,ug,total,vit_b9,nutrient,via Frida 143,frida-5.5
+eurofir,FOLFRE,145,"Folate, free",ug,free,vit_b9,nutrient,via Frida 145,frida-5.5
+eurofir,VITC,47,Vitamin C,mg,,vit_c,nutrient,via Frida 47,frida-5.5
+eurofir,CHOCAL,128,Vitamin D3,ug,D3,vit_d,nutrient,via Frida 128,frida-5.5
+eurofir,ERGCAL,127,Vitamin D2,ug,D2,vit_d,nutrient,via Frida 127,frida-5.5
+eurofir,VITD,126,Vitamin D,ug,D2+D3,vit_d,nutrient,via Frida 126,frida-5.5
+eurofir,TOCPHA,276,alpha-Tocopherol,mg,alpha_tocopherol,vit_e,nutrient,via Frida 276,frida-5.5
+eurofir,VITE,135,Vitamin E,mg,alpha_TE,vit_e,nutrient,via Frida 135,frida-5.5
+eurofir,VITK,442,Vitamin K,ug,total_K,vit_k,nutrient,via Frida 442,frida-5.5
+eurofir,VITK1,164,Vitamin K1,ug,K1,vit_k,nutrient,via Frida 164,frida-5.5
+eurofir,VITK2,441,Vitamin K2,ug,K2,vit_k,nutrient,via Frida 441,frida-5.5
+eurofir,WATER,268,Water,g,,water,nutrient,via Frida 268,frida-5.5
+eurofir,ZN,274,Zinc,mg,,zinc,nutrient,via Frida 274,frida-5.5
+eurofir,AAE8,430,Sum essential amino acids,mg,,,compound,via Frida 430,frida-5.5
+eurofir,ACEAC,136,Acetic acid,g,,,compound,via Frida 136,frida-5.5
+eurofir,AL,20,Aluminum,mg,,,compound,via Frida 20,frida-5.5
+eurofir,ALA,17,Alanine,mg,,alanine,nutrient,via Frida 17; promoted 2026-09-28 class B,frida-5.5
+eurofir,ARG,31,Arginine,mg,,arginine,nutrient,via Frida 31; promoted 2026-09-28 class B,frida-5.5
+eurofir,AS,32,Arsenic,ug,,,compound,via Frida 32,frida-5.5
+eurofir,ASCDL,177,Dehydroascorbic acid,mg,,,compound,via Frida 177,frida-5.5
+eurofir,ASCL,175,Ascorbic acid,mg,,,compound,via Frida 175,frida-5.5
+eurofir,ASP,34,Aspartic acid,mg,,aspartic_acid,nutrient,via Frida 34; promoted 2026-09-28 class B,frida-5.5
+eurofir,B,44,Boron,ug,,,compound,via Frida 44,frida-5.5
+eurofir,BENAC,41,Benzoic acid,mg,,,compound,via Frida 41,frida-5.5
+eurofir,BRD,46,Bromine,ug,,,compound,via Frida 46,frida-5.5
+eurofir,CADAVT,106,Cadaverine,mg,,,compound,via Frida 106,frida-5.5
+eurofir,CAFFN,121,Caffeine,mg,,,compound,via Frida 121,frida-5.5
+eurofir,CARTBCIS,440,cis-beta-Caroten,ug,,,compound,via Frida 440,frida-5.5
+eurofir,CD,107,Cadmium,ug,,,compound,via Frida 107,frida-5.5
+eurofir,CELLU,112,Cellulose,g,,,compound,via Frida 112,frida-5.5
+eurofir,CHOCALOH,11,25-hydroxy vitamin D3 ,ug,,,compound,via Frida 11,frida-5.5
+eurofir,CITAC,119,Citric acid,g,,,compound,via Frida 119,frida-5.5
+eurofir,CLD,114,Chloride,mg,,chloride,nutrient,via Frida 114; promoted 2026-09-28 class B,frida-5.5
+eurofir,CO,120,Cobalt,ug,,,compound,via Frida 120,frida-5.5
+eurofir,CYS,124,Cystine,mg,,cystine,nutrient,via Frida 124; promoted 2026-09-28 class B,frida-5.5
+eurofir,DEN,363,Density,g,,,compound,via Frida 363,frida-5.5
+eurofir,DISAC,18,Sum disaccharides,g,,,compound,via Frida 18,frida-5.5
+eurofir,DRYMAT,265,Dry matter,g,,,compound,via Frida 265,frida-5.5
+eurofir,ERGCALOH,354,25-hydroxy Vitamin D2,ug,,,compound,via Frida 354,frida-5.5
+eurofir,F10:0,48,C10:0,g,,,compound,via Frida 48,frida-5.5
+eurofir,F12:0,49,C12:0,g,,,compound,via Frida 49,frida-5.5
+eurofir,F12:1CIS,401,"C12:1,n-1",g,,,compound,via Frida 401,frida-5.5
+eurofir,F13:0,50,C13:0,g,,,compound,via Frida 50,frida-5.5
+eurofir,F14:0,51,C14:0,g,,,compound,via Frida 51,frida-5.5
+eurofir,F14:1CN5,52,"C14:1,n-5",g,,,compound,via Frida 52,frida-5.5
+eurofir,F14:1TN5,53,"C14:1,n-5,trans",g,,,compound,via Frida 53,frida-5.5
+eurofir,F15:0,56,C15:0,g,,,compound,via Frida 56,frida-5.5
+eurofir,F15:1CIS,57,"C15:1,n-5",g,,,compound,via Frida 57,frida-5.5
+eurofir,F16:0,58,C16:0,g,,,compound,via Frida 58,frida-5.5
+eurofir,F16:1CN7,59,"C16:1,n-7",g,,,compound,via Frida 59,frida-5.5
+eurofir,F16:1TN7,60,"C16:1,n-7,trans",g,,,compound,via Frida 60,frida-5.5
+eurofir,F17:0,63,C17:0,g,,,compound,via Frida 63,frida-5.5
+eurofir,F17:1CIS,64,"C17:1,n-7",g,,,compound,via Frida 64,frida-5.5
+eurofir,F18:0,65,C18:0,g,,,compound,via Frida 65,frida-5.5
+eurofir,F18:1CN12,425,"C18:1,n-12",g,,,compound,via Frida 425,frida-5.5
+eurofir,F18:1CN7,66,"C18:1,n-7",g,,,compound,via Frida 66,frida-5.5
+eurofir,F18:1CN9,67,"C18:1,n-9",g,,,compound,via Frida 67,frida-5.5
+eurofir,F18:1TRS,70,"C18:1,trans",g,,,compound,via Frida 70,frida-5.5
+eurofir,F18:2CN6,71,"C18:2,n-6",g,,,compound,via Frida 71,frida-5.5
+eurofir,F18:2CON,72,"C18:2,conjugated",g,,,compound,via Frida 72,frida-5.5
+eurofir,F18:2TRS,73,"C18:2,trans",g,,,compound,via Frida 73,frida-5.5
+eurofir,F18:3CN3,74,"C18:3,n-3",g,,,compound,via Frida 74,frida-5.5
+eurofir,F18:3CN6,75,"C18:3,n-6",g,,,compound,via Frida 75,frida-5.5
+eurofir,F18:3TRS,355,"C18:3,trans",g,,,compound,via Frida 355,frida-5.5
+eurofir,F18:4CN3,76,"C18:4,n-3",g,,,compound,via Frida 76,frida-5.5
+eurofir,F20:0,77,C20:0,g,,,compound,via Frida 77,frida-5.5
+eurofir,F20:1CN11,78,"C20:1,n-11",g,,,compound,via Frida 78,frida-5.5
+eurofir,F20:1CN9,347,"C20:1,n-9",g,,,compound,via Frida 347,frida-5.5
+eurofir,F20:1TRS,79,"C20:1,trans",g,,,compound,via Frida 79,frida-5.5
+eurofir,F20:2CN6,80,"C20:2,n-6",g,,,compound,via Frida 80,frida-5.5
+eurofir,F20:3CN3,82,"C20:3,n-3",g,,,compound,via Frida 82,frida-5.5
+eurofir,F20:3CN6,85,"C20:3,n-6",g,,,compound,via Frida 85,frida-5.5
+eurofir,F20:4CN3,349,"C20:4,n-3",g,,,compound,via Frida 349,frida-5.5
+eurofir,F20:4CN6,86,"C20:4,n-6",g,,,compound,via Frida 86,frida-5.5
+eurofir,F20:5CN3,87,"C20:5,n-3",g,,,compound,via Frida 87,frida-5.5
+eurofir,F21:0,409,C21:0,g,,,compound,via Frida 409,frida-5.5
+eurofir,F21:5CN3,428,"C21:5,n-3",g,,,compound,via Frida 428,frida-5.5
+eurofir,F22:0,89,C22:0,g,,,compound,via Frida 89,frida-5.5
+eurofir,F22:1CN11,90,"C22:1,n-11",g,,,compound,via Frida 90,frida-5.5
+eurofir,F22:1CN9,92,"C22:1,n-9",g,,,compound,via Frida 92,frida-5.5
+eurofir,F22:1TRS,93,"C22:1,trans",g,,,compound,via Frida 93,frida-5.5
+eurofir,F22:2CN6,410,"C22:2,n-6",g,,,compound,via Frida 410,frida-5.5
+eurofir,F22:3CN3,426,"C22:3,n-3",g,,,compound,via Frida 426,frida-5.5
+eurofir,F22:4CN6,411,"C22:4,n-6",g,,,compound,via Frida 411,frida-5.5
+eurofir,F22:5CN3,98,"C22:5,n-3",g,,,compound,via Frida 98,frida-5.5
+eurofir,F22:5N6,412,"C22:5,n-6",g,,,compound,via Frida 412,frida-5.5
+eurofir,F22:6CN3,99,"C22:6,n-3",g,,,compound,via Frida 99,frida-5.5
+eurofir,F23:0,413,C23:0,g,,,compound,via Frida 413,frida-5.5
+eurofir,F24:0,100,C24:0,g,,,compound,via Frida 100,frida-5.5
+eurofir,F24:1CN9,101,"C24:1,n-9",g,,,compound,via Frida 101,frida-5.5
+eurofir,F4:0,103,C4:0,g,,,compound,via Frida 103,frida-5.5
+eurofir,F6:0,104,C6:0,g,,,compound,via Frida 104,frida-5.5
+eurofir,F8:0,105,C8:0,g,,,compound,via Frida 105,frida-5.5
+eurofir,FACF,140,Fatty acid conversion factor,R,,,compound,via Frida 140,frida-5.5
+eurofir,FACID,340,Sum fatty acids,g,,,compound,via Frida 340,frida-5.5
+eurofir,FAMS,247,Sum monounsaturated fatty acids,g,,,compound,via Frida 247,frida-5.5
+eurofir,FAN3,249,Sum n-3 fatty acids,g,,,compound,via Frida 249,frida-5.5
+eurofir,FAN6,250,Sum n-6 fatty acids,g,,,compound,via Frida 250,frida-5.5
+eurofir,FAPU,251,Sum polyunsaturated fatty acids,g,,,compound,via Frida 251,frida-5.5
+eurofir,FASAT,248,Sum saturated fatty acids,g,,,compound,via Frida 248,frida-5.5
+eurofir,FATRS,261,Sum trans fatty acids,g,,,compound,via Frida 261,frida-5.5
+eurofir,FAUN,24,Other fatty acids,g,,,compound,via Frida 24,frida-5.5
+eurofir,FD,142,Fluoride,ug,,fluoride,nutrient,via Frida 142; promoted fluoride,frida-5.5
+eurofir,FIBC,123,Crude fibre,g,,,compound,via Frida 123,frida-5.5
+eurofir,FIBHMWS,415,High molecular weight soluble dietary fibre ,g,,,compound,via Frida 415,frida-5.5
+eurofir,FIBINS,414,Insoluble dietary fibers,g,,,compound,via Frida 414,frida-5.5
+eurofir,FIBLMW,416,Low molecular weight soluble dietary fibre ,g,,,compound,via Frida 416,frida-5.5
+eurofir,FIBT,202,Neutral detergent fibre,g,,,compound,via Frida 202,frida-5.5
+eurofir,GALS,148,Galactose,g,,galactose,nutrient,via Frida 148; promoted 2026-09-28 class B,frida-5.5
+eurofir,GLU,150,Glutamic acid,mg,,glutamic_acid,nutrient,via Frida 150; promoted 2026-09-28 class B,frida-5.5
+eurofir,GLY,153,Glycine,mg,,glycine,nutrient,via Frida 153; promoted 2026-09-28 class B,frida-5.5
+eurofir,GRP_AM,422,Sum biogenic amines,mg,,,compound,via Frida 422,frida-5.5
+eurofir,GRP_MIN,443,Sum minerals,mg,,,compound,via Frida 443,frida-5.5
+eurofir,GRP_SUGOH,244,Sum sugar alcohols,g,,,compound,via Frida 244,frida-5.5
+eurofir,HG,174,Mercury,ug,,,compound,via Frida 174,frida-5.5
+eurofir,HIS,159,Histidine,mg,,histidine,nutrient,via Frida 159; promoted 2026-09-28 class B,frida-5.5
+eurofir,HISTN,158,Histamine,mg,,,compound,via Frida 158,frida-5.5
+eurofir,HYP,400,Hydroxyproline,mg,,hydroxyproline,nutrient,via Frida 400; promoted 2026-09-28 class B,frida-5.5
+eurofir,ILE,161,Isoleucine,mg,,isoleucine,nutrient,via Frida 161; promoted 2026-09-28 class B,frida-5.5
+eurofir,ISOMALT,344,Isomalt,g,,,compound,via Frida 344,frida-5.5
+eurofir,LACAC,192,Lactic acid,g,,,compound,via Frida 192,frida-5.5
+eurofir,LACACD,125,D-lactic acid,g,,,compound,via Frida 125,frida-5.5
+eurofir,LACACL,178,L-lactic acid,g,,,compound,via Frida 178,frida-5.5
+eurofir,LACTL,446,Lactitol,g,,,compound,via Frida 446,frida-5.5
+eurofir,LEU,180,Leucine,mg,,leucine,nutrient,via Frida 180; promoted 2026-09-28 class B,frida-5.5
+eurofir,LIGN,181,Lignin,g,,,compound,via Frida 181,frida-5.5
+eurofir,LYS,183,Lysine,mg,,lysine,nutrient,via Frida 183; promoted 2026-09-28 class B,frida-5.5
+eurofir,MALTL,343,Maltitol,g,,,compound,via Frida 343,frida-5.5
+eurofir,MANTL,188,Mannitol,g,,,compound,via Frida 188,frida-5.5
+eurofir,MET,189,Methionine,mg,,methionine,nutrient,via Frida 189; promoted 2026-09-28 class B,frida-5.5
+eurofir,MK10,439,Menaquinone 10,ug,,,compound,via Frida 439,frida-5.5
+eurofir,MK4,433,Menaquinone 4,ug,,,compound,via Frida 433,frida-5.5
+eurofir,MK5,434,Menaquinone 5,ug,,,compound,via Frida 434,frida-5.5
+eurofir,MK6,435,Menaquinone 6,ug,,,compound,via Frida 435,frida-5.5
+eurofir,MK7,436,Menaquinone 7,ug,,,compound,via Frida 436,frida-5.5
+eurofir,MK8,437,Menaquinone 8,ug,,,compound,via Frida 437,frida-5.5
+eurofir,MK9,438,Menaquinone 9,ug,,,compound,via Frida 438,frida-5.5
+eurofir,MNSAC,191,Sum monosaccharides,g,,,compound,via Frida 191,frida-5.5
+eurofir,NCF,219,Nitrogen conversion factor,R,,,compound,via Frida 219,frida-5.5
+eurofir,NI,204,Nickel,ug,,,compound,via Frida 204,frida-5.5
+eurofir,424,424,"C20:1,n-15",g,,,compound,"via Frida 424; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,427,427,Sum fatty acids below the detection limit,g,,,compound,"via Frida 427; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,423,423,Ornithine,mg,,,compound,"via Frida 423; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,431,431,Sum non-essential amino acids,mg,,,compound,"via Frida 431; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,444,444,Residual,g,,,compound,"via Frida 444; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,OA,208,Sum organic acids,g,,,compound,via Frida 208,frida-5.5
+eurofir,OXALAC,209,Oxalic acid,g,,,compound,via Frida 209,frida-5.5
+eurofir,PB,43,Lead,ug,,,compound,via Frida 43,frida-5.5
+eurofir,PHE,211,Phenylalanine,mg,,phenylalanine,nutrient,via Frida 211; promoted 2026-09-28 class B,frida-5.5
+eurofir,PHETN,212,Phenylethylamine,mg,,,compound,via Frida 212,frida-5.5
+eurofir,PRO,216,Proline,mg,,proline,nutrient,via Frida 216; promoted 2026-09-28 class B,frida-5.5
+eurofir,PROPAC,217,Propionic acid,g,,,compound,via Frida 217,frida-5.5
+eurofir,PUTRSC,221,Putrescine,mg,,,compound,via Frida 221,frida-5.5
+eurofir,RAFS,222,Raffinose,g,,,compound,via Frida 222,frida-5.5
+eurofir,RB,227,Rubidium,ug,,,compound,via Frida 227,frida-5.5
+eurofir,S,253,Sulfur,mg,,,compound,via Frida 253,frida-5.5
+eurofir,SER,231,Serine,mg,,serine,nutrient,via Frida 231; promoted 2026-09-28 class B,frida-5.5
+eurofir,SEROTN,232,Serotonin,mg,,,compound,via Frida 232,frida-5.5
+eurofir,SI,234,Silicon,mg,,,compound,via Frida 234,frida-5.5
+eurofir,SN,260,Tin,ug,,,compound,via Frida 260,frida-5.5
+eurofir,SORTL,237,Sorbitol,g,,,compound,via Frida 237,frida-5.5
+eurofir,SPERDN,238,Spermidine,mg,,,compound,via Frida 238,frida-5.5
+eurofir,SPERN,239,Spermine,mg,,,compound,via Frida 239,frida-5.5
+eurofir,STARCH,243,Starch/Glycogen,g,,,compound,via Frida 243,frida-5.5
+eurofir,SUGAR,245,Sum sugars,g,total,sugars,nutrient,via Frida 245; critic follow-up SUGAR split,frida-5.5
+eurofir,SUGAR,418,Free Sugars,g,free,sugars,nutrient,via Frida 418; critic follow-up SUGAR split,frida-5.5
+eurofir,TAU,255,Taurine,mg,,taurine,nutrient,via Frida 255; promoted 2026-09-28 class B,frida-5.5
+eurofir,THR,258,Threonine,mg,,threonine,nutrient,via Frida 258; promoted 2026-09-28 class B,frida-5.5
+eurofir,TOCPHB,279,beta-Tocopherol,mg,beta_tocopherol,vit_e,nutrient,via Frida 279,frida-5.5
+eurofir,TOCPHD,282,delta-Tocopherol,mg,delta_tocopherol,vit_e,nutrient,via Frida 282,frida-5.5
+eurofir,TOCPHG,286,gamma-Tocopherol,mg,gamma_tocopherol,vit_e,nutrient,via Frida 286,frida-5.5
+eurofir,TOCTRA,277,alpha-Tocotrienol,mg,alpha_tocotrienol,vit_e,nutrient,via Frida 277,frida-5.5
+eurofir,TRP,262,Tryptophan,mg,,tryptophan,nutrient,via Frida 262; promoted 2026-09-28 class B,frida-5.5
+eurofir,TYR,264,Tyrosine,mg,,tyrosine,nutrient,via Frida 264; promoted 2026-09-28 class B,frida-5.5
+eurofir,TYRA,263,Tyramine,mg,,,compound,via Frida 263,frida-5.5
+eurofir,VAL,266,Valine,mg,,valine,nutrient,via Frida 266; promoted 2026-09-28 class B,frida-5.5
+eurofir,WASTE,252,Waste,PCT,,,compound,via Frida 252,frida-5.5
+eurofir,XYLTL,445,Xylitol,g,,,compound,via Frida 445,frida-5.5
+foodb-nutrient,FDBN00039,39,Ash,,,ash,nutrient,,foodb-2020-04-07
+foodb-nutrient,FDBN00003,3,Carbohydrate,,,carbohydrate,nutrient,CARBOHYDRATE|CARBOHYDRATES,foodb-2020-04-07
+foodb-nutrient,FDBN00038,38,Energy,,,energy,nutrient,,foodb-2020-04-07
+foodb-nutrient,FDBN00005,5,Fiber (dietary),,,fiber,nutrient,FIBER(DIETARY),foodb-2020-04-07
+foodb-nutrient,FDBN00002,2,Proteins,,,protein,nutrient,PROTEIN|PROTEINS,foodb-2020-04-07
+foodb-nutrient,FDBN00001,1,Fat,,,total_fat,nutrient,FAT,foodb-2020-04-07
+foodb-compound,*,,(all Compound.public_id),,,,compound,Do not flatten 70k compounds into Nutrient; compound layer,foodb-2020-04-07
+foodb-nutrient,FDBN00004,4,Fatty acids,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00006,6,13:0,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00007,7,14:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00008,8,15:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00009,9,16:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00010,10,16:1 t,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00011,11,16:1 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00012,12,17:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00013,13,18:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00014,14,18:1 t,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00015,15,18:1 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00016,16,18:2 CLAs,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00017,17,18:2 i,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00018,18,18:2 t not further defined,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00019,19,"18:2 t,t",,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00020,20,18:2 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00021,21,18:3 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00022,22,18:3i,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00023,23,18:4,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00024,24,20:1,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00025,25,"20:2 n-6 c,c",,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00026,26,20:3 n-3,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00027,27,20:3 n-6,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00028,28,20:3 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00029,29,20:4 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00030,30,21:5,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00031,31,22:0,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00032,32,22:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00033,33,22:1 t,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00034,34,22:1 undifferentiated,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00035,35,22:4,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00036,36,22:5 n-3,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+foodb-nutrient,FDBN00037,37,24:1 c,,,,compound,"individual FA shorthand → Compound layer, not Nutrient; compound layer",foodb-2020-04-07
+frida,300,NT,Nitrogen,g/100g,,IGNORE,ignore,not a composition amount,frida-5.5
+frida,432,PH,pH,No Unit,,IGNORE,ignore,not a composition amount,frida-5.5
+frida,417,SUGAD,Added Sugar,g/100g,added,added_sugars,nutrient,,frida-5.5
+frida,19,ALC,Alcohol,g/100g,,alcohol,nutrient,eurofir=ALC,frida-5.5
+frida,33,ASH,Ash,g/100g,,ash,nutrient,eurofir=ASH,frida-5.5
+frida,303,CARTBTRANS,beta-Carotene,µg/100g,trans,beta_carotene,nutrient,eurofir=CARTBTRANS,frida-5.5
+frida,108,CA,Calcium,mg/100g,,calcium,nutrient,eurofir=CA,frida-5.5
+frida,170,CHOT,Carbohydrate by difference,g/100g,by_difference,carbohydrate,nutrient,eurofir=CHOT,frida-5.5
+frida,172,CHO,Available carbohydrates,g/100g,available,carbohydrate,nutrient,eurofir=CHO,frida-5.5
+frida,318,CHO,"Available carbohydrate, labelling",g/100g,available_labelling,carbohydrate,nutrient,eurofir=CHO,frida-5.5
+frida,115,CHORL,Cholesterol,mg/100g,,cholesterol,nutrient,,frida-5.5
+frida,116,CHOLN,Choline,mg/100g,,choline,nutrient,,frida-5.5
+frida,117,CR,Chromium,µg/100g,,chromium,nutrient,eurofir=CR,frida-5.5
+frida,166,CU,Copper,mg/100g,,copper,nutrient,eurofir=CU,frida-5.5
+frida,137,ENERC,Energy (kJ),kJ/100g,metabolisable_kJ,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,316,ENERC,"Energy, labelling (kJ)",kJ/100g,labelling_kJ,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,356,ENERC,Energy (kcal),kcal/100 g,metabolisable_kcal,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,359,ENERC,"Energy, labelling (kcal)",kcal/100 g,labelling_kcal,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,168,FIBT,Dietary fibre,g/100g,TDF,fiber,nutrient,eurofir=FIBT,frida-5.5
+frida,146,FRUS,Fructose,g/100g,,fructose,nutrient,,frida-5.5
+frida,149,GLUS,Glucose,g/100g,,glucose,nutrient,,frida-5.5
+frida,163,ID,Iodine,µg/100g,,iodine,nutrient,,frida-5.5
+frida,162,FE,Iron,mg/100g,,iron,nutrient,eurofir=FE,frida-5.5
+frida,179,LACS,Lactose,g/100g,,lactose,nutrient,,frida-5.5
+frida,184,MG,Magnesium,mg/100g,,magnesium,nutrient,eurofir=MG,frida-5.5
+frida,185,MALS,Maltose,g/100g,,maltose,nutrient,,frida-5.5
+frida,187,MN,Manganese,mg/100g,,manganese,nutrient,eurofir=MN,frida-5.5
+frida,190,MO,Molybdenum,µg/100g,,molybdenum,nutrient,eurofir=MO,frida-5.5
+frida,214,P,Phosphorus,mg/100g,,phosphorus,nutrient,eurofir=P,frida-5.5
+frida,165,K,Potassium,mg/100g,,potassium,nutrient,eurofir=K,frida-5.5
+frida,218,PROT,Protein,g/100g,total,protein,nutrient,eurofir=PROT,frida-5.5
+frida,317,PROT,"Protein, labeling",g/100g,labelling,protein,nutrient,eurofir=PROT,frida-5.5
+frida,421,PROT,Protein from Amino Acids,g/100g,from_amino_acids,protein,nutrient,eurofir=PROT,frida-5.5
+frida,225,RETOLAT,Retinol,µg/100g,,retinol,nutrient,eurofir=RETOLAT,frida-5.5
+frida,327,NACL,Salt labelling,g/100g,labelling,salt,nutrient,eurofir=NACL,frida-5.5
+frida,230,SE,Selenium,µg/100g,,selenium,nutrient,eurofir=SE,frida-5.5
+frida,201,NA,Sodium,mg/100g,,sodium,nutrient,eurofir=NA,frida-5.5
+frida,228,SUCS,Sucrose,g/100g,,sucrose,nutrient,,frida-5.5
+frida,141,FAT,Fat,g/100g,,total_fat,nutrient,eurofir=FAT,frida-5.5
+frida,12,VITA,Vitamin A,RE (µg/100g),RE,vit_a,nutrient,eurofir=VITA,frida-5.5
+frida,36,THIA,Thiamine,mg/100g,,vit_b1,nutrient,eurofir=THIA,frida-5.5
+frida,37,THIA,Thiamin (Vitamin B1),mg/100g,,vit_b1,nutrient,eurofir=THIA,frida-5.5
+frida,38,VITB12,Vitamin B12,µg/100g,,vit_b12,nutrient,eurofir=VITB12,frida-5.5
+frida,39,RIBF,Riboflavin (Vitamin B2),mg/100g,,vit_b2,nutrient,eurofir=RIBF,frida-5.5
+frida,203,NIAEQ,Niacin equivalent,NE,NE,vit_b3,nutrient,eurofir=NIAEQ,frida-5.5
+frida,294,NICOTAC,Niacin,mg/100g,preformed,vit_b3,nutrient,eurofir=NICOTAC,frida-5.5
+frida,210,PANTAC,Pantothenic acid,mg/100g,,vit_b5,nutrient,eurofir=PANTAC,frida-5.5
+frida,40,VITB6,Vitamin B6,mg/100g,,vit_b6,nutrient,eurofir=VITB6,frida-5.5
+frida,42,BIOT,Biotin,µg/100g,,vit_b7,nutrient,eurofir=BIOT,frida-5.5
+frida,143,FOL,Folate,µg/100g,total,vit_b9,nutrient,eurofir=FOL,frida-5.5
+frida,145,FOLFRE,"Folate, free",µg/100g,free,vit_b9,nutrient,eurofir=FOLFRE,frida-5.5
+frida,47,VITC,Vitamin C,mg/100g,,vit_c,nutrient,eurofir=VITC,frida-5.5
+frida,126,VITD,Vitamin D,µg/100g,D2+D3,vit_d,nutrient,eurofir=VITD,frida-5.5
+frida,127,ERGCAL,Vitamin D2,µg/100g,D2,vit_d,nutrient,eurofir=ERGCAL,frida-5.5
+frida,128,CHOCAL,Vitamin D3,µg/100g,D3,vit_d,nutrient,eurofir=CHOCAL,frida-5.5
+frida,135,VITE,Vitamin E,alfa-TE,alpha_TE,vit_e,nutrient,eurofir=VITE,frida-5.5
+frida,276,TOCPHA,alpha-Tocopherol,mg/100g,alpha_tocopherol,vit_e,nutrient,eurofir=TOCPHA,frida-5.5
+frida,164,VITK1,Vitamin K1,µg/100g,K1,vit_k,nutrient,eurofir=VITK1,frida-5.5
+frida,441,VITK2,Vitamin K2,µg/100g,K2,vit_k,nutrient,eurofir=VITK2,frida-5.5
+frida,442,VITK,Vitamin K,µg/100g,total_K,vit_k,nutrient,eurofir=VITK,frida-5.5
+frida,268,WATER,Water,g/100g,,water,nutrient,eurofir=WATER,frida-5.5
+frida,274,ZN,Zinc,mg/100g,,zinc,nutrient,eurofir=ZN,frida-5.5
+frida,100,F24:0,C24:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,101,F24:1CN9,"C24:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,103,F4:0,C4:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,104,F6:0,C6:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,105,F8:0,C8:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,106,CADAVT,Cadaverine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,107,CD,Cadmium,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,11,CHOCALOH,25-hydroxy vitamin D3 ,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,112,CELLU,Cellulose,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,114,CLD,Chloride,mg/100g,,chloride,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,119,CITAC,Citric acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,120,CO,Cobalt,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,121,CAFFN,Caffeine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,123,FIBC,Crude fibre,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,124,CYS,Cystine,mg/100g,,cystine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,125,LACACD,D-lactic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,136,ACEAC,Acetic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,140,FACF,Fatty acid conversion factor,No Unit,,,compound,Frida parameter kept,frida-5.5
+frida,142,FD,Fluoride,µg/100g,,fluoride,nutrient,Frida parameter kept; promoted fluoride,frida-5.5
+frida,148,GALS,Galactose,g/100g,,galactose,nutrient,monosaccharide; not promoted yet (only 5 sugars locked); promoted 2026-09-28 class B,frida-5.5
+frida,150,GLU,Glutamic acid,mg/100g,,glutamic_acid,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,153,GLY,Glycine,mg/100g,,glycine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,158,HISTN,Histamine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,159,HIS,Histidine,mg/100g,,histidine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,161,ILE,Isoleucine,mg/100g,,isoleucine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,17,ALA,Alanine,mg/100g,,alanine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,174,HG,Mercury,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,175,ASCL,Ascorbic acid,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,177,ASCDL,Dehydroascorbic acid,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,178,LACACL,L-lactic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,18,DISAC,Sum disaccharides,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,180,LEU,Leucine,mg/100g,,leucine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,181,LIGN,Lignin,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,183,LYS,Lysine,mg/100g,,lysine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,188,MANTL,Mannitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,189,MET,Methionine,mg/100g,,methionine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,191,MNSAC,Sum monosaccharides,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,192,LACAC,Lactic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,20,AL,Aluminum,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,202,FIBT,Neutral detergent fibre,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,204,NI,Nickel,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,208,OA,Sum organic acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,209,OXALAC,Oxalic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,211,PHE,Phenylalanine,mg/100g,,phenylalanine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,212,PHETN,Phenylethylamine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,216,PRO,Proline,mg/100g,,proline,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,217,PROPAC,Propionic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,219,NCF,Nitrogen conversion factor,No Unit,,,compound,Frida parameter kept,frida-5.5
+frida,221,PUTRSC,Putrescine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,222,RAFS,Raffinose,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,227,RB,Rubidium,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,231,SER,Serine,mg/100g,,serine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,232,SEROTN,Serotonin,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,234,SI,Silicon,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,237,SORTL,Sorbitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,238,SPERDN,Spermidine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,239,SPERN,Spermine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,24,FAUN,Other fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,243,STARCH,Starch/Glycogen,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,244,GRP_SUGOH,Sum sugar alcohols,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,245,SUGAR,Sum sugars,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,247,FAMS,Sum monounsaturated fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,248,FASAT,Sum saturated fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,249,FAN3,Sum n-3 fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,250,FAN6,Sum n-6 fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,251,FAPU,Sum polyunsaturated fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,252,WASTE,Waste,%,,,compound,Frida parameter kept,frida-5.5
+frida,253,S,Sulfur,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,255,TAU,Taurine,mg/100g,,taurine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,258,THR,Threonine,mg/100g,,threonine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,260,SN,Tin,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,261,FATRS,Sum trans fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,262,TRP,Tryptophan,mg/100g,,tryptophan,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,263,TYRA,Tyramine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,264,TYR,Tyrosine,mg/100g,,tyrosine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,265,DRYMAT,Dry matter,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,266,VAL,Valine,mg/100g,,valine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,277,TOCTRA,alpha-Tocotrienol,mg/100g,alpha_tocotrienol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,279,TOCPHB,beta-Tocopherol,mg/100g,beta_tocopherol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,282,TOCPHD,delta-Tocopherol,mg/100g,delta_tocopherol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,286,TOCPHG,gamma-Tocopherol,mg/100g,gamma_tocopherol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,31,ARG,Arginine,mg/100g,,arginine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,32,AS,Arsenic,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,34,ASP,Aspartic acid,mg/100g,,aspartic_acid,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,340,FACID,Sum fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,343,MALTL,Maltitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,344,ISOMALT,Isomalt,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,347,F20:1CN9,"C20:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,349,F20:4CN3,"C20:4,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,354,ERGCALOH,25-hydroxy Vitamin D2,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,355,F18:3TRS,"C18:3,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,363,DEN,Density,g/ml,,,compound,Frida parameter kept,frida-5.5
+frida,400,HYP,Hydroxyproline,mg/100g,,hydroxyproline,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,401,F12:1CIS,"C12:1,n-1",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,409,F21:0,C21:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,41,BENAC,Benzoic acid,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,410,F22:2CN6,"C22:2,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,411,F22:4CN6,"C22:4,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,412,F22:5N6,"C22:5,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,413,F23:0,C23:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,414,FIBINS,Insoluble dietary fibers,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,415,FIBHMWS,High molecular weight soluble dietary fibre ,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,416,FIBLMW,Low molecular weight soluble dietary fibre ,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,418,SUGAR,Free Sugars,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,422,GRP_AM,Sum biogenic amines,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,423,NULL,Ornithine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,424,NULL,"C20:1,n-15",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,425,F18:1CN12,"C18:1,n-12",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,426,F22:3CN3,"C22:3,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,427,NULL,Sum fatty acids below the detection limit,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,428,F21:5CN3,"C21:5,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,43,PB,Lead,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,430,AAE8,Sum essential amino acids,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,431,NULL,Sum non-essential amino acids,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,433,MK4,Menaquinone 4,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,434,MK5,Menaquinone 5,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,435,MK6,Menaquinone 6,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,436,MK7,Menaquinone 7,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,437,MK8,Menaquinone 8,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,438,MK9,Menaquinone 9,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,439,MK10,Menaquinone 10,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,44,B,Boron,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,440,CARTBCIS,cis-beta-Caroten,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,443,GRP_MIN,Sum minerals,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,444,NULL,Residual,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,445,XYLTL,Xylitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,446,LACTL,Lactitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,46,BRD,Bromine,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,48,F10:0,C10:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,49,F12:0,C12:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,50,F13:0,C13:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,51,F14:0,C14:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,52,F14:1CN5,"C14:1,n-5",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,53,F14:1TN5,"C14:1,n-5,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,56,F15:0,C15:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,57,F15:1CIS,"C15:1,n-5",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,58,F16:0,C16:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,59,F16:1CN7,"C16:1,n-7",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,60,F16:1TN7,"C16:1,n-7,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,63,F17:0,C17:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,64,F17:1CIS,"C17:1,n-7",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,65,F18:0,C18:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,66,F18:1CN7,"C18:1,n-7",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,67,F18:1CN9,"C18:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,70,F18:1TRS,"C18:1,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,71,F18:2CN6,"C18:2,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,72,F18:2CON,"C18:2,conjugated",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,73,F18:2TRS,"C18:2,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,74,F18:3CN3,"C18:3,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,75,F18:3CN6,"C18:3,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,76,F18:4CN3,"C18:4,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,77,F20:0,C20:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,78,F20:1CN11,"C20:1,n-11",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,79,F20:1TRS,"C20:1,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,80,F20:2CN6,"C20:2,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,82,F20:3CN3,"C20:3,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,85,F20:3CN6,"C20:3,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,86,F20:4CN6,"C20:4,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,87,F20:5CN3,"C20:5,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,89,F22:0,C22:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,90,F22:1CN11,"C22:1,n-11",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,92,F22:1CN9,"C22:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,93,F22:1TRS,"C22:1,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,98,F22:5CN3,"C22:5,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,99,F22:6CN3,"C22:6,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+off,acidity,,acidity,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,carbon-footprint,,carbon-footprint,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,cocoa,,cocoa,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,collagen-meat-protein-ratio,,collagen-meat-protein-ratio,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,fruits-vegetables-legumes,,fruits-vegetables-legumes,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,glycemic-index,,glycemic-index,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,ph,,ph,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,water-hardness,,water-hardness,,,IGNORE,ignore,score / non-nutrient,off-csv-2026-09-22
+off,added-sugars,,added-sugars,100g_or_100ml,,added_sugars,nutrient,,off-csv-2026-09-22
+off,alcohol,,alcohol,100g_or_100ml,,alcohol,nutrient,,off-csv-2026-09-22
+off,calcium,,calcium,100g_or_100ml,,calcium,nutrient,,off-csv-2026-09-22
+off,carbohydrates,,carbohydrates,100g_or_100ml,,carbohydrate,nutrient,,off-csv-2026-09-22
+off,carbohydrates-total,,carbohydrates-total,100g_or_100ml,,carbohydrate,nutrient,,off-csv-2026-09-22
+off,cholesterol,,cholesterol,100g_or_100ml,,cholesterol,nutrient,,off-csv-2026-09-22
+off,choline,,choline,100g_or_100ml,,choline,nutrient,,off-csv-2026-09-22
+off,chromium,,chromium,100g_or_100ml,,chromium,nutrient,,off-csv-2026-09-22
+off,copper,,copper,100g_or_100ml,,copper,nutrient,,off-csv-2026-09-22
+off,docosahexaenoic-acid,,docosahexaenoic-acid,100g_or_100ml,,dha,nutrient,,off-csv-2026-09-22
+off,energy,,energy,100g_or_100ml,unspecified,energy,nutrient,prefer energy-kcal / energy-kj,off-csv-2026-09-22
+off,energy-kcal,,energy-kcal,100g_or_100ml,kcal,energy,nutrient,,off-csv-2026-09-22
+off,energy-kj,,energy-kj,100g_or_100ml,kJ,energy,nutrient,,off-csv-2026-09-22
+off,eicosapentaenoic-acid,,eicosapentaenoic-acid,100g_or_100ml,,epa,nutrient,,off-csv-2026-09-22
+off,fiber,,fiber,100g_or_100ml,,fiber,nutrient,,off-csv-2026-09-22
+off,fructose,,fructose,100g_or_100ml,,fructose,nutrient,,off-csv-2026-09-22
+off,glucose,,glucose,100g_or_100ml,,glucose,nutrient,,off-csv-2026-09-22
+off,iodine,,iodine,100g_or_100ml,,iodine,nutrient,,off-csv-2026-09-22
+off,iron,,iron,100g_or_100ml,,iron,nutrient,,off-csv-2026-09-22
+off,lactose,,lactose,100g_or_100ml,,lactose,nutrient,,off-csv-2026-09-22
+off,linoleic-acid,,linoleic-acid,100g_or_100ml,,linoleic,nutrient,,off-csv-2026-09-22
+off,magnesium,,magnesium,100g_or_100ml,,magnesium,nutrient,,off-csv-2026-09-22
+off,maltose,,maltose,100g_or_100ml,,maltose,nutrient,,off-csv-2026-09-22
+off,manganese,,manganese,100g_or_100ml,,manganese,nutrient,,off-csv-2026-09-22
+off,molybdenum,,molybdenum,100g_or_100ml,,molybdenum,nutrient,,off-csv-2026-09-22
+off,monounsaturated-fat,,monounsaturated-fat,100g_or_100ml,,monounsaturated_fat,nutrient,,off-csv-2026-09-22
+off,omega-3-fat,,omega-3-fat,100g_or_100ml,,omega3,nutrient,label lump,off-csv-2026-09-22
+off,phosphorus,,phosphorus,100g_or_100ml,,phosphorus,nutrient,,off-csv-2026-09-22
+off,polyunsaturated-fat,,polyunsaturated-fat,100g_or_100ml,,polyunsaturated_fat,nutrient,,off-csv-2026-09-22
+off,potassium,,potassium,100g_or_100ml,,potassium,nutrient,,off-csv-2026-09-22
+off,proteins,,proteins,100g_or_100ml,,protein,nutrient,,off-csv-2026-09-22
+off,salt,,salt,100g_or_100ml,,salt,nutrient,,off-csv-2026-09-22
+off,saturated-fat,,saturated-fat,100g_or_100ml,,saturated_fat,nutrient,,off-csv-2026-09-22
+off,selenium,,selenium,100g_or_100ml,,selenium,nutrient,,off-csv-2026-09-22
+off,sodium,,sodium,100g_or_100ml,,sodium,nutrient,,off-csv-2026-09-22
+off,starch,,starch,100g_or_100ml,,starch,nutrient,,off-csv-2026-09-22
+off,sucrose,,sucrose,100g_or_100ml,,sucrose,nutrient,,off-csv-2026-09-22
+off,sugars,,sugars,100g_or_100ml,,sugars,nutrient,,off-csv-2026-09-22
+off,fat,,fat,100g_or_100ml,,total_fat,nutrient,,off-csv-2026-09-22
+off,trans-fat,,trans-fat,100g_or_100ml,,trans_fat,nutrient,,off-csv-2026-09-22
+off,vitamin-a,,vitamin-a,100g_or_100ml,unspecified,vit_a,nutrient,,off-csv-2026-09-22
+off,vitamin-b1,,vitamin-b1,100g_or_100ml,,vit_b1,nutrient,,off-csv-2026-09-22
+off,vitamin-b12,,vitamin-b12,100g_or_100ml,,vit_b12,nutrient,,off-csv-2026-09-22
+off,vitamin-b2,,vitamin-b2,100g_or_100ml,,vit_b2,nutrient,,off-csv-2026-09-22
+off,vitamin-pp,,vitamin-pp,100g_or_100ml,,vit_b3,nutrient,OFF name for niacin,off-csv-2026-09-22
+off,pantothenic-acid,,pantothenic-acid,100g_or_100ml,,vit_b5,nutrient,,off-csv-2026-09-22
+off,vitamin-b6,,vitamin-b6,100g_or_100ml,,vit_b6,nutrient,,off-csv-2026-09-22
+off,biotin,,biotin,100g_or_100ml,,vit_b7,nutrient,,off-csv-2026-09-22
+off,folates,,folates,100g_or_100ml,,vit_b9,nutrient,,off-csv-2026-09-22
+off,vitamin-b9,,vitamin-b9,100g_or_100ml,,vit_b9,nutrient,,off-csv-2026-09-22
+off,vitamin-c,,vitamin-c,100g_or_100ml,,vit_c,nutrient,,off-csv-2026-09-22
+off,vitamin-d,,vitamin-d,100g_or_100ml,unspecified,vit_d,nutrient,,off-csv-2026-09-22
+off,vitamin-e,,vitamin-e,100g_or_100ml,,vit_e,nutrient,,off-csv-2026-09-22
+off,phylloquinone,,phylloquinone,100g_or_100ml,,vit_k,nutrient,,off-csv-2026-09-22
+off,vitamin-k,,vitamin-k,100g_or_100ml,,vit_k,nutrient,,off-csv-2026-09-22
+off,water,,water,100g_or_100ml,,water,nutrient,,off-csv-2026-09-22
+off,zinc,,zinc,100g_or_100ml,,zinc,nutrient,,off-csv-2026-09-22
+off,added-salt,,added-salt,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,alpha-linolenic-acid,,alpha-linolenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,arachidic-acid,,arachidic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,arachidonic-acid,,arachidonic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,behenic-acid,,behenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,beta-carotene,,beta-carotene,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,beta-glucan,,beta-glucan,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,bicarbonate,,bicarbonate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,butyric-acid,,butyric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,caffeine,,caffeine,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,capric-acid,,capric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,caproic-acid,,caproic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,caprylic-acid,,caprylic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,carnitine,,carnitine,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,casein,,casein,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,cerotic-acid,,cerotic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,chloride,,chloride,100g_or_100ml,,chloride,nutrient,OFF slug kept; not an intake Nutrient yet; promoted 2026-09-28 class B,off-csv-2026-09-22
+off,chlorophyl,,chlorophyl,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,dihomo-gamma-linolenic-acid,,dihomo-gamma-linolenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,elaidic-acid,,elaidic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,energy-from-fat,,energy-from-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,erucic-acid,,erucic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,erythritol,,erythritol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,fluoride,,fluoride,100g_or_100ml,,fluoride,nutrient,OFF slug kept; not an intake Nutrient yet; promoted fluoride,off-csv-2026-09-22
+off,galactose,,galactose,100g_or_100ml,,galactose,nutrient,monosaccharide; not promoted yet (only 5 sugars locked); promoted 2026-09-28 class B,off-csv-2026-09-22
+off,gamma-linolenic-acid,,gamma-linolenic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,gondoic-acid,,gondoic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,hydroxymethylbutyrate,,hydroxymethylbutyrate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,inositol,,inositol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,insoluble-fiber,,insoluble-fiber,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,isomalt,,isomalt,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,lauric-acid,,lauric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,lignoceric-acid,,lignoceric-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,maltitol,,maltitol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,maltodextrins,,maltodextrins,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,mead-acid,,mead-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,melissic-acid,,melissic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,methylsulfonylmethane,,methylsulfonylmethane,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,montanic-acid,,montanic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,myristic-acid,,myristic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,nervonic-acid,,nervonic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,nitrate,,nitrate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,nucleotides,,nucleotides,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,oleic-acid,,oleic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,omega-6-fat,,omega-6-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,omega-9-fat,,omega-9-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,palmitic-acid,,palmitic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,polydextrose,,polydextrose,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,polyols,,polyols,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,psicose,,psicose,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,serum-proteins,,serum-proteins,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,silica,,silica,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,soluble-fiber,,soluble-fiber,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,sorbitol,,sorbitol,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,stearic-acid,,stearic-acid,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,sulphate,,sulphate,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+off,taurine,,taurine,100g_or_100ml,,taurine,nutrient,OFF slug kept; not an intake Nutrient yet; promoted 2026-09-28 class B,off-csv-2026-09-22
+off,unsaturated-fat,,unsaturated-fat,100g_or_100ml,,,compound,OFF slug kept; not an intake Nutrient yet,off-csv-2026-09-22
+usda,200,2027,Proximate,G,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,201,1001,Solids,G,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,202,1002,Nitrogen,G,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,206,1006,"Fiber, crude (DO NOT USE - Archived)",G,,IGNORE,ignore,archived or do-not-use,foundation-2026-04-30
+usda,226,1023,pH,PH,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,227,1024,Specific Gravity,SP_GR,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,273,1066,"Fiber, neutral detergent (DO NOT USE - Archived)",G,,IGNORE,ignore,archived or do-not-use,foundation-2026-04-30
+usda,374,1148,Fluoride - DO NOT USE; use 313,UG,,IGNORE,ignore,archived or do-not-use,foundation-2026-04-30
+usda,950,2044,Lipids,G,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,952,2046,Vitamins and Other Components,G,,IGNORE,ignore,not a composition amount,foundation-2026-04-30
+usda,539,1235,"Sugars, added",G,added,added_sugars,nutrient,,foundation-2026-04-30
+usda,851,1404,"PUFA 18:3 n-3 c,c,c (ALA)",G,,ala,nutrient,,foundation-2026-04-30
+usda,221,1018,"Alcohol, ethyl",G,,alcohol,nutrient,,foundation-2026-04-30
+usda,207,1007,Ash,G,,ash,nutrient,,foundation-2026-04-30
+usda,321,1107,"Carotene, beta",UG,,beta_carotene,nutrient,,foundation-2026-04-30
+usda,301,1087,"Calcium, Ca",MG,,calcium,nutrient,,foundation-2026-04-30
+usda,551,1237,"Calcium, added",MG,added,calcium,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,561,1239,"Calcium, intrinsic",MG,intrinsic,calcium,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,205,1005,"Carbohydrate, by difference",G,,carbohydrate,nutrient,,foundation-2026-04-30
+usda,205.2,1050,"Carbohydrate, by summation",G,,carbohydrate,nutrient,,foundation-2026-04-30
+usda,956,2039,Carbohydrates,G,,carbohydrate,nutrient,,foundation-2026-04-30
+usda,601,1253,Cholesterol,MG,,cholesterol,nutrient,,foundation-2026-04-30
+usda,421,1180,"Choline, total",MG,,choline,nutrient,,foundation-2026-04-30
+usda,310,1096,"Chromium, Cr",UG,,chromium,nutrient,,foundation-2026-04-30
+usda,312,1098,"Copper, Cu",MG,,copper,nutrient,,foundation-2026-04-30
+usda,621,1272,PUFA 22:6 n-3 (DHA),G,,dha,nutrient,,foundation-2026-04-30
+usda,208,1008,Energy,KCAL,,energy,nutrient,,foundation-2026-04-30
+usda,268,1062,Energy,kJ,,energy,nutrient,,foundation-2026-04-30
+usda,957,2047,Energy (Atwater General Factors),KCAL,atwater_general,energy,nutrient,,foundation-2026-04-30
+usda,958,2048,Energy (Atwater Specific Factors),KCAL,atwater_specific,energy,nutrient,,foundation-2026-04-30
+usda,629,1278,PUFA 20:5 n-3 (EPA),G,,epa,nutrient,,foundation-2026-04-30
+usda,291,1079,"Fiber, total dietary",G,,fiber,nutrient,,foundation-2026-04-30
+usda,293,2033,Total dietary fiber (AOAC 2011.25),G,,fiber,nutrient,,foundation-2026-04-30
+usda,212,1012,Fructose,G,,fructose,nutrient,,foundation-2026-04-30
+usda,211,1011,Glucose,G,,glucose,nutrient,,foundation-2026-04-30
+usda,314,1100,"Iodine, I",UG,,iodine,nutrient,,foundation-2026-04-30
+usda,303,1089,"Iron, Fe",MG,,iron,nutrient,,foundation-2026-04-30
+usda,553,1238,"Iron, added",MG,added,iron,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,563,1240,"Iron, intrinsic",MG,intrinsic,iron,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,213,1013,Lactose,G,,lactose,nutrient,,foundation-2026-04-30
+usda,675,1316,"PUFA 18:2 n-6 c,c",G,,linoleic,nutrient,,foundation-2026-04-30
+usda,304,1090,"Magnesium, Mg",MG,,magnesium,nutrient,,foundation-2026-04-30
+usda,214,1014,Maltose,G,,maltose,nutrient,,foundation-2026-04-30
+usda,315,1101,"Manganese, Mn",MG,,manganese,nutrient,,foundation-2026-04-30
+usda,316,1102,"Molybdenum, Mo",UG,,molybdenum,nutrient,,foundation-2026-04-30
+usda,645,1292,"Fatty acids, total monounsaturated",G,,monounsaturated_fat,nutrient,,foundation-2026-04-30
+usda,305,1091,"Phosphorus, P",MG,,phosphorus,nutrient,,foundation-2026-04-30
+usda,646,1293,"Fatty acids, total polyunsaturated",G,,polyunsaturated_fat,nutrient,,foundation-2026-04-30
+usda,306,1092,"Potassium, K",MG,,potassium,nutrient,,foundation-2026-04-30
+usda,203,1003,Protein,G,,protein,nutrient,,foundation-2026-04-30
+usda,257,1053,Adjusted Protein,G,,protein,nutrient,,foundation-2026-04-30
+usda,319,1105,Retinol,UG,,retinol,nutrient,,foundation-2026-04-30
+usda,375,1149,"Salt, NaCl",MG,,salt,nutrient,,foundation-2026-04-30
+usda,606,1258,"Fatty acids, total saturated",G,,saturated_fat,nutrient,,foundation-2026-04-30
+usda,317,1103,"Selenium, Se",UG,,selenium,nutrient,,foundation-2026-04-30
+usda,307,1093,"Sodium, Na",MG,,sodium,nutrient,,foundation-2026-04-30
+usda,209,1009,Starch,G,,starch,nutrient,,foundation-2026-04-30
+usda,210,1010,Sucrose,G,,sucrose,nutrient,,foundation-2026-04-30
+usda,269,2000,Total Sugars,G,,sugars,nutrient,,foundation-2026-04-30
+usda,269.3,1063,"Sugars, Total",G,,sugars,nutrient,,foundation-2026-04-30
+usda,274,1067,Reducing sugars,G,reducing,sugars,nutrient,"lab class, not a sixth sugar",foundation-2026-04-30
+usda,549,1236,"Sugars, intrinsic",G,intrinsic,sugars,nutrient,sugars naturally in the food as published,foundation-2026-04-30
+usda,204,1004,Total lipid (fat),G,,total_fat,nutrient,,foundation-2026-04-30
+usda,605,1257,"Fatty acids, total trans",G,,trans_fat,nutrient,,foundation-2026-04-30
+usda,318,1104,"Vitamin A, IU",IU,IU,vit_a,nutrient,,foundation-2026-04-30
+usda,320,1106,"Vitamin A, RAE",UG,RAE,vit_a,nutrient,,foundation-2026-04-30
+usda,392,1156,"Vitamin A, RE",MCG_RE,RE,vit_a,nutrient,,foundation-2026-04-30
+usda,960,2067,Vitamin A,UG,,vit_a,nutrient,,foundation-2026-04-30
+usda,404,1165,Thiamin,MG,,vit_b1,nutrient,,foundation-2026-04-30
+usda,574,1243,"Thiamin, added",MG,added,vit_b1,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,584,1249,"Thiamin, intrinsic",MG,intrinsic,vit_b1,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,418,1178,Vitamin B-12,UG,,vit_b12,nutrient,,foundation-2026-04-30
+usda,578,1246,"Vitamin B-12, added",UG,added,vit_b12,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,588,1252,"Vitamin B-12, intrinsic",UG,intrinsic,vit_b12,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,405,1166,Riboflavin,MG,,vit_b2,nutrient,,foundation-2026-04-30
+usda,575,1244,"Riboflavin, added",MG,added,vit_b2,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,585,1250,"Riboflavin, intrinsic",MG,intrinsic,vit_b2,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,406,1167,Niacin,MG,preformed,vit_b3,nutrient,,foundation-2026-04-30
+usda,409,1169,Niacin equivalent N406 +N407,MG,NE,vit_b3,nutrient,,foundation-2026-04-30
+usda,576,1245,"Niacin, added",MG,added,vit_b3,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,586,1251,"Niacin, intrinsic",MG,intrinsic,vit_b3,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,410,1170,Pantothenic acid,MG,,vit_b5,nutrient,,foundation-2026-04-30
+usda,415,1175,Vitamin B-6,MG,,vit_b6,nutrient,,foundation-2026-04-30
+usda,416,1176,Biotin,UG,,vit_b7,nutrient,,foundation-2026-04-30
+usda,417,1177,"Folate, total",UG,total,vit_b9,nutrient,,foundation-2026-04-30
+usda,432,1187,"Folate, food",UG,food_folate,vit_b9,nutrient,,foundation-2026-04-30
+usda,435,1190,"Folate, DFE",UG,DFE,vit_b9,nutrient,,foundation-2026-04-30
+usda,401,1162,"Vitamin C, total ascorbic acid",MG,,vit_c,nutrient,,foundation-2026-04-30
+usda,571,1241,"Vitamin C, added",MG,added,vit_c,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,581,1247,"Vitamin C, intrinsic",MG,intrinsic,vit_c,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,324,1110,"Vitamin D (D2 + D3), International Units",IU,IU,vit_d,nutrient,,foundation-2026-04-30
+usda,328,1114,Vitamin D (D2 + D3),UG,,vit_d,nutrient,,foundation-2026-04-30
+usda,323,1109,Vitamin E (alpha-tocopherol),MG,alpha_tocopherol,vit_e,nutrient,,foundation-2026-04-30
+usda,394,1158,Vitamin E,MG_ATE,unspecified,vit_e,nutrient,,foundation-2026-04-30
+usda,573,1242,"Vitamin E, added",MG,added,vit_e,nutrient,same nutrient; fraction=added,foundation-2026-04-30
+usda,583,1248,"Vitamin E, intrinsic",MG,intrinsic,vit_e,nutrient,same nutrient; fraction=intrinsic,foundation-2026-04-30
+usda,959,2068,Vitamin E,MG,unspecified,vit_e,nutrient,,foundation-2026-04-30
+usda,430,1185,Vitamin K (phylloquinone),UG,,vit_k,nutrient,,foundation-2026-04-30
+usda,255,1051,Water,G,,water,nutrient,,foundation-2026-04-30
+usda,309,1095,"Zinc, Zn",MG,,zinc,nutrient,,foundation-2026-04-30
+usda,2052,2052,Delta-7-Stigmastenol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2053,2053,Stigmastadiene,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2054,2054,Total Tocotrienols,MG,total_tocotrienols,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2055,2055,Total Tocopherols,MG,total_tocopherols,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2057,2057,Ergothioneine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2058,2058,Beta-glucan,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2059,2059,Vitamin D4,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2060,2060,Ergosta-7-enol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2061,2061,"Ergosta-7,22-dienol",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2062,2062,"Ergosta-5,7-dienol",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2063,2063,Verbascose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,2064,2064,Oligosaccharides,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,218,1015,Amylose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,219,1016,Amylopectin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,220,1017,Pectin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,222,1019,Pentosan,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,223,1020,Pentoses,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,224,1021,Hemicellulose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,225,1022,Cellulose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,229,1025,Organic acids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,230,1026,Acetic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,231,1027,Aconitic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,232,1028,Benzoic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,233,1029,Chelidonic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,234,1030,Chlorogenic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,235,1031,Cinnamic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,236,1032,Citric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,237,1033,Fumaric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,238,1034,Galacturonic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,239,1035,Gallic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,240,1036,Glycolic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,241,1037,Isocitric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,242,1038,Lactic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,243,1039,Malic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,244,1040,Oxaloacetic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,245,1041,Oxalic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,246,1042,Phytic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,247,1043,Pyruvic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,248,1044,Quinic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,249,1045,Salicylic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,250,1046,Succinic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,251,1047,Tartaric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,252,1048,Ursolic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,253,1049,"Solids, non-fat",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,256,1052,Adjusted Nitrogen,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,259,1054,Piperine,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,260,1055,Mannitol,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,261,1056,Sorbitol,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,262,1057,Caffeine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,263,1058,Theobromine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,264,1059,Nitrates,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,265,1060,Nitrites,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,266,1061,"Nitrosamine,total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,271,1064,"Solids, soluble",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,272,1065,Glycogen,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,276,1068,Beta-glucans,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,281,1069,Oligosaccharides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,282,1070,Nonstarch polysaccharides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,283,1071,Resistant starch,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,284,1072,"Carbohydrate, other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,285,1073,Arabinose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,286,1074,Xylose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,287,1075,Galactose,G,,galactose,nutrient,monosaccharide; not promoted yet (only 5 sugars locked); promoted 2026-09-28 class B,foundation-2026-04-30
+usda,288,1076,Raffinose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,289,1077,Stachyose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,290,1078,Xylitol,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,292,1080,Lignin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,293.1,2034,Insoluble dietary fiber (IDF),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,293.2,2035,Soluble dietary fiber (SDFP+SDFS),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,293.3,2038,High Molecular Weight Dietary Fiber (HMWDF),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,293.4,2065,Low Molecular Weight Dietary Fiber (LMWDF),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,294,1081,Ribose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,295,1082,"Fiber, soluble",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,296,1083,Theophylline,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,297,1084,"Fiber, insoluble",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,298,1085,Total fat (NLEA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,299,1086,Total sugar alcohols,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,300,2043,Minerals,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,302,1088,"Chlorine, Cl",MG,,chloride,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,308,1094,"Sulfur, S",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,311,1097,"Cobalt, Co",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,313,1099,"Fluoride, F",UG,,fluoride,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted fluoride,foundation-2026-04-30
+usda,321.1,1159,cis-beta-Carotene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,321.2,2028,trans-beta-Carotene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,322,1108,"Carotene, alpha",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,323.99,2041,Tocopherols and tocotrienols,MG,tocopherols_and_tocotrienols,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,325,1111,Vitamin D2 (ergocalciferol),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,326,1112,Vitamin D3 (cholecalciferol),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,327,1113,25-hydroxycholecalciferol,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,329,1115,25-hydroxyergocalciferol,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,330,1116,Phytoene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,331,1117,Phytofluene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,332,1118,"Carotene, gamma",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,334,1120,"Cryptoxanthin, beta",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,335,2032,"Cryptoxanthin, alpha",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,337,1122,Lycopene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,337.1,1160,cis-Lycopene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,337.2,2029,trans-Lycopene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,338,1123,Lutein + zeaxanthin,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,338.1,1121,Lutein,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,338.2,1119,Zeaxanthin,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,338.3,1161,cis-Lutein/Zeaxanthin,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,340,1124,Vitamin E (label entry primarily),IU,label,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,341,1125,"Tocopherol, beta",MG,beta_tocopherol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,342,1126,"Tocopherol, gamma",MG,gamma_tocopherol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,343,1127,"Tocopherol, delta",MG,delta_tocopherol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,344,1128,"Tocotrienol, alpha",MG,alpha_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,345,1129,"Tocotrienol, beta",MG,beta_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,346,1130,"Tocotrienol, gamma",MG,gamma_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,347,1131,"Tocotrienol, delta",MG,delta_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,348,1132,"Aluminum, Al",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,349,1133,"Antimony, Sb",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,350,1134,"Arsenic, As",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,351,1135,"Barium, Ba",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,352,1136,"Beryllium, Be",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,354,1137,"Boron, B",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,355,1138,"Bromine, Br",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,356,1139,"Cadmium, Cd",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,363,1140,"Gold, Au",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,364,1141,"Iron, heme",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,365,1142,"Iron, non-heme",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,367,1143,"Lead, Pb",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,368,1144,"Lithium, Li",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,370,1145,"Mercury, Hg",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,371,1146,"Nickel, Ni",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,373,1147,"Rubidium, Rb",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,378,1150,"Silicon, Si",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,379,1151,"Silver, Ag",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,380,1152,"Strontium, Sr",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,385,1153,"Tin, Sn",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,386,1154,"Titanium, Ti",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,389,1155,"Vanadium, V",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,393,1157,Carotene,MCG_RE,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,402,1163,"Vitamin C, reduced ascorbic acid",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,403,1164,"Vitamin C, dehydro ascorbic acid",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,407,1168,"Niacin from tryptophan, determined",MG,from_tryptophan,vit_b3,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,411,1171,"Vitamin B-6, pyridoxine, alcohol form",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,412,1172,"Vitamin B-6, pyridoxal, aldehyde form",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,413,1173,"Vitamin B-6, pyridoxamine, amine form",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,414,1174,"Vitamin B-6, N411 + N412 +N413",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,419,1179,"Folate, free",UG,free,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,422,1181,Inositol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,423,1182,Inositol phosphate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,428,1183,Vitamin K (Menaquinone-4),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,429,1184,Vitamin K (Dihydrophylloquinone),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,431,1186,Folic acid,UG,folic_acid,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,433,1188,5-methyl tetrahydrofolate (5-MTHF),UG,5_mthf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,434,1189,"Folate, not 5-MTHF",UG,not_5_mthf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,436,1191,10-Formyl folic acid (10HCOFA),UG,10_formyl_folic_acid,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,437,1192,5-Formyltetrahydrofolic acid (5-HCOH4,UG,5_formyl_thf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,438,1193,Tetrahydrofolic acid (THF),UG,thf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,450,1194,"Choline, free",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,451,1195,"Choline, from phosphocholine",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,452,1196,"Choline, from phosphotidyl choline",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,453,1197,"Choline, from glycerophosphocholine",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,454,1198,Betaine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,455,1199,"Choline, from sphingomyelin",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,460,1200,p-Hydroxy benzoic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,461,1201,Caffeic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,462,1202,p-Coumaric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,463,1203,Ellagic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,464,1204,Ferrulic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,465,1205,Gentisic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,466,1206,Tyrosol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,467,1207,Vanillic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,469,1208,"Phenolic acids, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,470,1209,"Polyphenols, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,500,2042,Amino acids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,501,1210,Tryptophan,G,,tryptophan,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,502,1211,Threonine,G,,threonine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,503,1212,Isoleucine,G,,isoleucine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,504,1213,Leucine,G,,leucine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,505,1214,Lysine,G,,lysine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,506,1215,Methionine,G,,methionine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,507,1216,Cystine,G,,cystine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,508,1217,Phenylalanine,G,,phenylalanine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,509,1218,Tyrosine,G,,tyrosine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,510,1219,Valine,G,,valine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,511,1220,Arginine,G,,arginine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,512,1221,Histidine,G,,histidine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,513,1222,Alanine,G,,alanine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,514,1223,Aspartic acid,G,,aspartic_acid,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,515,1224,Glutamic acid,G,,glutamic_acid,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,516,1225,Glycine,G,,glycine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,517,1226,Proline,G,,proline,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,518,1227,Serine,G,,serine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,521,1228,Hydroxyproline,G,,hydroxyproline,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,522,1229,Cysteine and methionine(sulfer containig AA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,523,1230,Phenylalanine and tyrosine (aromatic  AA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,525,1231,Asparagine,G,,asparagine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,526,1232,Cysteine,G,,cysteine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,528,1233,Glutamine,G,,glutamine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,529,1234,Taurine,G,,taurine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,foundation-2026-04-30
+usda,602,1254,Glycerides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,603,1255,Phospholipids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,604,1256,Glycolipids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,607,1259,SFA 4:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,608,1260,SFA 6:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,609,1261,SFA 8:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,610,1262,SFA 10:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,611,1263,SFA 12:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,612,1264,SFA 14:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,613,1265,SFA 16:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,614,1266,SFA 18:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,615,1267,SFA 20:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,617,1268,MUFA 18:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,618,1269,PUFA 18:2,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,619,1270,PUFA 18:3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,620,1271,PUFA 20:4,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,624,1273,SFA 22:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,625,1274,MUFA 14:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,626,1275,MUFA 16:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,627,1276,PUFA 18:4,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,628,1277,MUFA 20:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,630,1279,MUFA 22:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,631,1280,PUFA 22:5 n-3 (DPA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,632,2003,SFA 5:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,633,2004,SFA 7:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,634,2005,SFA 9:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,635,2008,MUFA 12:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,636,1283,Phytosterols,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,637,1284,Ergosterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,638,1285,Stigmasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,639,1286,Campesterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,640,1287,Brassicasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,641,1288,Beta-sitosterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,642,1289,Campestanol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,643,1290,Unsaponifiable matter (lipids),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,644,1291,"Fatty acids, other than 607-615, 617-621, 624-632, 652-654, 686-689)",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,647,1294,Beta-sitostanol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,648,1295,Delta-7-avenasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,649,1296,Delta-5-avenasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,650,1297,Alpha-spinasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,651,1298,"Phytosterols, other",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,652,1299,SFA 15:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,653,1300,SFA 17:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,654,1301,SFA 24:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,661,1302,Wax Esters(Total Wax),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,662,1303,TFA 16:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,663,1304,TFA 18:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,664,1305,TFA 22:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,665,1306,TFA 18:2 t not further defined,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,666,1307,PUFA 18:2 i,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,667,1308,"PUFA 18:2 t,c",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,668,1309,"PUFA 18:2 c,t",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,669,1310,"TFA 18:2 t,t",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,670,1311,PUFA 18:2 CLAs,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,671,1312,MUFA 24:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,672,1313,"PUFA 20:2 n-6 c,c",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,673,1314,MUFA 16:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,674,1315,MUFA 18:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,676,1317,MUFA 22:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,676.1,2014,MUFA 22:1 n-9,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,676.2,2015,MUFA 22:1 n-11,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,677,1318,"Fatty acids, saturated, other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,678,1319,"Fatty acids, monounsat., other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,679,1320,"Fatty acids, polyunsat., other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,681,2006,SFA 21:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,682,2007,SFA 23:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,683,2021,PUFA 22:3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,685,1321,"PUFA 18:3 n-6 c,c,c",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,686,1322,SFA 19:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,687,1323,MUFA 17:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,688,1324,PUFA 16:2,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,689,1325,PUFA 20:3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,690,1326,"Fatty acids, total sat., NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,691,1327,"Fatty acids, total monounsat., NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,692,1328,"Fatty acids, total polyunsat., NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,693,1329,"Fatty acids, total trans-monoenoic",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,694,1330,"Fatty acids, total trans-dienoic",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,695,1331,"Fatty acids, total trans-polyenoic",G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,696,1332,SFA 13:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,697,1333,MUFA 15:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,698,1334,PUFA 22:2,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,699,1335,SFA 11:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,706,1336,"ORAC, Hydrophyllic",UMOL_TE,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,707,1337,"ORAC, Lipophillic",UMOL_TE,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,708,1338,"ORAC, Total",UMOL_TE,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,709,1339,Total Phenolics,MG_GAE,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,710,1340,Daidzein,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,711,1341,Genistein,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,712,1342,Glycitein,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,713,1343,Isoflavones,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,714,1344,Biochanin A,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,715,1345,Formononetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,716,1346,Coumestrol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,717,2049,Daidzin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,718,2050,Genistin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,719,2051,Glycitin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,729,1347,"Flavonoids, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,730,1348,Anthocyanidins,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,731,1349,Cyanidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,732,1350,Proanthocyanidin (dimer-A linkage),MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,733,1351,Proanthocyanidin monomers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,734,1352,Proanthocyanidin dimers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,735,1353,Proanthocyanidin trimers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,736,1354,Proanthocyanidin 4-6mers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,737,1355,Proanthocyanidin 7-10mers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,738,1356,Proanthocyanidin polymers (>10mers),MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,741,1357,Delphinidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,742,1358,Malvidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,743,1359,Pelargonidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,745,1360,Peonidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,746,1361,Petunidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,747,1362,"Flavans, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,748,1363,"Catechins, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,749,1364,Catechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,750,1365,Epigallocatechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,751,1366,Epicatechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,752,1367,Epicatechin-3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,753,1368,Epigallocatechin-3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,754,1369,"Procyanidins, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,755,1370,Theaflavins,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,756,1371,Thearubigins,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,757,1372,"Flavanones, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,758,1373,Eriodictyol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,759,1374,Hesperetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,760,1375,Isosakuranetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,761,1376,Liquiritigenin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,762,1377,Naringenin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,768,1378,"Flavones, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,770,1379,Apigenin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,771,1380,Chrysoeriol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,772,1381,Diosmetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,773,1382,Luteolin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,781,1383,Nobiletin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,782,1384,Sinensetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,783,1385,Tangeretin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,784,1386,"Flavonols, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,785,1387,Isorhamnetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,786,1388,Kaempferol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,787,1389,Limocitrin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,788,1390,Myricetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,789,1391,Quercetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,790,1392,Theogallin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,791,1393,"Theaflavin -3,3' -digallate",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,792,1394,Theaflavin -3' -gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,793,1395,Theaflavin -3 -gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,794,1396,(+) -Gallo catechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,795,1397,(+)-Catechin 3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,796,1398,(+)-Gallocatechin 3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,801,1399,Mannose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,803,1400,Triose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,804,1401,Tetrose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,805,1402,Other Saccharides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,806,1403,Inulin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,821,1281,TFA 14:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,822,2009,MUFA 14:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,825,2010,MUFA 17:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,826,2011,TFA 17:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,829,2012,MUFA 20:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,830,2013,TFA 20:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,831,2016,PUFA 18:2 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,832,2017,TFA 18:2 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,833,2018,PUFA 18:3 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,834,2019,TFA 18:3 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,835,2020,PUFA 20:3 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,836,2022,PUFA 20:4c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,837,2023,PUFA 20:5c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,838,2024,PUFA 22:5 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,839,2025,PUFA 22:6 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,840,2026,PUFA 20:2 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,852,1405,PUFA 20:3 n-3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,853,1406,PUFA 20:3 n-6,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,854,1407,PUFA 20:4 n-3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,855,1408,PUFA 20:4 n-6,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,856,1409,PUFA 18:3i,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,857,1410,PUFA 21:5,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,858,1411,PUFA 22:4,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,859,1412,MUFA 18:1-11 t (18:1t n-7),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,860,1413,MUFA 18:1-11 c (18:1c n-7),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,861,1414,PUFA 20:3 n-9,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,951,2045,Proximates,G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,953,2037,Soluble dietary fiber (SDFS),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,954,2036,Soluble dietary fiber (SDFP),G,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,955,2040,Other carotenoids,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,961,2069,Glutathione,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,foundation-2026-04-30
+usda,200,2027,Proximate,G,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,201,1001,Solids,G,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,202,1002,Nitrogen,G,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,206,1006,"Fiber, crude (DO NOT USE - Archived)",G,,IGNORE,ignore,archived or do-not-use,sr-legacy-2018-04
+usda,226,1023,pH,PH,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,227,1024,Specific Gravity,SP_GR,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,273,1066,"Fiber, neutral detergent (DO NOT USE - Archived)",G,,IGNORE,ignore,archived or do-not-use,sr-legacy-2018-04
+usda,374,1148,Fluoride - DO NOT USE; use 313,UG,,IGNORE,ignore,archived or do-not-use,sr-legacy-2018-04
+usda,950,2044,Lipids,G,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,952,2046,Vitamins and Other Components,G,,IGNORE,ignore,not a composition amount,sr-legacy-2018-04
+usda,539,1235,"Sugars, added",G,added,added_sugars,nutrient,,sr-legacy-2018-04
+usda,851,1404,"PUFA 18:3 n-3 c,c,c (ALA)",G,,ala,nutrient,,sr-legacy-2018-04
+usda,221,1018,"Alcohol, ethyl",G,,alcohol,nutrient,,sr-legacy-2018-04
+usda,207,1007,Ash,G,,ash,nutrient,,sr-legacy-2018-04
+usda,321,1107,"Carotene, beta",UG,,beta_carotene,nutrient,,sr-legacy-2018-04
+usda,301,1087,"Calcium, Ca",MG,,calcium,nutrient,,sr-legacy-2018-04
+usda,551,1237,"Calcium, added",MG,added,calcium,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,561,1239,"Calcium, intrinsic",MG,intrinsic,calcium,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,205,1005,"Carbohydrate, by difference",G,,carbohydrate,nutrient,,sr-legacy-2018-04
+usda,205.2,1050,"Carbohydrate, by summation",G,,carbohydrate,nutrient,,sr-legacy-2018-04
+usda,956,2039,Carbohydrates,G,,carbohydrate,nutrient,,sr-legacy-2018-04
+usda,601,1253,Cholesterol,MG,,cholesterol,nutrient,,sr-legacy-2018-04
+usda,421,1180,"Choline, total",MG,,choline,nutrient,,sr-legacy-2018-04
+usda,310,1096,"Chromium, Cr",UG,,chromium,nutrient,,sr-legacy-2018-04
+usda,312,1098,"Copper, Cu",MG,,copper,nutrient,,sr-legacy-2018-04
+usda,621,1272,PUFA 22:6 n-3 (DHA),G,,dha,nutrient,,sr-legacy-2018-04
+usda,208,1008,Energy,KCAL,,energy,nutrient,,sr-legacy-2018-04
+usda,268,1062,Energy,kJ,,energy,nutrient,,sr-legacy-2018-04
+usda,957,2047,Energy (Atwater General Factors),KCAL,atwater_general,energy,nutrient,,sr-legacy-2018-04
+usda,958,2048,Energy (Atwater Specific Factors),KCAL,atwater_specific,energy,nutrient,,sr-legacy-2018-04
+usda,629,1278,PUFA 20:5 n-3 (EPA),G,,epa,nutrient,,sr-legacy-2018-04
+usda,291,1079,"Fiber, total dietary",G,,fiber,nutrient,,sr-legacy-2018-04
+usda,293,2033,Total dietary fiber (AOAC 2011.25),G,,fiber,nutrient,,sr-legacy-2018-04
+usda,212,1012,Fructose,G,,fructose,nutrient,,sr-legacy-2018-04
+usda,211,1011,Glucose,G,,glucose,nutrient,,sr-legacy-2018-04
+usda,314,1100,"Iodine, I",UG,,iodine,nutrient,,sr-legacy-2018-04
+usda,303,1089,"Iron, Fe",MG,,iron,nutrient,,sr-legacy-2018-04
+usda,553,1238,"Iron, added",MG,added,iron,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,563,1240,"Iron, intrinsic",MG,intrinsic,iron,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,213,1013,Lactose,G,,lactose,nutrient,,sr-legacy-2018-04
+usda,675,1316,"PUFA 18:2 n-6 c,c",G,,linoleic,nutrient,,sr-legacy-2018-04
+usda,304,1090,"Magnesium, Mg",MG,,magnesium,nutrient,,sr-legacy-2018-04
+usda,214,1014,Maltose,G,,maltose,nutrient,,sr-legacy-2018-04
+usda,315,1101,"Manganese, Mn",MG,,manganese,nutrient,,sr-legacy-2018-04
+usda,316,1102,"Molybdenum, Mo",UG,,molybdenum,nutrient,,sr-legacy-2018-04
+usda,645,1292,"Fatty acids, total monounsaturated",G,,monounsaturated_fat,nutrient,,sr-legacy-2018-04
+usda,305,1091,"Phosphorus, P",MG,,phosphorus,nutrient,,sr-legacy-2018-04
+usda,646,1293,"Fatty acids, total polyunsaturated",G,,polyunsaturated_fat,nutrient,,sr-legacy-2018-04
+usda,306,1092,"Potassium, K",MG,,potassium,nutrient,,sr-legacy-2018-04
+usda,203,1003,Protein,G,,protein,nutrient,,sr-legacy-2018-04
+usda,257,1053,Adjusted Protein,G,,protein,nutrient,,sr-legacy-2018-04
+usda,319,1105,Retinol,UG,,retinol,nutrient,,sr-legacy-2018-04
+usda,375,1149,"Salt, NaCl",MG,,salt,nutrient,,sr-legacy-2018-04
+usda,606,1258,"Fatty acids, total saturated",G,,saturated_fat,nutrient,,sr-legacy-2018-04
+usda,317,1103,"Selenium, Se",UG,,selenium,nutrient,,sr-legacy-2018-04
+usda,307,1093,"Sodium, Na",MG,,sodium,nutrient,,sr-legacy-2018-04
+usda,209,1009,Starch,G,,starch,nutrient,,sr-legacy-2018-04
+usda,210,1010,Sucrose,G,,sucrose,nutrient,,sr-legacy-2018-04
+usda,269,2000,"Sugars, Total",G,,sugars,nutrient,,sr-legacy-2018-04
+usda,274,1067,Reducing sugars,G,reducing,sugars,nutrient,"lab class, not a sixth sugar",sr-legacy-2018-04
+usda,549,1236,"Sugars, intrinsic",G,intrinsic,sugars,nutrient,sugars naturally in the food as published,sr-legacy-2018-04
+usda,204,1004,Total lipid (fat),G,,total_fat,nutrient,,sr-legacy-2018-04
+usda,605,1257,"Fatty acids, total trans",G,,trans_fat,nutrient,,sr-legacy-2018-04
+usda,318,1104,"Vitamin A, IU",IU,IU,vit_a,nutrient,,sr-legacy-2018-04
+usda,320,1106,"Vitamin A, RAE",UG,RAE,vit_a,nutrient,,sr-legacy-2018-04
+usda,392,1156,"Vitamin A, RE",MCG_RE,RE,vit_a,nutrient,,sr-legacy-2018-04
+usda,404,1165,Thiamin,MG,,vit_b1,nutrient,,sr-legacy-2018-04
+usda,574,1243,"Thiamin, added",MG,added,vit_b1,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,584,1249,"Thiamin, intrinsic",MG,intrinsic,vit_b1,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,418,1178,Vitamin B-12,UG,,vit_b12,nutrient,,sr-legacy-2018-04
+usda,578,1246,"Vitamin B-12, added",UG,added,vit_b12,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,588,1252,"Vitamin B-12, intrinsic",UG,intrinsic,vit_b12,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,405,1166,Riboflavin,MG,,vit_b2,nutrient,,sr-legacy-2018-04
+usda,575,1244,"Riboflavin, added",MG,added,vit_b2,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,585,1250,"Riboflavin, intrinsic",MG,intrinsic,vit_b2,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,406,1167,Niacin,MG,preformed,vit_b3,nutrient,,sr-legacy-2018-04
+usda,409,1169,Niacin equivalent N406 +N407,MG,NE,vit_b3,nutrient,,sr-legacy-2018-04
+usda,576,1245,"Niacin, added",MG,added,vit_b3,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,586,1251,"Niacin, intrinsic",MG,intrinsic,vit_b3,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,410,1170,Pantothenic acid,MG,,vit_b5,nutrient,,sr-legacy-2018-04
+usda,415,1175,Vitamin B-6,MG,,vit_b6,nutrient,,sr-legacy-2018-04
+usda,416,1176,Biotin,UG,,vit_b7,nutrient,,sr-legacy-2018-04
+usda,417,1177,"Folate, total",UG,total,vit_b9,nutrient,,sr-legacy-2018-04
+usda,432,1187,"Folate, food",UG,food_folate,vit_b9,nutrient,,sr-legacy-2018-04
+usda,435,1190,"Folate, DFE",UG,DFE,vit_b9,nutrient,,sr-legacy-2018-04
+usda,401,1162,"Vitamin C, total ascorbic acid",MG,,vit_c,nutrient,,sr-legacy-2018-04
+usda,571,1241,"Vitamin C, added",MG,added,vit_c,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,581,1247,"Vitamin C, intrinsic",MG,intrinsic,vit_c,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,324,1110,"Vitamin D (D2 + D3), International Units",IU,IU,vit_d,nutrient,,sr-legacy-2018-04
+usda,328,1114,Vitamin D (D2 + D3),UG,,vit_d,nutrient,,sr-legacy-2018-04
+usda,323,1109,Vitamin E (alpha-tocopherol),MG,alpha_tocopherol,vit_e,nutrient,,sr-legacy-2018-04
+usda,394,1158,Vitamin E,MG_ATE,unspecified,vit_e,nutrient,,sr-legacy-2018-04
+usda,573,1242,"Vitamin E, added",MG,added,vit_e,nutrient,same nutrient; fraction=added,sr-legacy-2018-04
+usda,583,1248,"Vitamin E, intrinsic",MG,intrinsic,vit_e,nutrient,same nutrient; fraction=intrinsic,sr-legacy-2018-04
+usda,430,1185,Vitamin K (phylloquinone),UG,,vit_k,nutrient,,sr-legacy-2018-04
+usda,255,1051,Water,G,,water,nutrient,,sr-legacy-2018-04
+usda,309,1095,"Zinc, Zn",MG,,zinc,nutrient,,sr-legacy-2018-04
+usda,2052,2052,Delta-7-Stigmastenol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2053,2053,Stigmastadiene,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2054,2054,Total Tocotrienols,MG,total_tocotrienols,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2055,2055,Total Tocopherols,MG,total_tocopherols,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2057,2057,Ergothioneine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2058,2058,Beta-glucan,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2059,2059,Vitamin D4,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2060,2060,Ergosta-7-enol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2061,2061," Ergosta-7,22-dienol",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2062,2062," Ergosta-5,7-dienol",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2063,2063,Verbascose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,2064,2064,Oligosaccharides,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,218,1015,Amylose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,219,1016,Amylopectin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,220,1017,Pectin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,222,1019,Pentosan,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,223,1020,Pentoses,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,224,1021,Hemicellulose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,225,1022,Cellulose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,229,1025,Organic acids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,230,1026,Acetic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,231,1027,Aconitic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,232,1028,Benzoic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,233,1029,Chelidonic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,234,1030,Chlorogenic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,235,1031,Cinnamic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,236,1032,Citric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,237,1033,Fumaric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,238,1034,Galacturonic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,239,1035,Gallic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,240,1036,Glycolic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,241,1037,Isocitric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,242,1038,Lactic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,243,1039,Malic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,244,1040,Oxaloacetic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,245,1041,Oxalic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,246,1042,Phytic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,247,1043,Pyruvic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,248,1044,Quinic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,249,1045,Salicylic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,250,1046,Succinic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,251,1047,Tartaric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,252,1048,Ursolic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,253,1049,"Solids, non-fat",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,256,1052,Adjusted Nitrogen,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,259,1054,Piperine,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,260,1055,Mannitol,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,261,1056,Sorbitol,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,262,1057,Caffeine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,263,1058,Theobromine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,264,1059,Nitrates,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,265,1060,Nitrites,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,266,1061,"Nitrosamine,total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,269.3,1063,"Sugars, Total NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,271,1064,"Solids, soluble",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,272,1065,Glycogen,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,276,1068,Beta-glucans,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,281,1069,Oligosaccharides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,282,1070,Nonstarch polysaccharides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,283,1071,Resistant starch,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,284,1072,"Carbohydrate, other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,285,1073,Arabinose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,286,1074,Xylose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,287,1075,Galactose,G,,galactose,nutrient,monosaccharide; not promoted yet (only 5 sugars locked); promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,288,1076,Raffinose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,289,1077,Stachyose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,290,1078,Xylitol,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,292,1080,Lignin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,293.1,2034,Insoluble dietary fiber (IDF),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,293.2,2035,Soluble dietary fiber (SDFP+SDFS),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,293.3,2038,High Molecular Weight Dietary Fiber (HMWDF),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,293.4,2065,Low Molecular Weight Dietary Fiber (LMWDF),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,294,1081,Ribose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,295,1082,"Fiber, soluble",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,296,1083,Theophylline,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,297,1084,"Fiber, insoluble",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,298,1085,Total fat (NLEA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,299,1086,Total sugar alcohols,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,300,2043,Minerals,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,302,1088,"Chlorine, Cl",MG,,chloride,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,308,1094,"Sulfur, S",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,311,1097,"Cobalt, Co",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,313,1099,"Fluoride, F",UG,,fluoride,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted fluoride,sr-legacy-2018-04
+usda,321.1,1159,cis-beta-Carotene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,321.2,2028,trans-beta-Carotene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,322,1108,"Carotene, alpha",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,323.99,2041,Tocopherols and tocotrienols,MG,tocopherols_and_tocotrienols,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,325,1111,Vitamin D2 (ergocalciferol),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,326,1112,Vitamin D3 (cholecalciferol),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,327,1113,25-hydroxycholecalciferol,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,329,1115,25-hydroxyergocalciferol,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,330,1116,Phytoene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,331,1117,Phytofluene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,332,1118,"Carotene, gamma",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,334,1120,"Cryptoxanthin, beta",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,335,2032,"Cryptoxanthin, alpha",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,337,1122,Lycopene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,337.1,1160,cis-Lycopene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,337.2,2029,trans-Lycopene,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,338,1123,Lutein + zeaxanthin,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,338.1,1121,Lutein,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,338.2,1119,Zeaxanthin,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,338.3,1161,cis-Lutein/Zeaxanthin,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,340,1124,Vitamin E (label entry primarily),IU,label,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,341,1125,"Tocopherol, beta",MG,beta_tocopherol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,342,1126,"Tocopherol, gamma",MG,gamma_tocopherol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,343,1127,"Tocopherol, delta",MG,delta_tocopherol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,344,1128,"Tocotrienol, alpha",MG,alpha_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,345,1129,"Tocotrienol, beta",MG,beta_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,346,1130,"Tocotrienol, gamma",MG,gamma_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,347,1131,"Tocotrienol, delta",MG,delta_tocotrienol,vit_e,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,348,1132,"Aluminum, Al",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,349,1133,"Antimony, Sb",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,350,1134,"Arsenic, As",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,351,1135,"Barium, Ba",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,352,1136,"Beryllium, Be",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,354,1137,"Boron, B",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,355,1138,"Bromine, Br",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,356,1139,"Cadmium, Cd",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,363,1140,"Gold, Au",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,364,1141,"Iron, heme",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,365,1142,"Iron, non-heme",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,367,1143,"Lead, Pb",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,368,1144,"Lithium, Li",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,370,1145,"Mercury, Hg",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,371,1146,"Nickel, Ni",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,373,1147,"Rubidium, Rb",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,378,1150,"Silicon, Si",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,379,1151,"Silver, Ag",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,380,1152,"Strontium, Sr",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,385,1153,"Tin, Sn",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,386,1154,"Titanium, Ti",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,389,1155,"Vanadium, V",UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,393,1157,Carotene,MCG_RE,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,402,1163,"Vitamin C, reduced ascorbic acid",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,403,1164,"Vitamin C, dehydro ascorbic acid",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,407,1168,"Niacin from tryptophan, determined",MG,from_tryptophan,vit_b3,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,411,1171,"Vitamin B-6, pyridoxine, alcohol form",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,412,1172,"Vitamin B-6, pyridoxal, aldehyde form",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,413,1173,"Vitamin B-6, pyridoxamine, amine form",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,414,1174,"Vitamin B-6, N411 + N412 +N413",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,419,1179,"Folate, free",UG,free,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,422,1181,Inositol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,423,1182,Inositol phosphate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,428,1183,Vitamin K (Menaquinone-4),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,429,1184,Vitamin K (Dihydrophylloquinone),UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,431,1186,Folic acid,UG,folic_acid,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,433,1188,5-methyl tetrahydrofolate (5-MTHF),UG,5_mthf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,434,1189,"Folate, not 5-MTHF",UG,not_5_mthf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,436,1191,10-Formyl folic acid (10HCOFA),UG,10_formyl_folic_acid,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,437,1192,5-Formyltetrahydrofolic acid (5-HCOH4,UG,5_formyl_thf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,438,1193,Tetrahydrofolic acid (THF),UG,thf,vit_b9,nutrient,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,450,1194,"Choline, free",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,451,1195,"Choline, from phosphocholine",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,452,1196,"Choline, from phosphotidyl choline",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,453,1197,"Choline, from glycerophosphocholine",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,454,1198,Betaine,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,455,1199,"Choline, from sphingomyelin",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,460,1200,p-Hydroxy benzoic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,461,1201,Caffeic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,462,1202,p-Coumaric acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,463,1203,Ellagic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,464,1204,Ferrulic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,465,1205,Gentisic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,466,1206,Tyrosol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,467,1207,Vanillic acid,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,469,1208,"Phenolic acids, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,470,1209,"Polyphenols, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,500,2042,Amino acids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,501,1210,Tryptophan,G,,tryptophan,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,502,1211,Threonine,G,,threonine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,503,1212,Isoleucine,G,,isoleucine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,504,1213,Leucine,G,,leucine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,505,1214,Lysine,G,,lysine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,506,1215,Methionine,G,,methionine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,507,1216,Cystine,G,,cystine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,508,1217,Phenylalanine,G,,phenylalanine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,509,1218,Tyrosine,G,,tyrosine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,510,1219,Valine,G,,valine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,511,1220,Arginine,G,,arginine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,512,1221,Histidine,G,,histidine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,513,1222,Alanine,G,,alanine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,514,1223,Aspartic acid,G,,aspartic_acid,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,515,1224,Glutamic acid,G,,glutamic_acid,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,516,1225,Glycine,G,,glycine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,517,1226,Proline,G,,proline,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,518,1227,Serine,G,,serine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,521,1228,Hydroxyproline,G,,hydroxyproline,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,522,1229,Cysteine and methionine(sulfer containig AA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,523,1230,Phenylalanine and tyrosine (aromatic  AA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,525,1231,Asparagine,G,,asparagine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,526,1232,Cysteine,G,,cysteine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,528,1233,Glutamine,G,,glutamine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,529,1234,Taurine,G,,taurine,nutrient,USDA ticket kept; not an intake Nutrient yet; promoted 2026-09-28 class B,sr-legacy-2018-04
+usda,602,1254,Glycerides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,603,1255,Phospholipids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,604,1256,Glycolipids,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,607,1259,SFA 4:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,608,1260,SFA 6:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,609,1261,SFA 8:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,610,1262,SFA 10:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,611,1263,SFA 12:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,612,1264,SFA 14:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,613,1265,SFA 16:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,614,1266,SFA 18:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,615,1267,SFA 20:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,617,1268,MUFA 18:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,618,1269,PUFA 18:2,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,619,1270,PUFA 18:3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,620,1271,PUFA 20:4,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,624,1273,SFA 22:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,625,1274,MUFA 14:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,626,1275,MUFA 16:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,627,1276,PUFA 18:4,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,628,1277,MUFA 20:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,630,1279,MUFA 22:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,631,1280,PUFA 22:5 n-3 (DPA),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,632,2003,SFA 5:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,633,2004,SFA 7:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,634,2005,SFA 9:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,635,2008,MUFA 12:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,636,1283,Phytosterols,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,637,1284,Ergosterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,638,1285,Stigmasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,639,1286,Campesterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,640,1287,Brassicasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,641,1288,Beta-sitosterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,642,1289,Campestanol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,643,1290,Unsaponifiable matter (lipids),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,644,1291,"Fatty acids, other than 607-615, 617-621, 624-632, 652-654, 686-689)",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,647,1294,Beta-sitostanol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,648,1295,Delta-7-avenasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,649,1296,Delta-5-avenasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,650,1297,Alpha-spinasterol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,651,1298,"Phytosterols, other",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,652,1299,SFA 15:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,653,1300,SFA 17:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,654,1301,SFA 24:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,661,1302,Wax Esters(Total Wax),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,662,1303,TFA 16:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,663,1304,TFA 18:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,664,1305,TFA 22:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,665,1306,TFA 18:2 t not further defined,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,666,1307,PUFA 18:2 i,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,667,1308,"PUFA 18:2 t,c",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,668,1309,"PUFA 18:2 c,t",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,669,1310,"TFA 18:2 t,t",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,670,1311,PUFA 18:2 CLAs,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,671,1312,MUFA 24:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,672,1313,"PUFA 20:2 n-6 c,c",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,673,1314,MUFA 16:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,674,1315,MUFA 18:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,676,1317,MUFA 22:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,676.1,2014,MUFA 22:1 n-9,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,676.2,2015,MUFA 22:1 n-11,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,677,1318,"Fatty acids, saturated, other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,678,1319,"Fatty acids, monounsat., other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,679,1320,"Fatty acids, polyunsat., other",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,681,2006,SFA 21:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,682,2007,SFA 23:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,683,2021,PUFA 22:3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,685,1321,"PUFA 18:3 n-6 c,c,c",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,686,1322,SFA 19:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,687,1323,MUFA 17:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,688,1324,PUFA 16:2,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,689,1325,PUFA 20:3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,690,1326,"Fatty acids, total sat., NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,691,1327,"Fatty acids, total monounsat., NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,692,1328,"Fatty acids, total polyunsat., NLEA",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,693,1329,"Fatty acids, total trans-monoenoic",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,694,1330,"Fatty acids, total trans-dienoic",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,695,1331,"Fatty acids, total trans-polyenoic",G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,696,1332,SFA 13:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,697,1333,MUFA 15:1,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,698,1334,PUFA 22:2,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,699,1335,SFA 11:0,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,706,1336,"ORAC, Hydrophyllic",UMOL_TE,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,707,1337,"ORAC, Lipophillic",UMOL_TE,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,708,1338,"ORAC, Total",UMOL_TE,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,709,1339,Total Phenolics,MG_GAE,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,710,1340,Daidzein,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,711,1341,Genistein,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,712,1342,Glycitein,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,713,1343,Isoflavones,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,714,1344,Biochanin A,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,715,1345,Formononetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,716,1346,Coumestrol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,717,2049,Daidzin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,718,2050,Genistin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,719,2051,Glycitin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,729,1347,"Flavonoids, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,730,1348,Anthocyanidins,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,731,1349,Cyanidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,732,1350,Proanthocyanidin (dimer-A linkage),MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,733,1351,Proanthocyanidin monomers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,734,1352,Proanthocyanidin dimers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,735,1353,Proanthocyanidin trimers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,736,1354,Proanthocyanidin 4-6mers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,737,1355,Proanthocyanidin 7-10mers,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,738,1356,Proanthocyanidin polymers (>10mers),MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,741,1357,Delphinidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,742,1358,Malvidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,743,1359,Pelargonidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,745,1360,Peonidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,746,1361,Petunidin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,747,1362,"Flavans, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,748,1363,"Catechins, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,749,1364,Catechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,750,1365,Epigallocatechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,751,1366,Epicatechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,752,1367,Epicatechin-3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,753,1368,Epigallocatechin-3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,754,1369,"Procyanidins, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,755,1370,Theaflavins,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,756,1371,Thearubigins,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,757,1372,"Flavanones, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,758,1373,Eriodictyol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,759,1374,Hesperetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,760,1375,Isosakuranetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,761,1376,Liquiritigenin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,762,1377,Naringenin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,768,1378,"Flavones, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,770,1379,Apigenin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,771,1380,Chrysoeriol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,772,1381,Diosmetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,773,1382,Luteolin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,781,1383,Nobiletin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,782,1384,Sinensetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,783,1385,Tangeretin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,784,1386,"Flavonols, total",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,785,1387,Isorhamnetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,786,1388,Kaempferol,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,787,1389,Limocitrin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,788,1390,Myricetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,789,1391,Quercetin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,790,1392,Theogallin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,791,1393,"Theaflavin -3,3' -digallate",MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,792,1394,Theaflavin -3' -gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,793,1395,Theaflavin -3 -gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,794,1396,(+) -Gallo catechin,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,795,1397,(+)-Catechin 3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,796,1398,(+)-Gallocatechin 3-gallate,MG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,801,1399,Mannose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,803,1400,Triose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,804,1401,Tetrose,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,805,1402,Other Saccharides,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,806,1403,Inulin,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,821,1281,TFA 14:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,822,2009,MUFA 14:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,825,2010,MUFA 17:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,826,2011,TFA 17:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,829,2012,MUFA 20:1 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,830,2013,TFA 20:1 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,831,2016,PUFA 18:2 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,832,2017,TFA 18:2 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,833,2018,PUFA 18:3 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,834,2019,TFA 18:3 t,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,835,2020,PUFA 20:3 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,836,2022,PUFA 20:4c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,837,2023,PUFA 20:5c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,838,2024,PUFA 22:5 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,839,2025,PUFA 22:6 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,840,2026,PUFA 20:2 c,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,852,1405,PUFA 20:3 n-3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,853,1406,PUFA 20:4 n-6,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,854,1407,PUFA 20:4 n-3,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,855,1408,PUFA 2:4 n-6,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,856,1409,PUFA 18:3i,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,857,1410,PUFA 21:5,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,858,1411,PUFA 22:4,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,859,1412,MUFA 18:1-11 t (18:1t n-7),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,860,1413,MUFA 18:1-11 c (18:1c n-7),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,861,1414,PUFA 20:3 n-9,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,951,2045,Proximates,G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,953,2037,Soluble dietary fiber (SDFS),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,954,2036,Soluble dietary fiber (SDFP),G,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+usda,955,2040,Other carotenoids,UG,,,compound,USDA ticket kept; not an intake Nutrient yet,sr-legacy-2018-04
+infoods,EDIBLE1,,Edible portion 1,-,,IGNORE,ignore,yield coefficient,wafct-2019
+infoods,EDIBLE2,,Edible portion 2,-,,IGNORE,ignore,yield coefficient,wafct-2019
+infoods,SOP,,Sum of proximate components (SOP),g,,IGNORE,ignore,checksum,wafct-2019
+infoods,XFA,,Fatty acid conversion factor,-,,IGNORE,ignore,FA conversion factor,wafct-2019
+infoods,XN,,Conversion factor for calculating total protein from total nitrogen,-,,IGNORE,ignore,nitrogen factor,wafct-2019
+infoods,F18D3CN3,,Alpha-linolenic acid,g,,ala,nutrient,,wafct-2019
+infoods,ALC,,Alcohol,g,,alcohol,nutrient,,wafct-2019
+infoods,ASH,,Ash,g,,ash,nutrient,,wafct-2019
+infoods,CARTB,,Beta-carotene equivalents or [beta-carotene],mcg,equivalents_or_as_published,beta_carotene,nutrient,,wafct-2019
+infoods,CARTB,,Beta-carotene,mcg,beta_carotene,beta_carotene,nutrient,,wafct-2019
+infoods,CARTBEQ,,Beta-carotene equivalents or [beta-carotene],mcg,equivalents,beta_carotene,nutrient,,wafct-2019
+infoods,CA,,Calcium,mg,,calcium,nutrient,,wafct-2019
+infoods,CHOAVLDF,,"Carbohydrate, available; calculated by difference",g,available_by_difference,carbohydrate,nutrient,,wafct-2019
+infoods,CHOLE,,Cholesterol,mg,,cholesterol,nutrient,,wafct-2019
+infoods,CU,,Copper,mg,,copper,nutrient,,wafct-2019
+infoods,ENERC,,Energy,kJ,kJ,energy,nutrient,,wafct-2019
+infoods,ENERC,,Energy,kcal,kcal,energy,nutrient,,wafct-2019
+infoods,FIBC,,"Fibre, total dietary or [fibre, crude]",g,crude,fiber,nutrient,,wafct-2019
+infoods,FIBTG,,"Fibre, total dietary or [fibre, crude]",g,TDF,fiber,nutrient,,wafct-2019
+infoods,FE,,Iron,mg,,iron,nutrient,,wafct-2019
+infoods,F18D2CN6,,Linoleic acid,g,,linoleic,nutrient,,wafct-2019
+infoods,MG,,Magnesium,mg,,magnesium,nutrient,,wafct-2019
+infoods,FAMS,,"Fatty acids, total monounsaturated",g,,monounsaturated_fat,nutrient,,wafct-2019
+infoods,P,,Phosphorus,mg,,phosphorus,nutrient,,wafct-2019
+infoods,FAPU,,"Fatty acids, total polyunsaturated",g,,polyunsaturated_fat,nutrient,,wafct-2019
+infoods,K,,Potassium,mg,,potassium,nutrient,,wafct-2019
+infoods,PROTCNT,,"Protein, total",g,,protein,nutrient,N × XN,wafct-2019
+infoods,RETOL,,Retinol,mcg,,retinol,nutrient,,wafct-2019
+infoods,FASAT,,"Fatty acids, total saturated",g,,saturated_fat,nutrient,,wafct-2019
+infoods,NA,,Sodium,mg,,sodium,nutrient,,wafct-2019
+infoods,FAT,,"Fat, total or [fat, derived by analysis using continuous extraction]",g,,total_fat,nutrient,,wafct-2019
+infoods,FATCE,,"Fat, total or [fat, derived by analysis using continuous extraction]",g,FATCE,total_fat,nutrient,method variant,wafct-2019
+infoods,VITA,,Vitamin A (expressed in retinol equivalents),mcg,RE,vit_a,nutrient,β-carotene/6,wafct-2019
+infoods,VITA_RAE,,Vitamin A (expressed in retinol activity equivalents),mcg,RAE,vit_a,nutrient,β-carotene/12,wafct-2019
+infoods,THIA,,Thiamine (vitamin B1),mg,,vit_b1,nutrient,,wafct-2019
+infoods,VITB12,,Vitamin B12,mcg,,vit_b12,nutrient,,wafct-2019
+infoods,RIBF,,Riboflavin (vitamin B2),mg,,vit_b2,nutrient,,wafct-2019
+infoods,NIA,,"Niacin equivalents or [niacin, preformed] (vitamin B3)",mg,NE_or_preformed,vit_b3,nutrient,,wafct-2019
+infoods,NIA,,"Niacin, preformed",mg,preformed,vit_b3,nutrient,,wafct-2019
+infoods,NIAEQ,,"Niacin equivalents or [niacin, preformed] (vitamin B3)",mg,NE,vit_b3,nutrient,,wafct-2019
+infoods,VITB6C,,Vitamin B6,mg,,vit_b6,nutrient,,wafct-2019
+infoods,FOL,,"Folate, total or [folate, sum of vitamers] (vitamin B9)",mcg,total,vit_b9,nutrient,,wafct-2019
+infoods,FOLAC,,Folic acid (synthetic),mcg,folic_acid,vit_b9,nutrient,,wafct-2019
+infoods,FOLDFE,,"Folate, dietary folate equivalents (DFE)",mcg,DFE,vit_b9,nutrient,,wafct-2019
+infoods,FOLFD,,"Folate, naturally occurring (food folate)",mcg,food_folate,vit_b9,nutrient,,wafct-2019
+infoods,FOLSUM,,"Folate, total or [folate, sum of vitamers] (vitamin B9)",mcg,sum_vitamers,vit_b9,nutrient,,wafct-2019
+infoods,VITC,,Vitamin C,mg,,vit_c,nutrient,,wafct-2019
+infoods,VITD,,Vitamin D,mcg,D2+D3,vit_d,nutrient,,wafct-2019
+infoods,TOCPHA,,Vitamin E (expressed in alpha-tocopherol equivalents) or [alpha-tocopherol],mg,ATE_or_alpha,vit_e,nutrient,,wafct-2019
+infoods,TOCPHA,,Alpha-tocopherol,mg,alpha_tocopherol,vit_e,nutrient,,wafct-2019
+infoods,VITE,,Vitamin E (expressed in alpha-tocopherol equivalents) or [alpha-tocopherol],mg,alpha_TE,vit_e,nutrient,,wafct-2019
+infoods,WATER,,Water,g,,water,nutrient,,wafct-2019
+infoods,ZN,,Zinc,mg,,zinc,nutrient,,wafct-2019
+infoods,CARTA,,Alpha-carotene,mcg,,,compound,INFOODS tag kept,wafct-2019
+infoods,CRYPXB,,Beta-cryptoxanthin,mcg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP3,,Inositol triphosphate (IP3),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP4,,Inositol tetraphosphate (IP4),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP5,,Inositol pentaphosphate (IP5),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP6,,Inositol hexaphosphate (IP6),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,PHYTCPP,,"Phytate, total or [phytate, determined by direct precipitation] or [phytate, determined by indirect precipitation]",mg,,,compound,phytate; compound-layer later,wafct-2019
+infoods,PHYTCPPD,,"Phytate, total or [phytate, determined by direct precipitation] or [phytate, determined by indirect precipitation]",mg,,,compound,phytate method variant,wafct-2019
+infoods,PHYTCPPI,,"Phytate, total or [phytate, determined by direct precipitation] or [phytate, determined by indirect precipitation]",mg,,,compound,phytate method variant,wafct-2019
+infoods,TOCPHB,,Beta-tocopherol,mg,beta_tocopherol,vit_e,nutrient,INFOODS tag kept,wafct-2019
+infoods,TOCPHD,,Delta-tocopherol,mg,delta_tocopherol,vit_e,nutrient,INFOODS tag kept,wafct-2019
+infoods,TOCPHG,,Gamma-tocopherol,mg,gamma_tocopherol,vit_e,nutrient,INFOODS tag kept,wafct-2019
+infoods,TRP,,Tryptophan,mg,,tryptophan,nutrient,INFOODS tag kept; promoted 2026-09-28 class B,wafct-2019

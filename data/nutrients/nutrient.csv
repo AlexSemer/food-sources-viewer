@@ -1,0 +1,83 @@
+id,name,status,category,subcategory,unit,aliases,description,is_essential,notes
+energy,Energy,existing,macro,,kcal,,Total metabolizable energy,True,
+protein,Protein,existing,macro,,g,,Total protein (amino acid polymers),True,
+carbohydrate,Carbohydrate,existing,macro,,g,,Total available carbohydrate,True,
+fiber,Dietary Fiber,existing,macro,non_digestible,g,,,True,
+total_fat,Total Fat,existing,macro,,g,,,True,
+saturated_fat,Saturated Fat,existing,fatty_acid,,g,,,,
+monounsaturated_fat,Monounsaturated Fat,existing,fatty_acid,,g,,,,
+polyunsaturated_fat,Polyunsaturated Fat,existing,fatty_acid,,g,,,,
+omega3,Omega-3 Fatty Acids,existing,fatty_acid,,g,n-3|ω-3,,,
+dha,DHA (Docosahexaenoic Acid),existing,fatty_acid,,mg,,,,
+epa,EPA (Eicosapentaenoic Acid),existing,fatty_acid,,mg,,,,
+vit_a,Vitamin A (RAE),existing,vitamin,fat_soluble,µg,retinol activity equivalents,,,
+vit_b1,Thiamin (B1),existing,vitamin,water_soluble,mg,,,,
+vit_b2,Riboflavin (B2),existing,vitamin,water_soluble,mg,,,,
+vit_b3,Niacin (B3),existing,vitamin,water_soluble,mg,,,,
+vit_b5,Pantothenic Acid (B5),existing,vitamin,water_soluble,mg,,,,
+vit_b6,Vitamin B6 (Pyridoxine),existing,vitamin,water_soluble,mg,,,,
+vit_b7,Biotin (B7),existing,vitamin,water_soluble,µg,,,,
+vit_b9,Folate (B9),existing,vitamin,water_soluble,µg,folic acid|DFE,,,
+vit_b12,Vitamin B12 (Cobalamin),existing,vitamin,water_soluble,µg,,,,
+vit_c,Vitamin C (Ascorbic Acid),existing,vitamin,water_soluble,mg,,,,
+vit_d,Vitamin D,existing,vitamin,fat_soluble,µg,cholecalciferol|25-OH-D,,,
+vit_e,Vitamin E,existing,vitamin,fat_soluble,mg,,,,
+vit_k,Vitamin K,existing,vitamin,fat_soluble,µg,,,,
+calcium,Calcium,existing,mineral,,mg,,,,
+iron,Iron,existing,mineral,,mg,,,,
+magnesium,Magnesium,existing,mineral,,mg,,,,
+zinc,Zinc,existing,mineral,,mg,,,,
+selenium,Selenium,existing,mineral,,µg,,,,
+iodine,Iodine,existing,mineral,,µg,,,,
+potassium,Potassium,existing,mineral,,mg,,,,
+sodium,Sodium,existing,mineral,,mg,,,,
+phosphorus,Phosphorus,existing,mineral,,mg,,,,
+copper,Copper,existing,mineral,,mg,,,,
+manganese,Manganese,existing,mineral,,mg,,,,
+chromium,Chromium,existing,mineral,,µg,,,,
+molybdenum,Molybdenum,existing,mineral,,µg,,,,
+choline,Choline,existing,other,,mg,,,,
+water,Water,proposed,other,,g,,Moisture / water content,False,
+alcohol,Alcohol (ethanol),proposed,other,,g,,Ethanol; contributes energy,False,
+ash,Ash,proposed,other,,g,,Total mineral residue after incineration,False,
+cholesterol,Cholesterol,proposed,other,,mg,,,False,
+sugars,Total sugars,proposed,macro,available_carb,g,,Sum of mono- and disaccharides. Do not add to child sugar ids.,False,
+added_sugars,Added sugars,proposed,macro,available_carb,g,,"Policy/label cut, not a different molecule",False,
+starch,Starch,proposed,macro,available_carb,g,,,False,
+salt,Salt (NaCl),proposed,mineral,,g,,Not the same as sodium,False,
+trans_fat,Trans fat,proposed,fatty_acid,,g,,,False,
+ala,ALA (Alpha-linolenic acid),proposed,fatty_acid,,g,18:3 n-3,,True,
+linoleic,Linoleic acid,proposed,fatty_acid,,g,18:2 n-6,,True,
+retinol,Retinol (preformed vitamin A),proposed,vitamin,fat_soluble,µg,,,True,
+beta_carotene,Beta-carotene,proposed,phytonutrient,,µg,,,False,
+glucose,Glucose,proposed,macro,sugar,g,,Child of sugars. Do not sum with sugars.,False,
+fructose,Fructose,proposed,macro,sugar,g,,Child of sugars. Do not sum with sugars.,False,
+sucrose,Sucrose,proposed,macro,sugar,g,,Child of sugars. Do not sum with sugars.,False,
+lactose,Lactose,proposed,macro,sugar,g,,Child of sugars. Do not sum with sugars.,False,
+maltose,Maltose,proposed,macro,sugar,g,,Child of sugars. Do not sum with sugars.,False,
+galactose,Galactose,proposed,macro,sugar,g,,Child of sugars. Do not sum with sugars.,False,Promoted 2026-09-28
+chloride,Chloride,proposed,mineral,,mg,chlorine|Cl,Electrolyte; not the same as salt or sodium.,True,Promoted 2026-09-28
+tryptophan,Tryptophan,proposed,amino_acid,essential,g,Trp|W,Essential amino acid.,True,Do not add onto protein.
+threonine,Threonine,proposed,amino_acid,essential,g,Thr|T,Essential amino acid.,True,Do not add onto protein.
+isoleucine,Isoleucine,proposed,amino_acid,essential,g,Ile|I,Essential amino acid.,True,Do not add onto protein.
+leucine,Leucine,proposed,amino_acid,essential,g,Leu|L,Essential amino acid.,True,Do not add onto protein.
+lysine,Lysine,proposed,amino_acid,essential,g,Lys|K,Essential amino acid.,True,Do not add onto protein.
+methionine,Methionine,proposed,amino_acid,essential,g,Met|M,Essential amino acid.,True,Do not add onto protein.
+phenylalanine,Phenylalanine,proposed,amino_acid,essential,g,Phe|F,Essential amino acid.,True,Do not add onto protein.
+valine,Valine,proposed,amino_acid,essential,g,Val|V,Essential amino acid.,True,Do not add onto protein.
+histidine,Histidine,proposed,amino_acid,essential,g,His|H,Essential amino acid.,True,Do not add onto protein.
+cystine,Cystine,proposed,amino_acid,sulfur,g,(Cys)2,Disulfide dimer reported in food tables; not the same row as cysteine.,False,Do not add onto protein.
+cysteine,Cysteine,proposed,amino_acid,sulfur,g,Cys|C,Sulfur amino acid.,False,Do not add onto protein.
+tyrosine,Tyrosine,proposed,amino_acid,aromatic,g,Tyr|Y,Conditionally essential amino acid.,False,Do not add onto protein.
+arginine,Arginine,proposed,amino_acid,conditional,g,Arg|R,Conditionally essential amino acid.,False,Do not add onto protein.
+alanine,Alanine,proposed,amino_acid,,g,Ala|A,Non-essential amino acid.,False,Do not add onto protein.
+aspartic_acid,Aspartic acid,proposed,amino_acid,,g,Asp|D|aspartate,Non-essential amino acid.,False,Do not add onto protein.
+glutamic_acid,Glutamic acid,proposed,amino_acid,,g,Glu|E|glutamate,Non-essential amino acid.,False,Do not add onto protein.
+glycine,Glycine,proposed,amino_acid,,g,Gly|G,Non-essential amino acid.,False,Do not add onto protein.
+proline,Proline,proposed,amino_acid,,g,Pro|P,Non-essential amino acid.,False,Do not add onto protein.
+serine,Serine,proposed,amino_acid,,g,Ser|S,Non-essential amino acid.,False,Do not add onto protein.
+asparagine,Asparagine,proposed,amino_acid,,g,Asn|N,Non-essential amino acid.,False,Do not add onto protein.
+glutamine,Glutamine,proposed,amino_acid,conditional,g,Gln|Q,Conditionally essential amino acid.,False,Do not add onto protein.
+hydroxyproline,Hydroxyproline,proposed,amino_acid,,g,,Collagen marker; not an intake essential.,False,Do not add onto protein.
+taurine,Taurine,proposed,amino_acid,,mg,,Sulfonic acid often reported with amino acids.,False,Do not add onto protein.
+fluoride,Fluoride,proposed,mineral,,µg,F|fluorine,Trace mineral with AI/UL; dental enamel.,False,Promoted 2026-09-28 critic follow-up

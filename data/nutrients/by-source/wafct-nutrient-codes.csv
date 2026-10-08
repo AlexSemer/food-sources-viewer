@@ -1,0 +1,67 @@
+family,code,alt_code,source_name,source_unit,expression,nutrient_id,status,notes,source_version
+infoods,EDIBLE1,,Edible portion 1,-,,IGNORE,ignore,yield coefficient,wafct-2019
+infoods,EDIBLE2,,Edible portion 2,-,,IGNORE,ignore,yield coefficient,wafct-2019
+infoods,SOP,,Sum of proximate components (SOP),g,,IGNORE,ignore,checksum,wafct-2019
+infoods,XFA,,Fatty acid conversion factor,-,,IGNORE,ignore,FA conversion factor,wafct-2019
+infoods,XN,,Conversion factor for calculating total protein from total nitrogen,-,,IGNORE,ignore,nitrogen factor,wafct-2019
+infoods,F18D3CN3,,Alpha-linolenic acid,g,,ala,nutrient,,wafct-2019
+infoods,ALC,,Alcohol,g,,alcohol,nutrient,,wafct-2019
+infoods,ASH,,Ash,g,,ash,nutrient,,wafct-2019
+infoods,CARTB,,Beta-carotene equivalents or [beta-carotene],mcg,equivalents_or_as_published,beta_carotene,nutrient,,wafct-2019
+infoods,CARTB,,Beta-carotene,mcg,beta_carotene,beta_carotene,nutrient,,wafct-2019
+infoods,CARTBEQ,,Beta-carotene equivalents or [beta-carotene],mcg,equivalents,beta_carotene,nutrient,,wafct-2019
+infoods,CA,,Calcium,mg,,calcium,nutrient,,wafct-2019
+infoods,CHOAVLDF,,"Carbohydrate, available; calculated by difference",g,available_by_difference,carbohydrate,nutrient,,wafct-2019
+infoods,CHOLE,,Cholesterol,mg,,cholesterol,nutrient,,wafct-2019
+infoods,CU,,Copper,mg,,copper,nutrient,,wafct-2019
+infoods,ENERC,,Energy,kJ,kJ,energy,nutrient,,wafct-2019
+infoods,ENERC,,Energy,kcal,kcal,energy,nutrient,,wafct-2019
+infoods,FIBC,,"Fibre, total dietary or [fibre, crude]",g,crude,fiber,nutrient,,wafct-2019
+infoods,FIBTG,,"Fibre, total dietary or [fibre, crude]",g,TDF,fiber,nutrient,,wafct-2019
+infoods,FE,,Iron,mg,,iron,nutrient,,wafct-2019
+infoods,F18D2CN6,,Linoleic acid,g,,linoleic,nutrient,,wafct-2019
+infoods,MG,,Magnesium,mg,,magnesium,nutrient,,wafct-2019
+infoods,FAMS,,"Fatty acids, total monounsaturated",g,,monounsaturated_fat,nutrient,,wafct-2019
+infoods,P,,Phosphorus,mg,,phosphorus,nutrient,,wafct-2019
+infoods,FAPU,,"Fatty acids, total polyunsaturated",g,,polyunsaturated_fat,nutrient,,wafct-2019
+infoods,K,,Potassium,mg,,potassium,nutrient,,wafct-2019
+infoods,PROTCNT,,"Protein, total",g,,protein,nutrient,N × XN,wafct-2019
+infoods,RETOL,,Retinol,mcg,,retinol,nutrient,,wafct-2019
+infoods,FASAT,,"Fatty acids, total saturated",g,,saturated_fat,nutrient,,wafct-2019
+infoods,NA,,Sodium,mg,,sodium,nutrient,,wafct-2019
+infoods,FAT,,"Fat, total or [fat, derived by analysis using continuous extraction]",g,,total_fat,nutrient,,wafct-2019
+infoods,FATCE,,"Fat, total or [fat, derived by analysis using continuous extraction]",g,FATCE,total_fat,nutrient,method variant,wafct-2019
+infoods,VITA,,Vitamin A (expressed in retinol equivalents),mcg,RE,vit_a,nutrient,β-carotene/6,wafct-2019
+infoods,VITA_RAE,,Vitamin A (expressed in retinol activity equivalents),mcg,RAE,vit_a,nutrient,β-carotene/12,wafct-2019
+infoods,THIA,,Thiamine (vitamin B1),mg,,vit_b1,nutrient,,wafct-2019
+infoods,VITB12,,Vitamin B12,mcg,,vit_b12,nutrient,,wafct-2019
+infoods,RIBF,,Riboflavin (vitamin B2),mg,,vit_b2,nutrient,,wafct-2019
+infoods,NIA,,"Niacin equivalents or [niacin, preformed] (vitamin B3)",mg,NE_or_preformed,vit_b3,nutrient,,wafct-2019
+infoods,NIA,,"Niacin, preformed",mg,preformed,vit_b3,nutrient,,wafct-2019
+infoods,NIAEQ,,"Niacin equivalents or [niacin, preformed] (vitamin B3)",mg,NE,vit_b3,nutrient,,wafct-2019
+infoods,VITB6C,,Vitamin B6,mg,,vit_b6,nutrient,,wafct-2019
+infoods,FOL,,"Folate, total or [folate, sum of vitamers] (vitamin B9)",mcg,total,vit_b9,nutrient,,wafct-2019
+infoods,FOLAC,,Folic acid (synthetic),mcg,folic_acid,vit_b9,nutrient,,wafct-2019
+infoods,FOLDFE,,"Folate, dietary folate equivalents (DFE)",mcg,DFE,vit_b9,nutrient,,wafct-2019
+infoods,FOLFD,,"Folate, naturally occurring (food folate)",mcg,food_folate,vit_b9,nutrient,,wafct-2019
+infoods,FOLSUM,,"Folate, total or [folate, sum of vitamers] (vitamin B9)",mcg,sum_vitamers,vit_b9,nutrient,,wafct-2019
+infoods,VITC,,Vitamin C,mg,,vit_c,nutrient,,wafct-2019
+infoods,VITD,,Vitamin D,mcg,D2+D3,vit_d,nutrient,,wafct-2019
+infoods,TOCPHA,,Vitamin E (expressed in alpha-tocopherol equivalents) or [alpha-tocopherol],mg,ATE_or_alpha,vit_e,nutrient,,wafct-2019
+infoods,TOCPHA,,Alpha-tocopherol,mg,alpha_tocopherol,vit_e,nutrient,,wafct-2019
+infoods,VITE,,Vitamin E (expressed in alpha-tocopherol equivalents) or [alpha-tocopherol],mg,alpha_TE,vit_e,nutrient,,wafct-2019
+infoods,WATER,,Water,g,,water,nutrient,,wafct-2019
+infoods,ZN,,Zinc,mg,,zinc,nutrient,,wafct-2019
+infoods,CARTA,,Alpha-carotene,mcg,,,compound,INFOODS tag kept,wafct-2019
+infoods,CRYPXB,,Beta-cryptoxanthin,mcg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP3,,Inositol triphosphate (IP3),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP4,,Inositol tetraphosphate (IP4),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP5,,Inositol pentaphosphate (IP5),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,IP6,,Inositol hexaphosphate (IP6),mg,,,compound,INFOODS tag kept,wafct-2019
+infoods,PHYTCPP,,"Phytate, total or [phytate, determined by direct precipitation] or [phytate, determined by indirect precipitation]",mg,,,compound,phytate; compound-layer later,wafct-2019
+infoods,PHYTCPPD,,"Phytate, total or [phytate, determined by direct precipitation] or [phytate, determined by indirect precipitation]",mg,,,compound,phytate method variant,wafct-2019
+infoods,PHYTCPPI,,"Phytate, total or [phytate, determined by direct precipitation] or [phytate, determined by indirect precipitation]",mg,,,compound,phytate method variant,wafct-2019
+infoods,TOCPHB,,Beta-tocopherol,mg,beta_tocopherol,vit_e,nutrient,INFOODS tag kept,wafct-2019
+infoods,TOCPHD,,Delta-tocopherol,mg,delta_tocopherol,vit_e,nutrient,INFOODS tag kept,wafct-2019
+infoods,TOCPHG,,Gamma-tocopherol,mg,gamma_tocopherol,vit_e,nutrient,INFOODS tag kept,wafct-2019
+infoods,TRP,,Tryptophan,mg,,tryptophan,nutrient,INFOODS tag kept; promoted 2026-09-28 class B,wafct-2019

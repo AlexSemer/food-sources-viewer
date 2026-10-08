@@ -1,0 +1,228 @@
+family,code,alt_code,source_name,source_unit,expression,nutrient_id,status,notes,source_version
+frida,300,NT,Nitrogen,g/100g,,IGNORE,ignore,not a composition amount,frida-5.5
+frida,432,PH,pH,No Unit,,IGNORE,ignore,not a composition amount,frida-5.5
+frida,417,SUGAD,Added Sugar,g/100g,added,added_sugars,nutrient,,frida-5.5
+frida,19,ALC,Alcohol,g/100g,,alcohol,nutrient,eurofir=ALC,frida-5.5
+frida,33,ASH,Ash,g/100g,,ash,nutrient,eurofir=ASH,frida-5.5
+frida,303,CARTBTRANS,beta-Carotene,µg/100g,trans,beta_carotene,nutrient,eurofir=CARTBTRANS,frida-5.5
+frida,108,CA,Calcium,mg/100g,,calcium,nutrient,eurofir=CA,frida-5.5
+frida,170,CHOT,Carbohydrate by difference,g/100g,by_difference,carbohydrate,nutrient,eurofir=CHOT,frida-5.5
+frida,172,CHO,Available carbohydrates,g/100g,available,carbohydrate,nutrient,eurofir=CHO,frida-5.5
+frida,318,CHO,"Available carbohydrate, labelling",g/100g,available_labelling,carbohydrate,nutrient,eurofir=CHO,frida-5.5
+frida,115,CHORL,Cholesterol,mg/100g,,cholesterol,nutrient,,frida-5.5
+frida,116,CHOLN,Choline,mg/100g,,choline,nutrient,,frida-5.5
+frida,117,CR,Chromium,µg/100g,,chromium,nutrient,eurofir=CR,frida-5.5
+frida,166,CU,Copper,mg/100g,,copper,nutrient,eurofir=CU,frida-5.5
+frida,137,ENERC,Energy (kJ),kJ/100g,metabolisable_kJ,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,316,ENERC,"Energy, labelling (kJ)",kJ/100g,labelling_kJ,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,356,ENERC,Energy (kcal),kcal/100 g,metabolisable_kcal,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,359,ENERC,"Energy, labelling (kcal)",kcal/100 g,labelling_kcal,energy,nutrient,eurofir=ENERC,frida-5.5
+frida,168,FIBT,Dietary fibre,g/100g,TDF,fiber,nutrient,eurofir=FIBT,frida-5.5
+frida,146,FRUS,Fructose,g/100g,,fructose,nutrient,,frida-5.5
+frida,149,GLUS,Glucose,g/100g,,glucose,nutrient,,frida-5.5
+frida,163,ID,Iodine,µg/100g,,iodine,nutrient,,frida-5.5
+frida,162,FE,Iron,mg/100g,,iron,nutrient,eurofir=FE,frida-5.5
+frida,179,LACS,Lactose,g/100g,,lactose,nutrient,,frida-5.5
+frida,184,MG,Magnesium,mg/100g,,magnesium,nutrient,eurofir=MG,frida-5.5
+frida,185,MALS,Maltose,g/100g,,maltose,nutrient,,frida-5.5
+frida,187,MN,Manganese,mg/100g,,manganese,nutrient,eurofir=MN,frida-5.5
+frida,190,MO,Molybdenum,µg/100g,,molybdenum,nutrient,eurofir=MO,frida-5.5
+frida,214,P,Phosphorus,mg/100g,,phosphorus,nutrient,eurofir=P,frida-5.5
+frida,165,K,Potassium,mg/100g,,potassium,nutrient,eurofir=K,frida-5.5
+frida,218,PROT,Protein,g/100g,total,protein,nutrient,eurofir=PROT,frida-5.5
+frida,317,PROT,"Protein, labeling",g/100g,labelling,protein,nutrient,eurofir=PROT,frida-5.5
+frida,421,PROT,Protein from Amino Acids,g/100g,from_amino_acids,protein,nutrient,eurofir=PROT,frida-5.5
+frida,225,RETOLAT,Retinol,µg/100g,,retinol,nutrient,eurofir=RETOLAT,frida-5.5
+frida,327,NACL,Salt labelling,g/100g,labelling,salt,nutrient,eurofir=NACL,frida-5.5
+frida,230,SE,Selenium,µg/100g,,selenium,nutrient,eurofir=SE,frida-5.5
+frida,201,NA,Sodium,mg/100g,,sodium,nutrient,eurofir=NA,frida-5.5
+frida,228,SUCS,Sucrose,g/100g,,sucrose,nutrient,,frida-5.5
+frida,141,FAT,Fat,g/100g,,total_fat,nutrient,eurofir=FAT,frida-5.5
+frida,12,VITA,Vitamin A,RE (µg/100g),RE,vit_a,nutrient,eurofir=VITA,frida-5.5
+frida,36,THIA,Thiamine,mg/100g,,vit_b1,nutrient,eurofir=THIA,frida-5.5
+frida,37,THIA,Thiamin (Vitamin B1),mg/100g,,vit_b1,nutrient,eurofir=THIA,frida-5.5
+frida,38,VITB12,Vitamin B12,µg/100g,,vit_b12,nutrient,eurofir=VITB12,frida-5.5
+frida,39,RIBF,Riboflavin (Vitamin B2),mg/100g,,vit_b2,nutrient,eurofir=RIBF,frida-5.5
+frida,203,NIAEQ,Niacin equivalent,NE,NE,vit_b3,nutrient,eurofir=NIAEQ,frida-5.5
+frida,294,NICOTAC,Niacin,mg/100g,preformed,vit_b3,nutrient,eurofir=NICOTAC,frida-5.5
+frida,210,PANTAC,Pantothenic acid,mg/100g,,vit_b5,nutrient,eurofir=PANTAC,frida-5.5
+frida,40,VITB6,Vitamin B6,mg/100g,,vit_b6,nutrient,eurofir=VITB6,frida-5.5
+frida,42,BIOT,Biotin,µg/100g,,vit_b7,nutrient,eurofir=BIOT,frida-5.5
+frida,143,FOL,Folate,µg/100g,total,vit_b9,nutrient,eurofir=FOL,frida-5.5
+frida,145,FOLFRE,"Folate, free",µg/100g,free,vit_b9,nutrient,eurofir=FOLFRE,frida-5.5
+frida,47,VITC,Vitamin C,mg/100g,,vit_c,nutrient,eurofir=VITC,frida-5.5
+frida,126,VITD,Vitamin D,µg/100g,D2+D3,vit_d,nutrient,eurofir=VITD,frida-5.5
+frida,127,ERGCAL,Vitamin D2,µg/100g,D2,vit_d,nutrient,eurofir=ERGCAL,frida-5.5
+frida,128,CHOCAL,Vitamin D3,µg/100g,D3,vit_d,nutrient,eurofir=CHOCAL,frida-5.5
+frida,135,VITE,Vitamin E,alfa-TE,alpha_TE,vit_e,nutrient,eurofir=VITE,frida-5.5
+frida,276,TOCPHA,alpha-Tocopherol,mg/100g,alpha_tocopherol,vit_e,nutrient,eurofir=TOCPHA,frida-5.5
+frida,164,VITK1,Vitamin K1,µg/100g,K1,vit_k,nutrient,eurofir=VITK1,frida-5.5
+frida,441,VITK2,Vitamin K2,µg/100g,K2,vit_k,nutrient,eurofir=VITK2,frida-5.5
+frida,442,VITK,Vitamin K,µg/100g,total_K,vit_k,nutrient,eurofir=VITK,frida-5.5
+frida,268,WATER,Water,g/100g,,water,nutrient,eurofir=WATER,frida-5.5
+frida,274,ZN,Zinc,mg/100g,,zinc,nutrient,eurofir=ZN,frida-5.5
+frida,100,F24:0,C24:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,101,F24:1CN9,"C24:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,103,F4:0,C4:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,104,F6:0,C6:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,105,F8:0,C8:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,106,CADAVT,Cadaverine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,107,CD,Cadmium,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,11,CHOCALOH,25-hydroxy vitamin D3 ,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,112,CELLU,Cellulose,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,114,CLD,Chloride,mg/100g,,chloride,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,119,CITAC,Citric acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,120,CO,Cobalt,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,121,CAFFN,Caffeine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,123,FIBC,Crude fibre,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,124,CYS,Cystine,mg/100g,,cystine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,125,LACACD,D-lactic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,136,ACEAC,Acetic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,140,FACF,Fatty acid conversion factor,No Unit,,,compound,Frida parameter kept,frida-5.5
+frida,142,FD,Fluoride,µg/100g,,fluoride,nutrient,Frida parameter kept; promoted fluoride,frida-5.5
+frida,148,GALS,Galactose,g/100g,,galactose,nutrient,monosaccharide; not promoted yet (only 5 sugars locked); promoted 2026-09-28 class B,frida-5.5
+frida,150,GLU,Glutamic acid,mg/100g,,glutamic_acid,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,153,GLY,Glycine,mg/100g,,glycine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,158,HISTN,Histamine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,159,HIS,Histidine,mg/100g,,histidine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,161,ILE,Isoleucine,mg/100g,,isoleucine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,17,ALA,Alanine,mg/100g,,alanine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,174,HG,Mercury,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,175,ASCL,Ascorbic acid,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,177,ASCDL,Dehydroascorbic acid,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,178,LACACL,L-lactic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,18,DISAC,Sum disaccharides,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,180,LEU,Leucine,mg/100g,,leucine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,181,LIGN,Lignin,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,183,LYS,Lysine,mg/100g,,lysine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,188,MANTL,Mannitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,189,MET,Methionine,mg/100g,,methionine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,191,MNSAC,Sum monosaccharides,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,192,LACAC,Lactic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,20,AL,Aluminum,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,202,FIBT,Neutral detergent fibre,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,204,NI,Nickel,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,208,OA,Sum organic acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,209,OXALAC,Oxalic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,211,PHE,Phenylalanine,mg/100g,,phenylalanine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,212,PHETN,Phenylethylamine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,216,PRO,Proline,mg/100g,,proline,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,217,PROPAC,Propionic acid,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,219,NCF,Nitrogen conversion factor,No Unit,,,compound,Frida parameter kept,frida-5.5
+frida,221,PUTRSC,Putrescine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,222,RAFS,Raffinose,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,227,RB,Rubidium,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,231,SER,Serine,mg/100g,,serine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,232,SEROTN,Serotonin,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,234,SI,Silicon,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,237,SORTL,Sorbitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,238,SPERDN,Spermidine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,239,SPERN,Spermine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,24,FAUN,Other fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,243,STARCH,Starch/Glycogen,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,244,GRP_SUGOH,Sum sugar alcohols,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,245,SUGAR,Sum sugars,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,247,FAMS,Sum monounsaturated fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,248,FASAT,Sum saturated fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,249,FAN3,Sum n-3 fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,250,FAN6,Sum n-6 fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,251,FAPU,Sum polyunsaturated fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,252,WASTE,Waste,%,,,compound,Frida parameter kept,frida-5.5
+frida,253,S,Sulfur,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,255,TAU,Taurine,mg/100g,,taurine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,258,THR,Threonine,mg/100g,,threonine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,260,SN,Tin,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,261,FATRS,Sum trans fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,262,TRP,Tryptophan,mg/100g,,tryptophan,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,263,TYRA,Tyramine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,264,TYR,Tyrosine,mg/100g,,tyrosine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,265,DRYMAT,Dry matter,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,266,VAL,Valine,mg/100g,,valine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,277,TOCTRA,alpha-Tocotrienol,mg/100g,alpha_tocotrienol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,279,TOCPHB,beta-Tocopherol,mg/100g,beta_tocopherol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,282,TOCPHD,delta-Tocopherol,mg/100g,delta_tocopherol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,286,TOCPHG,gamma-Tocopherol,mg/100g,gamma_tocopherol,vit_e,nutrient,Frida parameter kept,frida-5.5
+frida,31,ARG,Arginine,mg/100g,,arginine,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,32,AS,Arsenic,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,34,ASP,Aspartic acid,mg/100g,,aspartic_acid,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,340,FACID,Sum fatty acids,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,343,MALTL,Maltitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,344,ISOMALT,Isomalt,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,347,F20:1CN9,"C20:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,349,F20:4CN3,"C20:4,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,354,ERGCALOH,25-hydroxy Vitamin D2,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,355,F18:3TRS,"C18:3,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,363,DEN,Density,g/ml,,,compound,Frida parameter kept,frida-5.5
+frida,400,HYP,Hydroxyproline,mg/100g,,hydroxyproline,nutrient,Frida parameter kept; promoted 2026-09-28 class B,frida-5.5
+frida,401,F12:1CIS,"C12:1,n-1",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,409,F21:0,C21:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,41,BENAC,Benzoic acid,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,410,F22:2CN6,"C22:2,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,411,F22:4CN6,"C22:4,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,412,F22:5N6,"C22:5,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,413,F23:0,C23:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,414,FIBINS,Insoluble dietary fibers,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,415,FIBHMWS,High molecular weight soluble dietary fibre ,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,416,FIBLMW,Low molecular weight soluble dietary fibre ,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,418,SUGAR,Free Sugars,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,422,GRP_AM,Sum biogenic amines,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,423,NULL,Ornithine,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,424,NULL,"C20:1,n-15",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,425,F18:1CN12,"C18:1,n-12",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,426,F22:3CN3,"C22:3,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,427,NULL,Sum fatty acids below the detection limit,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,428,F21:5CN3,"C21:5,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,43,PB,Lead,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,430,AAE8,Sum essential amino acids,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,431,NULL,Sum non-essential amino acids,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,433,MK4,Menaquinone 4,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,434,MK5,Menaquinone 5,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,435,MK6,Menaquinone 6,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,436,MK7,Menaquinone 7,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,437,MK8,Menaquinone 8,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,438,MK9,Menaquinone 9,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,439,MK10,Menaquinone 10,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,44,B,Boron,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,440,CARTBCIS,cis-beta-Caroten,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,443,GRP_MIN,Sum minerals,mg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,444,NULL,Residual,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,445,XYLTL,Xylitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,446,LACTL,Lactitol,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,46,BRD,Bromine,µg/100g,,,compound,Frida parameter kept,frida-5.5
+frida,48,F10:0,C10:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,49,F12:0,C12:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,50,F13:0,C13:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,51,F14:0,C14:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,52,F14:1CN5,"C14:1,n-5",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,53,F14:1TN5,"C14:1,n-5,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,56,F15:0,C15:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,57,F15:1CIS,"C15:1,n-5",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,58,F16:0,C16:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,59,F16:1CN7,"C16:1,n-7",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,60,F16:1TN7,"C16:1,n-7,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,63,F17:0,C17:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,64,F17:1CIS,"C17:1,n-7",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,65,F18:0,C18:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,66,F18:1CN7,"C18:1,n-7",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,67,F18:1CN9,"C18:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,70,F18:1TRS,"C18:1,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,71,F18:2CN6,"C18:2,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,72,F18:2CON,"C18:2,conjugated",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,73,F18:2TRS,"C18:2,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,74,F18:3CN3,"C18:3,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,75,F18:3CN6,"C18:3,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,76,F18:4CN3,"C18:4,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,77,F20:0,C20:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,78,F20:1CN11,"C20:1,n-11",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,79,F20:1TRS,"C20:1,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,80,F20:2CN6,"C20:2,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,82,F20:3CN3,"C20:3,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,85,F20:3CN6,"C20:3,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,86,F20:4CN6,"C20:4,n-6",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,87,F20:5CN3,"C20:5,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,89,F22:0,C22:0,g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,90,F22:1CN11,"C22:1,n-11",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,92,F22:1CN9,"C22:1,n-9",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,93,F22:1TRS,"C22:1,trans",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,98,F22:5CN3,"C22:5,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5
+frida,99,F22:6CN3,"C22:6,n-3",g/100g,,,compound,Frida parameter kept,frida-5.5

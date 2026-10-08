@@ -1,0 +1,227 @@
+family,code,alt_code,source_name,source_unit,expression,nutrient_id,status,notes,source_version
+eurofir,NT,300,Nitrogen,g,,IGNORE,ignore,via Frida 300,frida-5.5
+eurofir,PH,432,pH,NULL,,IGNORE,ignore,via Frida 432,frida-5.5
+eurofir,SUGAD,417,Added Sugar,g,added,added_sugars,nutrient,via Frida 417,frida-5.5
+eurofir,ALC,19,Alcohol,g,,alcohol,nutrient,via Frida 19,frida-5.5
+eurofir,ASH,33,Ash,g,,ash,nutrient,via Frida 33,frida-5.5
+eurofir,CARTBTRANS,303,beta-Carotene,ug,trans,beta_carotene,nutrient,via Frida 303,frida-5.5
+eurofir,CA,108,Calcium,mg,,calcium,nutrient,via Frida 108,frida-5.5
+eurofir,CHO,172,Available carbohydrates,g,available,carbohydrate,nutrient,via Frida 172,frida-5.5
+eurofir,CHO,318,"Available carbohydrate, labelling",g,available_labelling,carbohydrate,nutrient,via Frida 318,frida-5.5
+eurofir,CHOT,170,Carbohydrate by difference,g,by_difference,carbohydrate,nutrient,via Frida 170,frida-5.5
+eurofir,CHORL,115,Cholesterol,mg,,cholesterol,nutrient,via Frida 115,frida-5.5
+eurofir,CHOLN,116,Choline,mg,,choline,nutrient,via Frida 116,frida-5.5
+eurofir,CR,117,Chromium,ug,,chromium,nutrient,via Frida 117,frida-5.5
+eurofir,CU,166,Copper,mg,,copper,nutrient,via Frida 166,frida-5.5
+eurofir,ENERC,137,Energy (kJ),kJ,metabolisable_kJ,energy,nutrient,via Frida 137,frida-5.5
+eurofir,ENERC,316,"Energy, labelling (kJ)",kJ,labelling_kJ,energy,nutrient,via Frida 316,frida-5.5
+eurofir,ENERC,356,Energy (kcal),kcal,metabolisable_kcal,energy,nutrient,via Frida 356,frida-5.5
+eurofir,ENERC,359,"Energy, labelling (kcal)",kcal,labelling_kcal,energy,nutrient,via Frida 359,frida-5.5
+eurofir,FIBT,168,Dietary fibre,g,TDF,fiber,nutrient,via Frida 168,frida-5.5
+eurofir,FRUS,146,Fructose,g,,fructose,nutrient,via Frida 146,frida-5.5
+eurofir,GLUS,149,Glucose,g,,glucose,nutrient,via Frida 149,frida-5.5
+eurofir,ID,163,Iodine,ug,,iodine,nutrient,via Frida 163,frida-5.5
+eurofir,FE,162,Iron,mg,,iron,nutrient,via Frida 162,frida-5.5
+eurofir,LACS,179,Lactose,g,,lactose,nutrient,via Frida 179,frida-5.5
+eurofir,MG,184,Magnesium,mg,,magnesium,nutrient,via Frida 184,frida-5.5
+eurofir,MALS,185,Maltose,g,,maltose,nutrient,via Frida 185,frida-5.5
+eurofir,MN,187,Manganese,mg,,manganese,nutrient,via Frida 187,frida-5.5
+eurofir,MO,190,Molybdenum,ug,,molybdenum,nutrient,via Frida 190,frida-5.5
+eurofir,P,214,Phosphorus,mg,,phosphorus,nutrient,via Frida 214,frida-5.5
+eurofir,K,165,Potassium,mg,,potassium,nutrient,via Frida 165,frida-5.5
+eurofir,PROT,218,Protein,g,total,protein,nutrient,via Frida 218,frida-5.5
+eurofir,PROT,421,Protein from Amino Acids,g,from_amino_acids,protein,nutrient,via Frida 421,frida-5.5
+eurofir,PROT,317,"Protein, labeling",g,labelling,protein,nutrient,via Frida 317,frida-5.5
+eurofir,RETOLAT,225,Retinol,ug,,retinol,nutrient,via Frida 225,frida-5.5
+eurofir,NACL,327,Salt labelling,g,labelling,salt,nutrient,via Frida 327,frida-5.5
+eurofir,SE,230,Selenium,ug,,selenium,nutrient,via Frida 230,frida-5.5
+eurofir,NA,201,Sodium,mg,,sodium,nutrient,via Frida 201,frida-5.5
+eurofir,SUCS,228,Sucrose,g,,sucrose,nutrient,via Frida 228,frida-5.5
+eurofir,FAT,141,Fat,g,,total_fat,nutrient,via Frida 141,frida-5.5
+eurofir,VITA,12,Vitamin A,ug,RE,vit_a,nutrient,via Frida 12,frida-5.5
+eurofir,THIA,37,Thiamin (Vitamin B1),mg,,vit_b1,nutrient,via Frida 37; aka Thiamine,frida-5.5
+eurofir,VITB12,38,Vitamin B12,ug,,vit_b12,nutrient,via Frida 38,frida-5.5
+eurofir,RIBF,39,Riboflavin (Vitamin B2),mg,,vit_b2,nutrient,via Frida 39,frida-5.5
+eurofir,NIAEQ,203,Niacin equivalent,mg,NE,vit_b3,nutrient,via Frida 203,frida-5.5
+eurofir,NICOTAC,294,Niacin,mg,preformed,vit_b3,nutrient,via Frida 294,frida-5.5
+eurofir,PANTAC,210,Pantothenic acid,mg,,vit_b5,nutrient,via Frida 210,frida-5.5
+eurofir,VITB6,40,Vitamin B6,mg,,vit_b6,nutrient,via Frida 40,frida-5.5
+eurofir,BIOT,42,Biotin,ug,,vit_b7,nutrient,via Frida 42,frida-5.5
+eurofir,FOL,143,Folate,ug,total,vit_b9,nutrient,via Frida 143,frida-5.5
+eurofir,FOLFRE,145,"Folate, free",ug,free,vit_b9,nutrient,via Frida 145,frida-5.5
+eurofir,VITC,47,Vitamin C,mg,,vit_c,nutrient,via Frida 47,frida-5.5
+eurofir,CHOCAL,128,Vitamin D3,ug,D3,vit_d,nutrient,via Frida 128,frida-5.5
+eurofir,ERGCAL,127,Vitamin D2,ug,D2,vit_d,nutrient,via Frida 127,frida-5.5
+eurofir,VITD,126,Vitamin D,ug,D2+D3,vit_d,nutrient,via Frida 126,frida-5.5
+eurofir,TOCPHA,276,alpha-Tocopherol,mg,alpha_tocopherol,vit_e,nutrient,via Frida 276,frida-5.5
+eurofir,VITE,135,Vitamin E,mg,alpha_TE,vit_e,nutrient,via Frida 135,frida-5.5
+eurofir,VITK,442,Vitamin K,ug,total_K,vit_k,nutrient,via Frida 442,frida-5.5
+eurofir,VITK1,164,Vitamin K1,ug,K1,vit_k,nutrient,via Frida 164,frida-5.5
+eurofir,VITK2,441,Vitamin K2,ug,K2,vit_k,nutrient,via Frida 441,frida-5.5
+eurofir,WATER,268,Water,g,,water,nutrient,via Frida 268,frida-5.5
+eurofir,ZN,274,Zinc,mg,,zinc,nutrient,via Frida 274,frida-5.5
+eurofir,AAE8,430,Sum essential amino acids,mg,,,compound,via Frida 430,frida-5.5
+eurofir,ACEAC,136,Acetic acid,g,,,compound,via Frida 136,frida-5.5
+eurofir,AL,20,Aluminum,mg,,,compound,via Frida 20,frida-5.5
+eurofir,ALA,17,Alanine,mg,,alanine,nutrient,via Frida 17; promoted 2026-09-28 class B,frida-5.5
+eurofir,ARG,31,Arginine,mg,,arginine,nutrient,via Frida 31; promoted 2026-09-28 class B,frida-5.5
+eurofir,AS,32,Arsenic,ug,,,compound,via Frida 32,frida-5.5
+eurofir,ASCDL,177,Dehydroascorbic acid,mg,,,compound,via Frida 177,frida-5.5
+eurofir,ASCL,175,Ascorbic acid,mg,,,compound,via Frida 175,frida-5.5
+eurofir,ASP,34,Aspartic acid,mg,,aspartic_acid,nutrient,via Frida 34; promoted 2026-09-28 class B,frida-5.5
+eurofir,B,44,Boron,ug,,,compound,via Frida 44,frida-5.5
+eurofir,BENAC,41,Benzoic acid,mg,,,compound,via Frida 41,frida-5.5
+eurofir,BRD,46,Bromine,ug,,,compound,via Frida 46,frida-5.5
+eurofir,CADAVT,106,Cadaverine,mg,,,compound,via Frida 106,frida-5.5
+eurofir,CAFFN,121,Caffeine,mg,,,compound,via Frida 121,frida-5.5
+eurofir,CARTBCIS,440,cis-beta-Caroten,ug,,,compound,via Frida 440,frida-5.5
+eurofir,CD,107,Cadmium,ug,,,compound,via Frida 107,frida-5.5
+eurofir,CELLU,112,Cellulose,g,,,compound,via Frida 112,frida-5.5
+eurofir,CHOCALOH,11,25-hydroxy vitamin D3 ,ug,,,compound,via Frida 11,frida-5.5
+eurofir,CITAC,119,Citric acid,g,,,compound,via Frida 119,frida-5.5
+eurofir,CLD,114,Chloride,mg,,chloride,nutrient,via Frida 114; promoted 2026-09-28 class B,frida-5.5
+eurofir,CO,120,Cobalt,ug,,,compound,via Frida 120,frida-5.5
+eurofir,CYS,124,Cystine,mg,,cystine,nutrient,via Frida 124; promoted 2026-09-28 class B,frida-5.5
+eurofir,DEN,363,Density,g,,,compound,via Frida 363,frida-5.5
+eurofir,DISAC,18,Sum disaccharides,g,,,compound,via Frida 18,frida-5.5
+eurofir,DRYMAT,265,Dry matter,g,,,compound,via Frida 265,frida-5.5
+eurofir,ERGCALOH,354,25-hydroxy Vitamin D2,ug,,,compound,via Frida 354,frida-5.5
+eurofir,F10:0,48,C10:0,g,,,compound,via Frida 48,frida-5.5
+eurofir,F12:0,49,C12:0,g,,,compound,via Frida 49,frida-5.5
+eurofir,F12:1CIS,401,"C12:1,n-1",g,,,compound,via Frida 401,frida-5.5
+eurofir,F13:0,50,C13:0,g,,,compound,via Frida 50,frida-5.5
+eurofir,F14:0,51,C14:0,g,,,compound,via Frida 51,frida-5.5
+eurofir,F14:1CN5,52,"C14:1,n-5",g,,,compound,via Frida 52,frida-5.5
+eurofir,F14:1TN5,53,"C14:1,n-5,trans",g,,,compound,via Frida 53,frida-5.5
+eurofir,F15:0,56,C15:0,g,,,compound,via Frida 56,frida-5.5
+eurofir,F15:1CIS,57,"C15:1,n-5",g,,,compound,via Frida 57,frida-5.5
+eurofir,F16:0,58,C16:0,g,,,compound,via Frida 58,frida-5.5
+eurofir,F16:1CN7,59,"C16:1,n-7",g,,,compound,via Frida 59,frida-5.5
+eurofir,F16:1TN7,60,"C16:1,n-7,trans",g,,,compound,via Frida 60,frida-5.5
+eurofir,F17:0,63,C17:0,g,,,compound,via Frida 63,frida-5.5
+eurofir,F17:1CIS,64,"C17:1,n-7",g,,,compound,via Frida 64,frida-5.5
+eurofir,F18:0,65,C18:0,g,,,compound,via Frida 65,frida-5.5
+eurofir,F18:1CN12,425,"C18:1,n-12",g,,,compound,via Frida 425,frida-5.5
+eurofir,F18:1CN7,66,"C18:1,n-7",g,,,compound,via Frida 66,frida-5.5
+eurofir,F18:1CN9,67,"C18:1,n-9",g,,,compound,via Frida 67,frida-5.5
+eurofir,F18:1TRS,70,"C18:1,trans",g,,,compound,via Frida 70,frida-5.5
+eurofir,F18:2CN6,71,"C18:2,n-6",g,,,compound,via Frida 71,frida-5.5
+eurofir,F18:2CON,72,"C18:2,conjugated",g,,,compound,via Frida 72,frida-5.5
+eurofir,F18:2TRS,73,"C18:2,trans",g,,,compound,via Frida 73,frida-5.5
+eurofir,F18:3CN3,74,"C18:3,n-3",g,,,compound,via Frida 74,frida-5.5
+eurofir,F18:3CN6,75,"C18:3,n-6",g,,,compound,via Frida 75,frida-5.5
+eurofir,F18:3TRS,355,"C18:3,trans",g,,,compound,via Frida 355,frida-5.5
+eurofir,F18:4CN3,76,"C18:4,n-3",g,,,compound,via Frida 76,frida-5.5
+eurofir,F20:0,77,C20:0,g,,,compound,via Frida 77,frida-5.5
+eurofir,F20:1CN11,78,"C20:1,n-11",g,,,compound,via Frida 78,frida-5.5
+eurofir,F20:1CN9,347,"C20:1,n-9",g,,,compound,via Frida 347,frida-5.5
+eurofir,F20:1TRS,79,"C20:1,trans",g,,,compound,via Frida 79,frida-5.5
+eurofir,F20:2CN6,80,"C20:2,n-6",g,,,compound,via Frida 80,frida-5.5
+eurofir,F20:3CN3,82,"C20:3,n-3",g,,,compound,via Frida 82,frida-5.5
+eurofir,F20:3CN6,85,"C20:3,n-6",g,,,compound,via Frida 85,frida-5.5
+eurofir,F20:4CN3,349,"C20:4,n-3",g,,,compound,via Frida 349,frida-5.5
+eurofir,F20:4CN6,86,"C20:4,n-6",g,,,compound,via Frida 86,frida-5.5
+eurofir,F20:5CN3,87,"C20:5,n-3",g,,,compound,via Frida 87,frida-5.5
+eurofir,F21:0,409,C21:0,g,,,compound,via Frida 409,frida-5.5
+eurofir,F21:5CN3,428,"C21:5,n-3",g,,,compound,via Frida 428,frida-5.5
+eurofir,F22:0,89,C22:0,g,,,compound,via Frida 89,frida-5.5
+eurofir,F22:1CN11,90,"C22:1,n-11",g,,,compound,via Frida 90,frida-5.5
+eurofir,F22:1CN9,92,"C22:1,n-9",g,,,compound,via Frida 92,frida-5.5
+eurofir,F22:1TRS,93,"C22:1,trans",g,,,compound,via Frida 93,frida-5.5
+eurofir,F22:2CN6,410,"C22:2,n-6",g,,,compound,via Frida 410,frida-5.5
+eurofir,F22:3CN3,426,"C22:3,n-3",g,,,compound,via Frida 426,frida-5.5
+eurofir,F22:4CN6,411,"C22:4,n-6",g,,,compound,via Frida 411,frida-5.5
+eurofir,F22:5CN3,98,"C22:5,n-3",g,,,compound,via Frida 98,frida-5.5
+eurofir,F22:5N6,412,"C22:5,n-6",g,,,compound,via Frida 412,frida-5.5
+eurofir,F22:6CN3,99,"C22:6,n-3",g,,,compound,via Frida 99,frida-5.5
+eurofir,F23:0,413,C23:0,g,,,compound,via Frida 413,frida-5.5
+eurofir,F24:0,100,C24:0,g,,,compound,via Frida 100,frida-5.5
+eurofir,F24:1CN9,101,"C24:1,n-9",g,,,compound,via Frida 101,frida-5.5
+eurofir,F4:0,103,C4:0,g,,,compound,via Frida 103,frida-5.5
+eurofir,F6:0,104,C6:0,g,,,compound,via Frida 104,frida-5.5
+eurofir,F8:0,105,C8:0,g,,,compound,via Frida 105,frida-5.5
+eurofir,FACF,140,Fatty acid conversion factor,R,,,compound,via Frida 140,frida-5.5
+eurofir,FACID,340,Sum fatty acids,g,,,compound,via Frida 340,frida-5.5
+eurofir,FAMS,247,Sum monounsaturated fatty acids,g,,,compound,via Frida 247,frida-5.5
+eurofir,FAN3,249,Sum n-3 fatty acids,g,,,compound,via Frida 249,frida-5.5
+eurofir,FAN6,250,Sum n-6 fatty acids,g,,,compound,via Frida 250,frida-5.5
+eurofir,FAPU,251,Sum polyunsaturated fatty acids,g,,,compound,via Frida 251,frida-5.5
+eurofir,FASAT,248,Sum saturated fatty acids,g,,,compound,via Frida 248,frida-5.5
+eurofir,FATRS,261,Sum trans fatty acids,g,,,compound,via Frida 261,frida-5.5
+eurofir,FAUN,24,Other fatty acids,g,,,compound,via Frida 24,frida-5.5
+eurofir,FD,142,Fluoride,ug,,fluoride,nutrient,via Frida 142; promoted fluoride,frida-5.5
+eurofir,FIBC,123,Crude fibre,g,,,compound,via Frida 123,frida-5.5
+eurofir,FIBHMWS,415,High molecular weight soluble dietary fibre ,g,,,compound,via Frida 415,frida-5.5
+eurofir,FIBINS,414,Insoluble dietary fibers,g,,,compound,via Frida 414,frida-5.5
+eurofir,FIBLMW,416,Low molecular weight soluble dietary fibre ,g,,,compound,via Frida 416,frida-5.5
+eurofir,FIBT,202,Neutral detergent fibre,g,,,compound,via Frida 202,frida-5.5
+eurofir,GALS,148,Galactose,g,,galactose,nutrient,via Frida 148; promoted 2026-09-28 class B,frida-5.5
+eurofir,GLU,150,Glutamic acid,mg,,glutamic_acid,nutrient,via Frida 150; promoted 2026-09-28 class B,frida-5.5
+eurofir,GLY,153,Glycine,mg,,glycine,nutrient,via Frida 153; promoted 2026-09-28 class B,frida-5.5
+eurofir,GRP_AM,422,Sum biogenic amines,mg,,,compound,via Frida 422,frida-5.5
+eurofir,GRP_MIN,443,Sum minerals,mg,,,compound,via Frida 443,frida-5.5
+eurofir,GRP_SUGOH,244,Sum sugar alcohols,g,,,compound,via Frida 244,frida-5.5
+eurofir,HG,174,Mercury,ug,,,compound,via Frida 174,frida-5.5
+eurofir,HIS,159,Histidine,mg,,histidine,nutrient,via Frida 159; promoted 2026-09-28 class B,frida-5.5
+eurofir,HISTN,158,Histamine,mg,,,compound,via Frida 158,frida-5.5
+eurofir,HYP,400,Hydroxyproline,mg,,hydroxyproline,nutrient,via Frida 400; promoted 2026-09-28 class B,frida-5.5
+eurofir,ILE,161,Isoleucine,mg,,isoleucine,nutrient,via Frida 161; promoted 2026-09-28 class B,frida-5.5
+eurofir,ISOMALT,344,Isomalt,g,,,compound,via Frida 344,frida-5.5
+eurofir,LACAC,192,Lactic acid,g,,,compound,via Frida 192,frida-5.5
+eurofir,LACACD,125,D-lactic acid,g,,,compound,via Frida 125,frida-5.5
+eurofir,LACACL,178,L-lactic acid,g,,,compound,via Frida 178,frida-5.5
+eurofir,LACTL,446,Lactitol,g,,,compound,via Frida 446,frida-5.5
+eurofir,LEU,180,Leucine,mg,,leucine,nutrient,via Frida 180; promoted 2026-09-28 class B,frida-5.5
+eurofir,LIGN,181,Lignin,g,,,compound,via Frida 181,frida-5.5
+eurofir,LYS,183,Lysine,mg,,lysine,nutrient,via Frida 183; promoted 2026-09-28 class B,frida-5.5
+eurofir,MALTL,343,Maltitol,g,,,compound,via Frida 343,frida-5.5
+eurofir,MANTL,188,Mannitol,g,,,compound,via Frida 188,frida-5.5
+eurofir,MET,189,Methionine,mg,,methionine,nutrient,via Frida 189; promoted 2026-09-28 class B,frida-5.5
+eurofir,MK10,439,Menaquinone 10,ug,,,compound,via Frida 439,frida-5.5
+eurofir,MK4,433,Menaquinone 4,ug,,,compound,via Frida 433,frida-5.5
+eurofir,MK5,434,Menaquinone 5,ug,,,compound,via Frida 434,frida-5.5
+eurofir,MK6,435,Menaquinone 6,ug,,,compound,via Frida 435,frida-5.5
+eurofir,MK7,436,Menaquinone 7,ug,,,compound,via Frida 436,frida-5.5
+eurofir,MK8,437,Menaquinone 8,ug,,,compound,via Frida 437,frida-5.5
+eurofir,MK9,438,Menaquinone 9,ug,,,compound,via Frida 438,frida-5.5
+eurofir,MNSAC,191,Sum monosaccharides,g,,,compound,via Frida 191,frida-5.5
+eurofir,NCF,219,Nitrogen conversion factor,R,,,compound,via Frida 219,frida-5.5
+eurofir,NI,204,Nickel,ug,,,compound,via Frida 204,frida-5.5
+eurofir,424,424,"C20:1,n-15",g,,,compound,"via Frida 424; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,427,427,Sum fatty acids below the detection limit,g,,,compound,"via Frida 427; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,423,423,Ornithine,mg,,,compound,"via Frida 423; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,431,431,Sum non-essential amino acids,mg,,,compound,"via Frida 431; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,444,444,Residual,g,,,compound,"via Frida 444; eurofir id was NULL, code=Frida ParameterID",frida-5.5
+eurofir,OA,208,Sum organic acids,g,,,compound,via Frida 208,frida-5.5
+eurofir,OXALAC,209,Oxalic acid,g,,,compound,via Frida 209,frida-5.5
+eurofir,PB,43,Lead,ug,,,compound,via Frida 43,frida-5.5
+eurofir,PHE,211,Phenylalanine,mg,,phenylalanine,nutrient,via Frida 211; promoted 2026-09-28 class B,frida-5.5
+eurofir,PHETN,212,Phenylethylamine,mg,,,compound,via Frida 212,frida-5.5
+eurofir,PRO,216,Proline,mg,,proline,nutrient,via Frida 216; promoted 2026-09-28 class B,frida-5.5
+eurofir,PROPAC,217,Propionic acid,g,,,compound,via Frida 217,frida-5.5
+eurofir,PUTRSC,221,Putrescine,mg,,,compound,via Frida 221,frida-5.5
+eurofir,RAFS,222,Raffinose,g,,,compound,via Frida 222,frida-5.5
+eurofir,RB,227,Rubidium,ug,,,compound,via Frida 227,frida-5.5
+eurofir,S,253,Sulfur,mg,,,compound,via Frida 253,frida-5.5
+eurofir,SER,231,Serine,mg,,serine,nutrient,via Frida 231; promoted 2026-09-28 class B,frida-5.5
+eurofir,SEROTN,232,Serotonin,mg,,,compound,via Frida 232,frida-5.5
+eurofir,SI,234,Silicon,mg,,,compound,via Frida 234,frida-5.5
+eurofir,SN,260,Tin,ug,,,compound,via Frida 260,frida-5.5
+eurofir,SORTL,237,Sorbitol,g,,,compound,via Frida 237,frida-5.5
+eurofir,SPERDN,238,Spermidine,mg,,,compound,via Frida 238,frida-5.5
+eurofir,SPERN,239,Spermine,mg,,,compound,via Frida 239,frida-5.5
+eurofir,STARCH,243,Starch/Glycogen,g,,,compound,via Frida 243,frida-5.5
+eurofir,SUGAR,245,Sum sugars,g,total,sugars,nutrient,via Frida 245; critic follow-up SUGAR split,frida-5.5
+eurofir,SUGAR,418,Free Sugars,g,free,sugars,nutrient,via Frida 418; critic follow-up SUGAR split,frida-5.5
+eurofir,TAU,255,Taurine,mg,,taurine,nutrient,via Frida 255; promoted 2026-09-28 class B,frida-5.5
+eurofir,THR,258,Threonine,mg,,threonine,nutrient,via Frida 258; promoted 2026-09-28 class B,frida-5.5
+eurofir,TOCPHB,279,beta-Tocopherol,mg,beta_tocopherol,vit_e,nutrient,via Frida 279,frida-5.5
+eurofir,TOCPHD,282,delta-Tocopherol,mg,delta_tocopherol,vit_e,nutrient,via Frida 282,frida-5.5
+eurofir,TOCPHG,286,gamma-Tocopherol,mg,gamma_tocopherol,vit_e,nutrient,via Frida 286,frida-5.5
+eurofir,TOCTRA,277,alpha-Tocotrienol,mg,alpha_tocotrienol,vit_e,nutrient,via Frida 277,frida-5.5
+eurofir,TRP,262,Tryptophan,mg,,tryptophan,nutrient,via Frida 262; promoted 2026-09-28 class B,frida-5.5
+eurofir,TYR,264,Tyrosine,mg,,tyrosine,nutrient,via Frida 264; promoted 2026-09-28 class B,frida-5.5
+eurofir,TYRA,263,Tyramine,mg,,,compound,via Frida 263,frida-5.5
+eurofir,VAL,266,Valine,mg,,valine,nutrient,via Frida 266; promoted 2026-09-28 class B,frida-5.5
+eurofir,WASTE,252,Waste,PCT,,,compound,via Frida 252,frida-5.5
+eurofir,XYLTL,445,Xylitol,g,,,compound,via Frida 445,frida-5.5

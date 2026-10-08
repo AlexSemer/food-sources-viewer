@@ -1,7 +1,7 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
-import { getSource, sources, type SourceDef } from "@fsv/shared";
+import { getSource, presetOf, sources, withPreset, type SourceDef } from "@fsv/shared";
 import {
   all,
   cappedCount,
@@ -18,6 +18,7 @@ import {
 } from "./db.ts";
 import { compositeCsv, compositeMeta, compositePage } from "./composite.ts";
 import { relationsFor } from "./relations.ts";
+import { storeFoodAmounts } from "./composite-store.ts";
 
 const PORT = Number(process.env.PORT ?? 3001);
 
@@ -162,7 +163,7 @@ function relatedFor(info: DbInfo, source: SourceDef, food: Record<string, unknow
   return out;
 }
 
-function foodDetail(source: SourceDef, foodId: string) {
+function foodDetail(source: SourceDef, foodId: string, presetId: string | null = null) {
   const info = openDb(source.id);
   const cols = info.tables.get(source.foodTable);
   if (!cols) throw httpError(500, `foodTable ${source.foodTable} is missing from ${source.dbFile}`);
@@ -206,6 +207,9 @@ function foodDetail(source: SourceDef, foodId: string) {
       p[1],
     );
   }
+  // NUTRI store: every amount row of the food in the preset's amount table, plus the raw viewer entry.
+  const preset = presetOf(source, presetId);
+  const store = preset ? storeFoodAmounts(info, preset, food[source.foodIdField]) : undefined;
   return {
     source,
     idField: source.foodIdField,
@@ -213,6 +217,9 @@ function foodDetail(source: SourceDef, foodId: string) {
     food,
     otherMatches: sameId.length ? sameId[0].total - 1 : 0,
     nutrients,
+    preset: preset ? { id: preset.id, label: preset.label, amountTable: preset.amountTable } : undefined,
+    amounts: store?.amounts,
+    raw: store?.raw,
     related: [...sameId, ...relatedFor(info, source, food)],
   };
 }
@@ -327,8 +334,9 @@ function handle(req: IncomingMessage, res: ServerResponse): void {
 
     if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "tables" && !parts[4]) {
       const info = openDb(parts[2]);
+      const s = getSource(parts[2]);
       json(res, 200, {
-        source: getSource(parts[2]),
+        source: s && withPreset(s, url.searchParams.get("preset")),
         meta: info.meta,
         // Row counts come from `_meta.counts` (written at ingest), so no COUNT(*) on big tables here.
         tables: [...info.tables].map(([name, cols]) => ({ name, rows: rowCount(info, name), columns: cols.length })),
@@ -344,14 +352,15 @@ function handle(req: IncomingMessage, res: ServerResponse): void {
     if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "foods" && !parts[4]) {
       const source = getSource(parts[2]);
       if (!source) throw httpError(404, "unknown source");
-      json(res, 200, listFoods(source, url));
+      json(res, 200, listFoods(withPreset(source, url.searchParams.get("preset")), url));
       return;
     }
 
     if (parts[0] === "api" && parts[1] === "sources" && parts[2] && parts[3] === "foods" && parts[4]) {
       const source = getSource(parts[2]);
       if (!source) throw httpError(404, "unknown source");
-      json(res, 200, foodDetail(source, parts[4]));
+      const preset = url.searchParams.get("preset");
+      json(res, 200, foodDetail(withPreset(source, preset), parts[4], preset));
       return;
     }
 

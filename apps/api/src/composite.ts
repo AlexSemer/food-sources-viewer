@@ -32,6 +32,7 @@ function filtersOf(url: URL): Filters {
     mode: p.get("mode") ?? "",
     agg: ["avg", "min", "max", "n"].includes(agg) ? agg : "avg",
     full: false,
+    preset: p.get("preset") ?? "",
   };
 }
 
@@ -199,7 +200,7 @@ export async function compositeCsv(sourceId: string, url: URL, req: IncomingMess
   const stmt = ctx.db.prepare(q.sql);
   const iter = stmt.iterate(...q.params) as IterableIterator<{ r: number }>;
 
-  const parts = [sourceId, "composite", ctx.f.type, ctx.f.mode, ctx.f.cat && `cat-${ctx.f.cat}`, ctx.f.sub && `sub-${ctx.f.sub}`, ctx.f.q && `q-${ctx.f.q}`];
+  const parts = [sourceId, "composite", ctx.f.preset, ctx.f.type, ctx.f.mode, ctx.f.cat && `cat-${ctx.f.cat}`, ctx.f.sub && `sub-${ctx.f.sub}`, ctx.f.q && `q-${ctx.f.q}`];
   const filename = `${safeFilename(parts.filter(Boolean).join("_"))}.csv`;
   res.writeHead(200, {
     "content-type": "text/csv; charset=utf-8",

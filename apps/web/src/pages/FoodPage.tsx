@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { getJson } from "../api";
 
 type Related = {
@@ -28,8 +28,17 @@ type FoodRes = {
     median: number | null;
     footnote: string | null;
   }[];
+  /** NUTRI store: the preset read, every amount row of the food, and the same food in the raw source's viewer. */
+  preset?: { id: string; label: string; amountTable: string };
+  amounts?: Record<string, unknown>[];
+  raw?: { sourceId: string; foodId: string };
   related: Related[];
 };
+
+const AMOUNT_COLS = [
+  "code", "code_alt", "nutrient_id", "compound_id", "name", "expression", "headline", "amount", "amount_unit", "basis", "is_empty",
+  "amount_canonical", "canonical_unit", "derivation", "footnote", "n", "min", "max", "median", "citation_id", "method_text",
+];
 
 const cell = (v: unknown) => (v == null ? "" : String(v));
 
@@ -93,6 +102,8 @@ function RelatedBlock({ sourceId, rel, value }: { sourceId: string; rel: Related
 
 export function FoodPage() {
   const { sourceId, foodId } = useParams();
+  const preset = useSearchParams()[0].get("preset") ?? "";
+  const presetQs = preset ? `?preset=${encodeURIComponent(preset)}` : "";
   const [data, setData] = useState<FoodRes | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -100,10 +111,10 @@ export function FoodPage() {
     if (!sourceId || !foodId) return;
     setData(null);
     setError(null);
-    getJson<FoodRes>(`/api/sources/${encodeURIComponent(sourceId)}/foods/${encodeURIComponent(foodId)}`)
+    getJson<FoodRes>(`/api/sources/${encodeURIComponent(sourceId)}/foods/${encodeURIComponent(foodId)}${presetQs}`)
       .then(setData)
       .catch((e: Error) => setError(e.message));
-  }, [sourceId, foodId]);
+  }, [sourceId, foodId, presetQs]);
 
   if (error) return <p className="error">{error}</p>;
   if (!data || !sourceId) return <p>Loading…</p>;
@@ -112,18 +123,60 @@ export function FoodPage() {
   return (
     <>
       <p>
-        <Link to={`/s/${sourceId}`}>{data.source.label}</Link>
+        <Link to={`/s/${sourceId}${presetQs}`}>{data.source.label}</Link>
         <span className="badge">{data.source.version}</span>
+        {data.preset ? <span className="badge">{data.preset.label}</span> : null}
       </p>
       <h1>{cell(data.food[data.nameField]) || foodId}</h1>
       <p className="muted">
         {data.source.foodTable}.{data.idField} {id}
         {data.otherMatches > 0 ? ` · ${data.otherMatches} more rows share this ${data.idField} (listed below)` : ""}
       </p>
-      <p className="muted">Values exactly as this source publishes them. No mapping.</p>
+      {data.amounts ? (
+        <p className="muted">
+          Rows of {data.preset?.amountTable}, mapped through nutrient_code (docs/store-schema.md).
+          {data.raw ? (
+            <>
+              {" "}
+              Same food in the raw source: <Link to={`/s/${data.raw.sourceId}/foods/${encodeURIComponent(data.raw.foodId)}`}>{data.raw.sourceId} {data.raw.foodId}</Link>
+            </>
+          ) : null}
+        </p>
+      ) : (
+        <p className="muted">Values exactly as this source publishes them. No mapping.</p>
+      )}
 
       <h2>{data.source.foodTable} row</h2>
       <RecordTable row={data.food} />
+
+      {data.amounts ? (
+        <>
+          <h2>
+            {data.preset?.amountTable} ({data.amounts.length})
+          </h2>
+          <p className="muted">headline: 1 = the headline ticket of that nutrient (HEADLINES.md), 0 = another expression, empty = no headline defined.</p>
+          <div style={{ overflowX: "auto" }}>
+            <table>
+              <thead>
+                <tr>
+                  {AMOUNT_COLS.map((c) => (
+                    <th key={c}>{c}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {data.amounts.map((a, i) => (
+                  <tr key={i}>
+                    {AMOUNT_COLS.map((c) => (
+                      <td key={c}>{cell(c === "name" ? (a.nutrient_name ?? a.source_name) : a[c])}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      ) : null}
 
       {data.nutrients ? (
         <>

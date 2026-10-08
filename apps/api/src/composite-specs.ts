@@ -17,7 +17,7 @@ import type { SourceDef } from "@fsv/shared";
 import { qi, type DbInfo } from "./db.ts";
 
 export type Agg = "avg" | "min" | "max" | "n";
-export type Filters = { q: string; cat: string; sub: string; type: string; mode: string; agg: Agg; full: boolean };
+export type Filters = { q: string; cat: string; sub: string; type: string; mode: string; agg: Agg; full: boolean; preset: string };
 export type Value = string | number | null;
 export type Row = Record<string, Value>;
 export type Column = {

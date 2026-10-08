@@ -16,7 +16,8 @@ export type SourceId =
   | "fao-supplement"
   | "fao-density"
   | "frida"
-  | "foodb";
+  | "foodb"
+  | "store";
 
 /** Display-only lookup: adds column `as` = `table.value` where `table.key` = food.`foodField`. */
 export type FoodJoin = {
@@ -38,6 +39,27 @@ export type FoodRelated = {
   foodField?: string;
   limit?: number;
   exclude?: string[];
+};
+
+/**
+ * One dataset inside a multi-dataset db (the NUTRI store, docs/store-schema.md): a food table and its amount
+ * table. A preset only says which pair is read; two presets are never mixed.
+ */
+export type SourcePreset = {
+  id: string;
+  label: string;
+  foodTable: string;
+  amountTable: string;
+  foodIdField: string;
+  foodNameField: string;
+  foodListFields?: string[];
+  /** nutrient_code.family / source_version of this dataset's tickets. */
+  family: string;
+  codeVersion: string;
+  /** Existing raw viewer entry with the same food ids (food page link). */
+  rawSourceId?: SourceId;
+  /** Headline ticket per Nutrient (docs/decisions/HEADLINES.md); a Nutrient without one has no headline marker. */
+  headlines?: Record<string, { code: string; expression: string }>;
 };
 
 export type SourceDef = {
@@ -65,6 +87,8 @@ export type SourceDef = {
   foodRelated?: FoodRelated[];
   /** USDA FDC layout: food page lists food_nutrient joined to nutrient. */
   usdaNutrients?: boolean;
+  /** Datasets behind a dropdown (?preset=); the first is the default. foodTable etc. are the default's. */
+  presets?: SourcePreset[];
 };
 
 const usda = (
@@ -328,8 +352,63 @@ export const sources: SourceDef[] = [
     foodListFields: ["public_id", "name_scientific", "food_group", "food_subgroup"],
     foodRelated: [{ table: "*", field: "food_id", limit: 200 }],
   },
+  {
+    id: "store",
+    label: "NUTRI store (schema v1)",
+    version: "v1",
+    dbFile: "store.sqlite",
+    datasourcesDir: "",
+    implemented: true,
+    // Default preset (usda_foundation); the food page lists the amount rows itself, so no generic related scan.
+    foodTable: "usda_foundation_food",
+    foodIdField: "fdc_id",
+    foodNameField: "name",
+    foodListFields: ["group_code", "n_factor"],
+    foodRelated: [],
+    presets: [
+      {
+        id: "usda_foundation",
+        label: "USDA Foundation 2026-04-30",
+        foodTable: "usda_foundation_food",
+        amountTable: "usda_foundation_amount",
+        foodIdField: "fdc_id",
+        foodNameField: "name",
+        foodListFields: ["group_code", "n_factor"],
+        family: "usda",
+        codeVersion: "foundation-2026-04-30",
+        rawSourceId: "usda-foundation",
+        headlines: {
+          energy: { code: "208", expression: "" },
+          vit_a: { code: "320", expression: "RAE" },
+          vit_b9: { code: "435", expression: "DFE" },
+          vit_e: { code: "323", expression: "alpha_tocopherol" },
+        },
+      },
+    ],
+  },
 ];
 
 export function getSource(id: string): SourceDef | undefined {
   return sources.find((s) => s.id === id);
+}
+
+/** The named preset of a source (default: the first); undefined for sources without presets or an unknown id. */
+export function presetOf(source: SourceDef, presetId?: string | null): SourcePreset | undefined {
+  if (!source.presets?.length) return undefined;
+  if (!presetId) return source.presets[0];
+  return source.presets.find((p) => p.id === presetId);
+}
+
+/** The source as seen through one preset: foodTable / ids / names come from that preset. Others are returned as is. */
+export function withPreset(source: SourceDef, presetId?: string | null): SourceDef {
+  if (!source.presets?.length) return source;
+  const p = presetOf(source, presetId);
+  if (!p) throw Object.assign(new Error(`unknown preset: ${presetId}`), { status: 400 });
+  return {
+    ...source,
+    foodTable: p.foodTable,
+    foodIdField: p.foodIdField,
+    foodNameField: p.foodNameField,
+    foodListFields: p.foodListFields,
+  };
 }

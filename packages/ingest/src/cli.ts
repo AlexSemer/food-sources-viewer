@@ -10,6 +10,7 @@ import { ingestFoodb } from "./foodb.ts";
 import { xlsxLoader, xlsxSourceIds } from "./xlsxSources.ts";
 import { prepareExisting } from "./compositePrep.ts";
 import { writeRelations } from "./relationsCache.ts";
+import { runStore } from "./store/run.ts";
 
 const implemented: Partial<Record<SourceId, () => Promise<FinalizeResult>>> = {
   "usda-foundation": ingestUsdaFoundation,
@@ -30,6 +31,31 @@ function fmtBytes(n: number): string {
 
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
+  // NUTRI store (docs/store-schema.md): store [dataset...]  -> data/store.sqlite, built from the existing source dbs.
+  if (args[0] === "store") {
+    const t0 = Date.now();
+    console.log(`\n=== store: ${getSource("store")!.label} ===`);
+    let result: Result;
+    try {
+      const res = await runStore(args.slice(1));
+      result = { id: "store", ok: true, seconds: (Date.now() - t0) / 1000, bytes: res.bytes, tables: Object.keys(res.counts).length };
+      console.log(`wrote ${res.path} (${fmtBytes(res.bytes)}) in ${result.seconds.toFixed(1)}s`);
+      for (const [t, n] of Object.entries(res.counts)) console.log(`  ${t.padEnd(26)} ${n}`);
+      try {
+        const doc = writeRelations(getSource("store")!);
+        console.log(`relations: ${doc.edges.length} joins (${doc.ms} ms)`);
+      } catch (err) {
+        console.warn(`relations failed (the API computes them on demand): ${err instanceof Error ? err.message : err}`);
+      }
+    } catch (err) {
+      result = { id: "store", ok: false, seconds: (Date.now() - t0) / 1000, error: err instanceof Error ? err.message : String(err) };
+      console.error(`FAILED store: ${result.error}`);
+    }
+    mkdirSync(join(dataRoot, "logs"), { recursive: true });
+    appendFileSync(join(dataRoot, "logs", "ingest-runs.jsonl"), JSON.stringify({ at: new Date().toISOString(), ...result }) + "\n");
+    if (!result.ok) process.exit(1);
+    return;
+  }
   // Maintenance subcommands on existing dbs (no re-ingest):
   //   prep <ids|all>       composite-view indexes / helper tables (compositePrep.ts)
   //   relations <ids|all>  recompute the relationship map cache data/_relations/<id>.json
@@ -56,6 +82,7 @@ async function main(): Promise<void> {
     console.log("Usage: npm run ingest -- <source-id...|all>");
     console.log("       npm run ingest -- prep <source-id...|all>        (composite-view indexes on existing dbs)");
     console.log("       npm run ingest -- relations <source-id...|all>   (recompute the relationship maps)");
+    console.log("       npm run ingest -- store [usda-foundation]        (NUTRI store, data/store.sqlite)");
     console.log(
       sources.map((s) => `  ${s.id.padEnd(20)} ${implemented[s.id] ? "ready" : "stub"}`).join("\n"),
     );

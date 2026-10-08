@@ -7,7 +7,7 @@ import { layoutKey, useStoredState } from "../layout";
 /**
  * Composite view: one row per "main food" of the source with identity columns, one column per
  * nutrient / component ("Name (unit)", alphabetical) and summaries of related rows. Pages are pivoted on
- * the server; filters live in the URL (?view=composite&q=&cat=&sub=&type=&mode=&agg=&page=).
+ * the server; filters live in the URL (?view=composite&preset=&q=&cat=&sub=&type=&mode=&agg=&page=).
  */
 
 type Column = {
@@ -48,7 +48,7 @@ type Page = {
 type Picker = { mode?: "page" | "all" | "custom"; keys?: string[] };
 
 const PAGE_SIZE = 50;
-const FILTER_KEYS = ["q", "cat", "sub", "type", "mode", "agg"] as const;
+const FILTER_KEYS = ["preset", "q", "cat", "sub", "type", "mode", "agg"] as const;
 
 const fmt = (n: number) => n.toLocaleString("en-US");
 const optLabel = (o: Option) => (o.count != null ? `${o.label} (${fmt(o.count)})` : o.label);
@@ -62,6 +62,8 @@ export function Composite({ sourceId }: { sourceId: string }) {
   const type = get("type");
   const mode = get("mode");
   const agg = get("agg");
+  const preset = get("preset");
+  const layoutTable = `composite:${preset ? `${preset}:` : ""}${mode || "default"}`;
   const page = Math.max(1, Number(get("page")) || 1);
 
   const [meta, setMeta] = useState<Meta | null>(null);
@@ -72,7 +74,7 @@ export function Composite({ sourceId }: { sourceId: string }) {
   const [pickerFilter, setPickerFilter] = useState("");
   const [csvCols, setCsvCols] = useState<"all" | "shown">("all");
   const [csvSep, setCsvSep] = useState<"," | ";">(",");
-  const [picker, setPicker] = useStoredState<Picker>(layoutKey(sourceId, `composite:${mode || "default"}`, "picker"));
+  const [picker, setPicker] = useStoredState<Picker>(layoutKey(sourceId, layoutTable, "picker"));
   useEffect(() => setQInput(q), [q]);
 
   const update = useCallback(
@@ -96,7 +98,7 @@ export function Composite({ sourceId }: { sourceId: string }) {
   }, [params]);
   const metaQs = useMemo(() => {
     const p = new URLSearchParams();
-    for (const k of ["type", "mode", "agg"]) if (params.get(k)) p.set(k, params.get(k)!);
+    for (const k of ["preset", "type", "mode", "agg"]) if (params.get(k)) p.set(k, params.get(k)!);
     return p.toString();
   }, [params]);
   const base = `/api/sources/${encodeURIComponent(sourceId)}`;
@@ -156,10 +158,11 @@ export function Composite({ sourceId }: { sourceId: string }) {
   const renderCell = useCallback(
     (col: string, v: unknown) => {
       if (v === null || v === undefined || v === "") return <span className="missing">-</span>;
-      if (linkKeys.has(col)) return <Link to={`/s/${sourceId}/foods/${encodeURIComponent(String(v))}`}>{String(v)}</Link>;
+      if (linkKeys.has(col))
+        return <Link to={`/s/${sourceId}/foods/${encodeURIComponent(String(v))}${preset ? `?preset=${encodeURIComponent(preset)}` : ""}`}>{String(v)}</Link>;
       return String(v);
     },
-    [sourceId, linkKeys],
+    [sourceId, linkKeys, preset],
   );
   const colClass = useCallback(
     (col: string) => (kinds.get(col) === "nutrient" ? "num" : kinds.get(col) === "related" ? "rel" : col === "notes" ? "notes" : undefined),
@@ -344,7 +347,7 @@ export function Composite({ sourceId }: { sourceId: string }) {
         ) : (
           <DataTable
             sourceId={sourceId}
-            table={`composite:${mode || "default"}`}
+            table={layoutTable}
             columns={keys}
             rows={data?.rows ?? []}
             compact

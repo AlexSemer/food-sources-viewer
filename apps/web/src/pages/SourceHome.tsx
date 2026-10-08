@@ -16,6 +16,7 @@ type SourceInfo = {
   foodNameField: string;
   foodTypeField?: string;
   foodTypeDefault?: string;
+  presets?: { id: string; label: string; foodTable: string; amountTable: string }[];
 };
 
 type TablesRes = {
@@ -38,7 +39,11 @@ const cell = (v: unknown) => (v == null ? "" : String(v));
 
 export function SourceHome() {
   const { sourceId } = useParams();
-  const view = parseView(useSearchParams()[0].get("view"));
+  const [params, setParams] = useSearchParams();
+  const view = parseView(params.get("view"));
+  // Multi-dataset sources (the NUTRI store): ?preset= picks which food/amount table pair is read.
+  const preset = params.get("preset") ?? "";
+  const presetQs = preset ? `preset=${encodeURIComponent(preset)}` : "";
   const [tables, setTables] = useState<TablesRes | null>(null);
   const [foods, setFoods] = useState<FoodsRes | null>(null);
   const [q, setQ] = useState("");
@@ -52,7 +57,7 @@ export function SourceHome() {
     setError(null);
     setTables(null);
     setFoods(null);
-    getJson<TablesRes>(`/api/sources/${encodeURIComponent(sourceId)}/tables`)
+    getJson<TablesRes>(`/api/sources/${encodeURIComponent(sourceId)}/tables${presetQs ? `?${presetQs}` : ""}`)
       .then((res) => {
         setTables(res);
         setQ("");
@@ -61,15 +66,16 @@ export function SourceHome() {
         setType(res.source.foodTypeDefault ?? "all");
       })
       .catch((e: Error) => setError(e.message));
-  }, [sourceId]);
+  }, [sourceId, presetQs]);
 
   useEffect(() => {
     if (!sourceId || !tables?.source.implemented || view !== "single") return;
-    const params = new URLSearchParams({ q: query, type, page: String(page) });
-    getJson<FoodsRes>(`/api/sources/${encodeURIComponent(sourceId)}/foods?${params}`)
+    const qs = new URLSearchParams({ q: query, type, page: String(page) });
+    if (preset) qs.set("preset", preset);
+    getJson<FoodsRes>(`/api/sources/${encodeURIComponent(sourceId)}/foods?${qs}`)
       .then(setFoods)
       .catch((e: Error) => setError(e.message));
-  }, [sourceId, tables, query, type, page, view]);
+  }, [sourceId, tables, query, type, page, view, preset]);
 
   function onSearch(e: FormEvent) {
     e.preventDefault();
@@ -90,7 +96,33 @@ export function SourceHome() {
         {tables.meta.loaded_at ? <span className="muted"> loaded {tables.meta.loaded_at}</span> : null}
       </p>
       {tables.meta.raw_path ? <p className="muted">raw: {tables.meta.raw_path}</p> : null}
-      <ViewToggle sourceId={src.id} view={view} />
+      {src.presets?.length ? (
+        <p className="row">
+          <label>
+            Dataset{" "}
+            <select
+              value={preset || src.presets[0].id}
+              onChange={(e) => {
+                // Only switches which table pair is read; filters of the previous dataset do not carry over.
+                const next = new URLSearchParams();
+                if (params.get("view")) next.set("view", params.get("view")!);
+                next.set("preset", e.target.value);
+                setParams(next);
+              }}
+            >
+              {src.presets.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <span className="muted">
+            {src.foodTable} + {src.presets.find((p) => p.id === (preset || src.presets![0].id))?.amountTable}
+          </span>
+        </p>
+      ) : null}
+      <ViewToggle sourceId={src.id} view={view} query={presetQs} />
     </>
   );
 
@@ -98,7 +130,7 @@ export function SourceHome() {
     return (
       <>
         {heading}
-        <Composite sourceId={src.id} />
+        <Composite sourceId={src.id} key={preset} />
       </>
     );
   }
@@ -188,7 +220,7 @@ export function SourceHome() {
                     {foods.columns.map((c) => (
                       <td key={c}>
                         {c === src.foodIdField ? (
-                          <Link to={`/s/${sourceId}/foods/${encodeURIComponent(cell(f[c]))}`}>{cell(f[c])}</Link>
+                          <Link to={`/s/${sourceId}/foods/${encodeURIComponent(cell(f[c]))}${presetQs ? `?${presetQs}` : ""}`}>{cell(f[c])}</Link>
                         ) : (
                           cell(f[c])
                         )}

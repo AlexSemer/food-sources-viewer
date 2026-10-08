@@ -1,5 +1,7 @@
 export async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
-  const res = await fetch(path, { signal });
+  // Resolved against the origin, not the page URL: a page opened as https://user:pass@host/ (Basic auth of the
+  // online sample) would otherwise make fetch reject relative URLs that inherit the credentials.
+  const res = await fetch(new URL(path, window.location.origin), { signal });
   const body = (await res.json()) as T & { error?: string };
   if (!res.ok) throw new Error(body.error ?? res.statusText);
   return body;

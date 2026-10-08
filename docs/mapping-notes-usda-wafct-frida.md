@@ -185,33 +185,174 @@ Load-time cleanup is needed:
 - WAFCT mixes REAL cells with numeric text (21,694 cells) and has bracketed or `tr` strings.
 - Frida writes empty cells as the literal string `'NULL'`.
 
-## 5. Schema sketch and main decisions
+## 5. Load shape under the lock (replaces the earlier schema sketch)
 
-```
-food                (food_id, canonical_name, foodex2_base, foodon_id, ncbi_taxon, group_id, state/prep facets)
-source_food         (source_id, source_food_key, name_en, name_local, lang_local, sci_name, foodex2_full, foodon_id,
-                     langual, source_group_code, edible_coef_1, edible_coef_2, waste_pct, n_factor, fa_factor,
-                     is_calculated_recipe, superseded_by, food_id NULL)   -- source row stays even if unmapped
-food_group          (group_id, name, parent_id)          -- canonical, FoodEx2-aligned
-source_group_map    (source_id, source_group_code, group_id)
-component           (component_id, infoods_tag, name, unit_canonical, definition)  -- e.g. CHOAVLDF ≠ CHOCDF ≠ CHO
-source_component    (source_id, source_component_key [nutrient.id | tag+col | ParameterID], source_tag,
-                     source_unit, component_id, unit_factor, method_note)
-value               (source_food_id, component_id, value NULL, unit, basis ['100g EP' | '100g as described'],
-                     qualifier ['=','tr','<LOD','lower_quality','estimated','calculated'], derivation_code,
-                     n, min, max, median, sd, outside_region bool, reference_id, borrowed_from_source_food_id)
-reference           (source_id, reference_key, citation)
-```
+This replaces the schema sketch and decision list that were here. It follows `docs/decisions/LOCKED.md`, with the column names from `OBSERVATION-FIELDS.md`, the kinds from `SCHEMA-FREEZE.md`, and the headline tickets from `HEADLINES.md` and `CRITIC-FOLLOWUP.md`. It defines no tables, no SQL and no new Nutrient ids. The code maps are not redrawn here: every ticket already has its fate (`nutrient` / `compound` / `ignore`) on `data/nutrients/by-source/`.
 
-Mapping decisions and risks:
-1. **Component crosswalk is the core job.** Use INFOODS tags as the canonical id. USDA needs a hand map of about 235 ids → tags, and Frida's and WAFCT's tag variants need to be aligned (PROT vs PROTCNT etc.). Composite WAFCT columns (`FAT or [FATCE]`) should map to the base tag *plus* a qualifier when the cell is bracketed, because the bracket can mean a different component.
-2. **Energy and carbohydrate** need separate components per definition (EU-factor ENERC, Atwater general, Atwater specific; CHO by difference with/without fibre, available). Never coalesce them silently.
-3. **Vitamin A/E/folate equivalents**: keep RE, RAE, α-TE and α-tocopherol as distinct components, and only derive between them where the inputs exist.
-4. **Basis**: store the edible-portion coefficient and waste, so the basis is explicit. Treat USDA's "per 100 g" as-described with no refuse info.
-5. **Qualifiers**:
-   - WAFCT: parse `tr`, `[x]`, `[tr]` and `oa` into flags and keep the raw string.
-   - Frida: zeros are ambiguous.
-   - USDA: carry derivation A/AS/NC.
-6. **Food identity**: keep every source row and map to the canonical `food` (often n:1), with FoodEx2 (WAFCT↔Frida) and FoodOn/NCBI (USDA↔Frida) as bridges. Expect manual curation. Name matching is noisy.
-7. **Dedupe USDA** (67 duplicate descriptions, 74 foods without an NDB number) and **Frida** (repeated names such as "Carrot, raw" ×3) before mapping.
-8. **Data defects to handle**: USDA nutrient 2066 has no definition; Frida ParameterID 344 is duplicated; Frida has 6 foods with an unknown group and a wrong EFSA code on C18:1 n-12; WAFCT has mixed text/real types.
+Sections 2 and 3 are kept as surveyed, but two of their sentences are superseded by this section. "Map it into one canonical component list" (section 2) and "Map them as distinct components" (section 3, carbohydrate) both become: separate NutrientCode tickets on **one** Nutrient, told apart by `expression`.
+
+**USDA numbering.** On NutrientCode, family `usda` has `code` = `nutrient_nbr` and `code_alt` = FDC `nutrient.id` (LOCKED §6). The tables in section 2 print "id (nbr)", for example "1005 (205)". Below, USDA tickets are written as "nbr 205 (id 1005)". The tickets 208, 268, 957, 958, 320, 323, 417 and 435 are nbrs. 1005, 1008, 1062, 1106, 1177, 2047, 2048 and 2066 are ids.
+
+### 5.1 Ids: Nutrient, NutrientCode, Compound
+
+- **One intake Nutrient, one slug.** The Nutrient id is ours, from `data/nutrients/nutrient.csv`: `energy`, `protein`, `carbohydrate`, `vit_a`, `vit_e`, `vit_b9`, and the locked extras such as `retinol` and `beta_carotene`. An INFOODS tagname, a USDA nbr or id, a EuroFIR component id or a Frida ParameterID is never the Nutrient PK (LOCKED §3).
+- **Source tickets live on NutrientCode**, one row per `(family, code, unit, expression)`. Many tickets can point at one Nutrient. The families for these three sources are `usda` (Foundation), `infoods` (WAFCT tagnames), `frida` (ParameterID) and `eurofir` (Frida's `EurofirComponentID`, keyed by ParameterID where the EuroFIR id is null or reused, per CRITIC-FOLLOWUP §3).
+- **No single component table.** That was rejected in LOCKED §1. Compound stays a second catalog, and an observation carries `nutrient_id` *or* `compound_id`.
+- **The one-source concepts are not promoted to close the gap.** Phytate and IP3–IP6, individual fatty acids beyond the fat Nutrients already named, organic acids, biogenic amines, extra sterols, polyphenols and pair/sum tickets stay Compound (LOCKED §12). Factors and meta columns stay `ignore`: WAFCT `EDIBLE1`, `EDIBLE2`, `SOP`, `XFA` and `XN`, and Frida 219 (NCF) and 252 (Waste). Every other ticket keeps the fate already on its by-source row. Some of the "one source only" concepts in section 2 are not new concepts at all. They are other expressions of a Nutrient we already have (Appendix A).
+
+### 5.2 Same substance, different accounting = same Nutrient + `expression`
+
+kJ is a unit face of energy, never a second Nutrient. kJ↔kcal and other conversions go only into `amount_canonical` / `canonical_unit`, and the published `amount` and `amount_unit` stay as they are. Expressions are never averaged or coalesced. A headline cell with no value of its own expression is empty, not zero, and is not filled from another expression.
+
+In the tables below, code-formatted expressions are tokens the docs already use (`RAE`, `RE`, `IU`, `atwater_general`, `atwater_specific`, `labelling_kJ`, `total`, `free`, `NE`, `equivalents_or_as_published`). Expressions described in plain words take the exact string already on the by-source row. This note adds no expression strings.
+
+**`energy`** (the method is the expression; record it, and also use `method_text` where the source gives one)
+
+| Source | Ticket | Expression | Headline (HEADLINES.md) |
+|---|---|---|---|
+| USDA | nbr 208 (id 1008) kcal | USDA "Energy" ticket, as on the CSV row | **headline** (LOCKED §13). Only 135 of 469 foods have it, so it's empty for the other 334 |
+| USDA | nbr 268 (id 1062) kJ | unit face of 208 | – |
+| USDA | nbr 957 (id 2047) | `atwater_general` (347 foods) | – |
+| USDA | nbr 958 (id 2048) | `atwater_specific` (312 foods) | – |
+| WAFCT | infoods `ENERC` kcal / kJ | EU factors | **headline**: kcal, else kJ converted in `amount_canonical` |
+| Frida | 356 kcal (137 is its kJ face) | EU factors, metabolisable | **headline** |
+| Frida | 359 kcal (316 is its kJ face) | labelling (`labelling_kJ` for 316) | – |
+
+**`carbohydrate`** (never one number for all three)
+
+| Source | Ticket | Expression |
+|---|---|---|
+| USDA | nbr 205 (id 1005) | by difference, fibre included |
+| USDA | nbr 205.2 (id 1050) | by summation |
+| WAFCT | infoods `CHOAVLDF` | available, by difference, fibre excluded |
+| Frida | 170 CHOT | by difference, fibre included (alcohol subtracted) |
+| Frida | 172 CHO | available |
+
+HEADLINES.md has no carbohydrate headline, and this note doesn't pick one (see 5.4).
+
+**`vit_a`** (no RE→RAE or IU→RAE conversion, and no RAE built from retinol + carotenoids. A later calculated RAE would be its own observation with `derivation = calculated`, per LOCKED §14)
+
+| Source | Ticket | Expression | Headline |
+|---|---|---|---|
+| USDA | nbr 320 (id 1106) µg | `RAE` | **headline**. Only 79 of 469 foods have it, so it's empty for the rest |
+| WAFCT | infoods `VITA_RAE` | `RAE` | **headline** |
+| WAFCT | infoods `VITA` | `RE` | – |
+| Frida | 12 VITA | `RE` | Frida has no RAE, so the **headline is empty** (not zero, and not RE) |
+
+Retinol (USDA nbr 319, WAFCT `RETOL`, Frida 225 RETOLAT) and β-carotene (USDA nbr 321, WAFCT `CARTB`, Frida 303) are their own Nutrients, `retinol` and `beta_carotene`. They are not `vit_a` expressions.
+
+**`vit_e`**
+
+| Source | Ticket | Expression | Headline |
+|---|---|---|---|
+| USDA | nbr 323 (id 1109) | α-tocopherol | **headline** |
+| WAFCT | infoods `VITE` (column "VITE or [TOCPHA]") | α-TE (`equivalents_or_as_published`) | **headline** |
+| WAFCT | infoods `TOCPHA` (own column) | α-tocopherol | – |
+| Frida | 135 VITE | α-TE | **headline** |
+| Frida | 276 TOCPHA | α-tocopherol | – |
+
+The β/γ/δ tocopherols and the tocotrienols are `vit_e` expressions too (CRITIC-FOLLOWUP §4). The headline expression differs by source (α-tocopherol for USDA, α-TE for WAFCT and Frida), so the headline cells are not comparable across sources.
+
+**`vit_b9`** (vitamer amounts are never added onto DFE)
+
+| Source | Ticket | Expression | Headline |
+|---|---|---|---|
+| USDA | nbr 435 | DFE | **headline**. No DFE on these Foundation foods, so it's **empty** for this file |
+| USDA | nbr 417 (id 1177) | `total` (172 foods). Still loads | – |
+| WAFCT | infoods `FOLDFE` | DFE | **headline** |
+| WAFCT | infoods `FOL` (column "FOL or [FOLSUM]") | `total` (`equivalents_or_as_published`) | – (HEADLINES uses it only when FOLDFE is absent) |
+| WAFCT | infoods `FOLFD`, `FOLAC` | food folate, folic acid | – |
+| Frida | 143 FOL | `total` | **headline** per HEADLINES.md (see the contradiction noted with this pass) |
+| Frida | 145 | `free` | – |
+
+**`protein`**: the tickets are USDA nbr 203 (id 1003), WAFCT `PROTCNT` and Frida 218 PROT. Frida 421 (from amino acids) and 317 (labelling) are `protein` expressions. Nitrogen factors are a fact about the source food, not an expression on the observation (see 5.3).
+
+### 5.3 Observation row: per source food, not per canonical food
+
+The grain is one row per published amount, for one source food + one ticket + one expression + one basis (OBSERVATION-FIELDS). The keys are `source_id`, `source_version` and `source_food_id`, which is `fdc_id` for USDA, WAFCT `Code` and Frida `FoodID`. `food_id` stays empty because there's no food crosswalk in this pass. Duplicate USDA descriptions (67) and repeated Frida names ("Carrot, raw" ×3) stay separate source rows. FoodOn, NCBI taxon, FoodEx2 and scientific name are the bridges counted in section 1. They are classification facts, not a merge.
+
+| Must carry | Column (OBSERVATION-FIELDS) | USDA Foundation | WAFCT 2019 | Frida 5.5 |
+|---|---|---|---|---|
+| amount or empty | `amount`, `is_empty` | `food_nutrient.amount`. The 33 null amounts become `is_empty`. A **missing row is not zero**: no row, no observation | Cell value. A blank cell becomes `is_empty`. `tr` becomes an empty `amount` with `is_empty` false, plus a qualifier | `ResVal`. **0 stays 0**: it's not trace and not "not detected". A literal `'NULL'` becomes `is_empty` |
+| source unit | `amount_unit` (+ `amount_canonical`, `canonical_unit`) | `nutrient.unit_name` (`G`, `MG`, `UG`, `KCAL`, `kJ`, `IU`) | Header unit (`g`, `mg`, `mcg`, `kJ`, `kcal`) | `EurofirUnitID` (`g`, `mg`, `ug`, `kJ`, `kcal`). The free-text `Unit` goes to `method_text` |
+| basis | `basis` | `100g` (100 g as described; no refuse data) | `100g_ep` | `100g` as published (see 5.4) |
+| edible coefficient / waste | not an observation column: a related fact on the source food | none | `EDIBLE1`, `EDIBLE2` per food | 252 Waste % per food |
+| nitrogen factor | related fact on the source food | `food_protein_conversion_factor` | `XN` per food | 219 NCF per food |
+| qualifier (tr, lower quality, calculated, borrowed) | no column yet (see 5.4). For now the raw cell text goes in `footnote` | none in Foundation values | `tr`, `[tr]`, `[x]` (lower quality), bracketed form, `oa` (non-African) | none. Zero is not a qualifier |
+| derivation | `derivation` | `derivation_id` as the source id (1 A, 4 AS, 49 NC) | `calculated` for `*` foods (yield/retention) and recipe rows | Borrowed: `SourceFood` is set, so derivation records the FoodID it was borrowed from (source text) |
+| n / min / max / median | `n`, `min`, `max`, `median` | `data_points`, `min`, `max`, `median` | Sheet 06 n, min, max, median (SD has no column) | `NumberOfDeterminations`, `Min`, `Max`, `Median` |
+| reference | `citation_id` (+ `footnote`) | No bibliographic id. `footnote` (22) | `BiblioID/Source` per food (refs in sheet 12) | `Source` (refs in the Source sheet). `'NULL'` becomes empty |
+
+**WAFCT bracketed cells.** A value printed as `[FATCE]` in the "FAT or [FATCE]" column keeps the base ticket (`FAT`, with the column's expression `equivalents_or_as_published` per CRITIC-FOLLOWUP) and adds a qualifier saying the cell is the bracketed form. The same goes for `[FIBC]`, `[TOCPHA]`, `[FOLSUM]`, `[NIA]` and `[CARTB]`. A bracketed cell is not a new ticket and not a new Nutrient.
+
+Edible coefficient, waste and nitrogen factor reach the value through `(source_version, source_food_id)`. They are not written as amounts or columns on the observation (OBSERVATION-FIELDS: "Do not write yield, retention, or edible-portion factors as amounts"), so a reader can still take the edible coefficient, waste or N factor of the source food the value belongs to.
+
+### 5.4 Not decided here (needs a decision-doc change first)
+
+1. **Qualifier column.** OBSERVATION-FIELDS has no qualifier, and SCHEMA-FREEZE doesn't list trace or quality flags as a kind. A new kind means updating SCHEMA-FREEZE first. Until then, the raw cell text (`tr`, `[x]`, the bracket, `oa`) goes in `footnote`, and calculated or borrowed goes in `derivation`.
+2. **Carbohydrate headline.** HEADLINES.md has none for any source.
+3. **Frida basis.** It's 100 g with `EurofirMatrixUnitID` = W plus a Waste %. Whether that 100 g is edible portion (`100g_ep`) needs the Frida 5.5 documentation PDF, which hasn't been checked yet.
+4. **USDA id 2066.** It's used 33 times but has no dictionary row, so it has no ticket on the Foundation CSV. Per the load contract it can't be dropped and can't get an invented Nutrient id. It needs a ticket (likely `compound`) added to the map, which this pass doesn't do.
+5. **SD.** WAFCT sheet 06 publishes SD, and there's no column for it.
+
+Known source defects carried from the survey: Frida ParameterID 344 Isomalt appears twice (the CSV keeps one, per COMBINER-RETAG), 6 Frida foods point at a missing FoodGroupID, the Frida C18:1 n-12 row has the wrong EFSA code, WAFCT numbers come as REAL and as text, and Frida writes the string `'NULL'` for empty.
+
+### 5.5 Viewing it next to the current sources
+
+The combined observations should show in the viewer as **one more source** in the dataset list, beside `usda-foundation`, `wafct`, `frida` and the rest. Nothing is built here, and there's no store to point at until a load script exists. What that implies, using the viewer's existing per-source pattern:
+
+- **One more `SourceDef`** in `packages/shared/src/index.ts`, with its own `dbFile` and food table, and a composite spec in `apps/api/src/composite-registry.ts` (`specFor`). It follows the long-table pattern of `fridaSpec` / `foodbSpec` in `apps/api/src/composite-long.ts`, with `foodIdRepeats` set because the table is long.
+- **The food list shows source foods** keyed by `(source_version, source_food_id)`, with a `source_version` filter that defaults to `foundation-2026-04-30`. LOCKED §2 allows one source at a time, and mix mode comes later. Duplicate source rows show as separate rows.
+- **Composite columns are `nutrient_id` × `expression`**, with `amount_unit` in the header and a kJ/kcal toggle that reads `amount_canonical`. The headline column per Nutrient follows HEADLINES.md. A second mode (like FooDB's "compounds" mode) shows `compound_id` observations, which is the composition view.
+- **No averaging.** Each cell is one observation. The spec offers no avg/min/max/n aggregation (`aggs`), and the n/min/max/median it shows are the source's published statistics. Empty stays empty, never 0.
+- **The food page** lists every observation of the source food with ticket, expression, basis, derivation, qualifier/footnote and citation, plus the related facts (edible coefficient, waste, N factor). The same `fdc_id` / `Code` / `FoodID` opens the raw source in its existing viewer for a side-by-side check.
+
+## Appendix A. Section 2 rows the existing code CSVs classify differently
+
+Checked on 2026-10-08 against the CSVs themselves: `data/nutrients/by-source/usda-foundation-nutrient-codes.csv` (USDA tickets are `nutrient_nbr`, FDC id in `alt_code`), `wafct-nutrient-codes.csv`, `frida-nutrient-codes.csv` and `eurofir-from-frida-nutrient-codes.csv`. No CSV was changed. Ticket = `code`; "→" gives the CSV's `nutrient_id` + `expression` (status), with `''` for an empty expression.
+
+General: section 2 says to "map it into one canonical component list". The CSVs map each ticket to our Nutrient slug or to Compound, with `expression` on the ticket.
+
+| Source | Ticket | Section 2 said | CSV says |
+|---|---|---|---|
+| USDA | 268 (id 1062) kJ | separate "Energy kJ" row / concept | `energy` + `''` (nutrient), same empty expression as 208; kJ is only the unit |
+| USDA | 957, 958 | Atwater energies inside "Energy kcal" | `energy` + `atwater_general` / `atwater_specific` (nutrient) |
+| USDA | 298 (id 1085) Total fat (NLEA) | listed in the Fat row | no Nutrient: **compound** |
+| USDA | 205, 205.2 | carbohydrate by difference vs by summation as different things | both `carbohydrate` + `''` (nutrient). They differ by code only |
+| USDA | 291, 293 (id 2033, AOAC 2011.25) | AOAC 2011 fibre fractions counted as USDA-only | 293 total is `fiber` + `''` (nutrient), like 291 |
+| USDA | 269.3, 269 (id 2000) | Sugars row | both `sugars` + `''` (nutrient) |
+| USDA | 202 Nitrogen | core nutrient row | **ignore** (Frida 300 NT also ignore) |
+| USDA | 320 RAE | "vit A RAE" as its own USDA+WAFCT concept | `vit_a` + `RAE` |
+| USDA | 323, 341, 342, 343 | "tocopherols α/β/γ/δ" as concepts | `vit_e` + `alpha_tocopherol` / `beta_` / `gamma_` / `delta_tocopherol` |
+| USDA | 328 / 324 | Vitamin D (D2+D3) / IU | `vit_d` + `''` / `vit_d` + `IU`. WAFCT VITD and Frida 126 use expression `D2+D3` for the same quantity |
+| USDA | 325 D2, 326 D3 | "D2/D3" as a USDA+Frida shared concept | **compound** (both). Frida 127 / 128 are `vit_d` + `D2` / `D3` (nutrient): the two maps disagree |
+| USDA | 618 PUFA 18:2, 619 PUFA 18:3 | collapsed "18:2" / "18:3" in all three | **compound**. Only 675 (18:2 n-6 c,c) → `linoleic` and 851 (ALA) → `ala` |
+| USDA | 322 α-carotene, 334 β-cryptoxanthin | USDA+WAFCT concepts | compound (WAFCT CARTA, CRYPXB also compound): agrees on fate |
+| USDA | 406 Niacin | "niacin" in all three | `vit_b3` + `preformed` |
+| USDA | 2052, 2053, 2057–2063 (no `nutrient_nbr`) | part of the 235 ids used | rows exist with the FDC id written into `code` (`code` = `alt_code`, compound). That is not a `nutrient_nbr` ticket, so the store loader skips these 99 amounts (9 ids) and logs them. id 2066 has no row at all (33 amounts) |
+| WAFCT | `ENERC` kJ / kcal | separate "Energy kJ" row | two tickets: `energy` + `kJ`, `energy` + `kcal` (nutrient) |
+| WAFCT | `VITA`, `VITA_RAE` | "vit A RE" (WAFCT+Frida) and "vit A RAE" (USDA+WAFCT) as two concepts | both `vit_a`, + `RE` / `RAE` |
+| WAFCT | `VITE`, `TOCPHA`, `TOCPHB/D/G` | "vit E α-TE" as its own WAFCT+Frida concept; tocopherols as concepts | `vit_e` + `alpha_TE`; `TOCPHA` has two rows (`ATE_or_alpha` for the bracket form under VITE, `alpha_tocopherol` for its own column); B/D/G by expression |
+| WAFCT | `NIAEQ`, `NIA` | "niacin eq." as its own concept | `vit_b3` + `NE`; `NIA` has two rows (`NE_or_preformed`, `preformed`) |
+| WAFCT | `FOL`, `FOLSUM`, `FOLDFE`, `FOLFD`, `FOLAC` | folate DFE, food folate, folic acid as WAFCT-only concepts | all `vit_b9` + `total` / `sum_vitamers` / `DFE` / `food_folate` / `folic_acid` |
+| WAFCT | `CARTBEQ`, `CARTB` | "β-carotene eq." as a WAFCT-only concept | `beta_carotene` + `equivalents`; `CARTB` has two rows (`equivalents_or_as_published`, `beta_carotene`) |
+| WAFCT | `CHOAVLDF` | WAFCT-only concept | `carbohydrate` + `available_by_difference` |
+| WAFCT | `FIBTG`, `FIBC` | one Fibre row | `fiber` + `TDF` / `fiber` + `crude` (nutrient). Frida 123 FIBC crude fibre is **compound**: the two maps disagree |
+| WAFCT | `FAT`, `FATCE` | "FAT or [FATCE]" as one column | `total_fat` + `''` / `total_fat` + `FATCE` |
+| Frida | 137, 316, 356, 359 | separate "Energy kJ" row; labelling as Frida-only | `energy` + `metabolisable_kJ` / `labelling_kJ` / `metabolisable_kcal` / `labelling_kcal` |
+| Frida | 218, 317, 421 | protein; labelling and from-AA as Frida-only | `protein` + `total` / `labelling` / `from_amino_acids` |
+| Frida | 170, 172, 318 | CHOT by difference, CHO available | `carbohydrate` + `by_difference` / `available` / `available_labelling` |
+| Frida | 248, 247, 251 (FASAT, FAMS, FAPU) | SFA / MUFA / PUFA in all three | **compound**. USDA 606/645/646 and WAFCT FASAT/FAMS/FAPU are the `saturated_fat` / `monounsaturated_fat` / `polyunsaturated_fat` Nutrients |
+| Frida | 71 C18:2 n-6, 74 C18:3 n-3 | "18:2", "18:3" in all three | **compound**. USDA 675 / 851 and WAFCT F18D2CN6 / F18D3CN3 are `linoleic` / `ala` |
+| Frida | 245 Sum sugars, 418 Free sugars | Sugars row (245) | **compound** in the Frida map, but `sugars` + `total` / `free` (nutrient) in the EuroFIR-from-Frida map |
+| Frida | 123 FIBC, 202 neutral detergent fibre | fibre variants | compound (both) |
+| Frida | 12 VITA | "vit A RE" as its own concept | `vit_a` + `RE` |
+| Frida | 135, 276, 279, 282, 286 | "vit E α-TE" as its own concept; tocopherols | `vit_e` + `alpha_TE` / `alpha_tocopherol` / `beta_` / `delta_` / `gamma_tocopherol` |
+| Frida | 203, 294 | "niacin eq." as its own concept | `vit_b3` + `NE` / `preformed` |
+| Frida | 143, 145 | folate total; free folate | `vit_b9` + `total` / `free` |
+| Frida | 303 CARTBTRANS | β-carotene | `beta_carotene` + `trans` |
+| EuroFIR-from-Frida | same tickets as Frida | as for Frida | same as Frida except 245 / 418 (above). The EuroFIR map has 226 rows: Frida 36 (Thiamine) has no EuroFIR row; Frida 37 carries `THIA` |
+
+Agrees, no change: amino acids (class B Nutrients), phytate and IP3–IP6 (compound), the WAFCT factors `EDIBLE1/2`, `SOP`, `XFA` and `XN` (ignore), retinol (USDA 319, WAFCT RETOL, Frida 225) and β-carotene as their own Nutrients, cholesterol, water, ash and the minerals.
+
+Outside section 2 but relevant to 5.1: Frida 219 (NCF) and 252 (Waste) are **compound** in the Frida map, while 5.1 and `store-schema.md` treat them as food facts (`n_factor`, `waste_pct`), never amounts. Frida 140 (fatty acid conversion factor) is also compound, while WAFCT `XFA` is ignore. Frida 243 Starch/Glycogen is compound although `starch` is a locked Nutrient.

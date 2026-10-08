@@ -1,0 +1,723 @@
+{
+ "version": 4,
+ "sourceId": "foodb",
+ "mainTable": "Food",
+ "mainId": "id",
+ "generatedAt": "2026-10-08T18:39:34.923Z",
+ "loadedAt": "2026-09-30T16:11:10.712Z",
+ "ms": 635,
+ "tables": [
+  {
+   "name": "AccessionNumber",
+   "rows": 202,
+   "columns": 7
+  },
+  {
+   "name": "Compound",
+   "rows": 1556,
+   "columns": 16
+  },
+  {
+   "name": "CompoundAlternateParent",
+   "rows": 3914,
+   "columns": 7
+  },
+  {
+   "name": "CompoundExternalDescriptor",
+   "rows": 836,
+   "columns": 8
+  },
+  {
+   "name": "CompoundOntologyTerm",
+   "rows": 16808,
+   "columns": 6
+  },
+  {
+   "name": "CompoundSubstituent",
+   "rows": 7498,
+   "columns": 7
+  },
+  {
+   "name": "CompoundSynonym",
+   "rows": 20583,
+   "columns": 7
+  },
+  {
+   "name": "CompoundsEnzyme",
+   "rows": 1912,
+   "columns": 8
+  },
+  {
+   "name": "CompoundsFlavor",
+   "rows": 2569,
+   "columns": 10
+  },
+  {
+   "name": "CompoundsHealthEffect",
+   "rows": 7939,
+   "columns": 14
+  },
+  {
+   "name": "CompoundsPathway",
+   "rows": 316,
+   "columns": 7
+  },
+  {
+   "name": "Content",
+   "rows": 93525,
+   "columns": 26
+  },
+  {
+   "name": "Enzyme",
+   "rows": 907,
+   "columns": 32
+  },
+  {
+   "name": "EnzymeSynonym",
+   "rows": 0,
+   "columns": 6
+  },
+  {
+   "name": "Flavor",
+   "rows": 883,
+   "columns": 8
+  },
+  {
+   "name": "Food",
+   "rows": 200,
+   "columns": 23
+  },
+  {
+   "name": "FoodTaxonomy",
+   "rows": 200,
+   "columns": 7
+  },
+  {
+   "name": "HealthEffect",
+   "rows": 1435,
+   "columns": 10
+  },
+  {
+   "name": "MapItemsPathway",
+   "rows": 0,
+   "columns": 6
+  },
+  {
+   "name": "NcbiTaxonomyMap",
+   "rows": 242,
+   "columns": 5
+  },
+  {
+   "name": "Nutrient",
+   "rows": 39,
+   "columns": 23
+  },
+  {
+   "name": "OntologySynonym",
+   "rows": 1669,
+   "columns": 11
+  },
+  {
+   "name": "OntologyTerm",
+   "rows": 4370,
+   "columns": 12
+  },
+  {
+   "name": "Pathway",
+   "rows": 97,
+   "columns": 6
+  },
+  {
+   "name": "PdbIdentifier",
+   "rows": 0,
+   "columns": 5
+  },
+  {
+   "name": "Pfam",
+   "rows": 0,
+   "columns": 5
+  },
+  {
+   "name": "PfamMembership",
+   "rows": 0,
+   "columns": 5
+  },
+  {
+   "name": "Reference",
+   "rows": 4362,
+   "columns": 12
+  },
+  {
+   "name": "Sequence",
+   "rows": 0,
+   "columns": 8
+  }
+ ],
+ "edges": [
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "AccessionNumber",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 202
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 172,
+   "matched": 172,
+   "matchRate": 1,
+   "coverage": 0.08666666666666667,
+   "perParent": 1.5
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundAlternateParent",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 3914
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 525,
+   "matched": 471,
+   "matchRate": 0.8971428571428571,
+   "coverage": 0.2733333333333333,
+   "perParent": 9.2
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundExternalDescriptor",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 836
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 417,
+   "matched": 369,
+   "matchRate": 0.8848920863309353,
+   "coverage": 0.24333333333333335,
+   "perParent": 2.2
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundOntologyTerm",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 16808
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 917,
+   "matched": 910,
+   "matchRate": 0.9923664122137404,
+   "coverage": 0.6166666666666667,
+   "perParent": 17.5
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundsEnzyme",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 1912
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 164,
+   "matched": 142,
+   "matchRate": 0.8658536585365854,
+   "coverage": 0.06666666666666667,
+   "perParent": 18.4
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundsFlavor",
+    "column": "source_id",
+    "unique": false,
+    "rows": 2569
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Compound'",
+   "sampled": 559,
+   "matched": 496,
+   "matchRate": 0.8872987477638641,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundsFlavor",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 2569
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 559,
+   "matched": 496,
+   "matchRate": 0.8872987477638641,
+   "coverage": 0.31666666666666665,
+   "perParent": 5.2
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundsHealthEffect",
+    "column": "source_id",
+    "unique": false,
+    "rows": 7939
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Compound'",
+   "sampled": 697,
+   "matched": 628,
+   "matchRate": 0.9010043041606887,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundsHealthEffect",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 7939
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 697,
+   "matched": 628,
+   "matchRate": 0.9010043041606887,
+   "coverage": 0.36666666666666664,
+   "perParent": 13.9
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundsPathway",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 316
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 110,
+   "matched": 93,
+   "matchRate": 0.8454545454545455,
+   "coverage": 0.07333333333333333,
+   "perParent": 2.8
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundSubstituent",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 7498
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 529,
+   "matched": 474,
+   "matchRate": 0.8960302457466919,
+   "coverage": 0.2833333333333333,
+   "perParent": 17
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "CompoundSynonym",
+    "column": "source_id",
+    "unique": false,
+    "rows": 20583
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Compound'",
+   "sampled": 1000,
+   "matched": 903,
+   "matchRate": 0.903,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "Content",
+    "column": "source_id",
+    "unique": false,
+    "rows": 93525
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Compound'",
+   "sampled": 1000,
+   "matched": 830,
+   "matchRate": 0.83,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "Compound",
+    "column": "id",
+    "unique": true,
+    "rows": 1556
+   },
+   "b": {
+    "table": "Reference",
+    "column": "source_id",
+    "unique": false,
+    "rows": 4362
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Compound'",
+   "sampled": 917,
+   "matched": 845,
+   "matchRate": 0.9214830970556162,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "Enzyme",
+    "column": "id",
+    "unique": true,
+    "rows": 907
+   },
+   "b": {
+    "table": "CompoundsEnzyme",
+    "column": "enzyme_id",
+    "unique": false,
+    "rows": 1912
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 907,
+   "matched": 907,
+   "matchRate": 1,
+   "coverage": 1,
+   "perParent": 2.1
+  },
+  {
+   "a": {
+    "table": "Flavor",
+    "column": "id",
+    "unique": true,
+    "rows": 883
+   },
+   "b": {
+    "table": "CompoundsFlavor",
+    "column": "flavor_id",
+    "unique": false,
+    "rows": 2569
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 398,
+   "matched": 398,
+   "matchRate": 1,
+   "coverage": 0.48,
+   "perParent": 6.1
+  },
+  {
+   "a": {
+    "table": "Food",
+    "column": "id",
+    "unique": true,
+    "rows": 200
+   },
+   "b": {
+    "table": "Content",
+    "column": "food_id",
+    "unique": false,
+    "rows": 93525
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 176,
+   "matched": 176,
+   "matchRate": 1,
+   "coverage": 0.965,
+   "perParent": 484.6
+  },
+  {
+   "a": {
+    "table": "Food",
+    "column": "id",
+    "unique": true,
+    "rows": 200
+   },
+   "b": {
+    "table": "FoodTaxonomy",
+    "column": "food_id",
+    "unique": false,
+    "rows": 200
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 12,
+   "matched": 12,
+   "matchRate": 1,
+   "coverage": 0.06,
+   "perParent": 16.7
+  },
+  {
+   "a": {
+    "table": "Food",
+    "column": "ncbi_taxonomy_id",
+    "unique": true,
+    "rows": 200
+   },
+   "b": {
+    "table": "FoodTaxonomy",
+    "column": "ncbi_taxonomy_id",
+    "unique": false,
+    "rows": 200
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 12,
+   "matched": 12,
+   "matchRate": 1,
+   "coverage": 0.061224489795918366,
+   "perParent": 16.3,
+   "note": "Food.ncbi_taxonomy_id is unique except 1 duplicated value"
+  },
+  {
+   "a": {
+    "table": "HealthEffect",
+    "column": "id",
+    "unique": true,
+    "rows": 1435
+   },
+   "b": {
+    "table": "CompoundsHealthEffect",
+    "column": "health_effect_id",
+    "unique": false,
+    "rows": 7939
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.8633333333333333,
+   "perParent": 6.4
+  },
+  {
+   "a": {
+    "table": "Nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 39
+   },
+   "b": {
+    "table": "CompoundSynonym",
+    "column": "source_id",
+    "unique": false,
+    "rows": 20583
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Nutrient'",
+   "sampled": 2,
+   "matched": 2,
+   "matchRate": 1,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "Nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 39
+   },
+   "b": {
+    "table": "Content",
+    "column": "source_id",
+    "unique": false,
+    "rows": 93525
+   },
+   "cardinality": "1:N",
+   "how": "polymorphic",
+   "condition": "source_type = 'Nutrient'",
+   "sampled": 39,
+   "matched": 39,
+   "matchRate": 1,
+   "coverage": null,
+   "perParent": null
+  },
+  {
+   "a": {
+    "table": "OntologyTerm",
+    "column": "id",
+    "unique": true,
+    "rows": 4370
+   },
+   "b": {
+    "table": "CompoundOntologyTerm",
+    "column": "ontology_term_id",
+    "unique": false,
+    "rows": 16808
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.25666666666666665,
+   "perParent": 15
+  },
+  {
+   "a": {
+    "table": "OntologyTerm",
+    "column": "id",
+    "unique": true,
+    "rows": 4370
+   },
+   "b": {
+    "table": "OntologySynonym",
+    "column": "ontology_term_id",
+    "unique": false,
+    "rows": 1669
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 939,
+   "matched": 939,
+   "matchRate": 1,
+   "coverage": 0.20666666666666667,
+   "perParent": 1.8
+  },
+  {
+   "a": {
+    "table": "OntologyTerm",
+    "column": "id",
+    "unique": true,
+    "rows": 4370
+   },
+   "b": {
+    "table": "OntologyTerm",
+    "column": "parent_id",
+    "unique": false,
+    "rows": 4370
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 301,
+   "matched": 301,
+   "matchRate": 1,
+   "coverage": 0.07,
+   "perParent": 14.3,
+   "note": "self reference (tree)"
+  },
+  {
+   "a": {
+    "table": "Pathway",
+    "column": "id",
+    "unique": true,
+    "rows": 97
+   },
+   "b": {
+    "table": "CompoundsPathway",
+    "column": "pathway_id",
+    "unique": false,
+    "rows": 316
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 86,
+   "matched": 86,
+   "matchRate": 1,
+   "coverage": 0.8865979381443299,
+   "perParent": 3.7
+  }
+ ],
+ "notes": [
+  "CompoundSynonym.source_id with source_type = 'FoodcomexCompound' has no table named FoodcomexCompound",
+  "EnzymeSynonym: no join found",
+  "MapItemsPathway: no join found",
+  "NcbiTaxonomyMap: no join found",
+  "PdbIdentifier: no join found",
+  "Pfam: no join found",
+  "PfamMembership: no join found",
+  "Sequence: no join found"
+ ]
+}

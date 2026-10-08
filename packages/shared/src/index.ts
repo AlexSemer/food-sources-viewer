@@ -388,6 +388,13 @@ export const sources: SourceDef[] = [
   },
 ];
 
+/**
+ * Sources of the online sample (data-sample/, `npm run sample`): the first SAMPLE_FOODS_PER_SOURCE main foods of each.
+ * The deployed API (FSV_SAMPLE=1) lists only these.
+ */
+export const SAMPLE_SOURCE_IDS = ["usda-foundation", "wafct", "frida", "foodb", "store"] as const satisfies readonly SourceId[];
+export const SAMPLE_FOODS_PER_SOURCE = 200;
+
 export function getSource(id: string): SourceDef | undefined {
   return sources.find((s) => s.id === id);
 }

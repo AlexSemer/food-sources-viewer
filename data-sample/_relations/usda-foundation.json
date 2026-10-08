@@ -1,0 +1,687 @@
+{
+ "version": 4,
+ "sourceId": "usda-foundation",
+ "mainTable": "food",
+ "mainId": "fdc_id",
+ "generatedAt": "2026-10-08T18:38:48.062Z",
+ "loadedAt": "2026-09-30T16:12:42.917Z",
+ "ms": 812,
+ "tables": [
+  {
+   "name": "acquisition_samples",
+   "rows": 5493,
+   "columns": 2
+  },
+  {
+   "name": "agricultural_samples",
+   "rows": 810,
+   "columns": 5
+  },
+  {
+   "name": "food",
+   "rows": 28795,
+   "columns": 5
+  },
+  {
+   "name": "food_attribute",
+   "rows": 5216,
+   "columns": 6
+  },
+  {
+   "name": "food_attribute_type",
+   "rows": 5,
+   "columns": 3
+  },
+  {
+   "name": "food_calorie_conversion_factor",
+   "rows": 154,
+   "columns": 4
+  },
+  {
+   "name": "food_category",
+   "rows": 28,
+   "columns": 3
+  },
+  {
+   "name": "food_component",
+   "rows": 0,
+   "columns": 8
+  },
+  {
+   "name": "food_nutrient",
+   "rows": 104747,
+   "columns": 11
+  },
+  {
+   "name": "food_nutrient_conversion_factor",
+   "rows": 284,
+   "columns": 2
+  },
+  {
+   "name": "food_portion",
+   "rows": 9456,
+   "columns": 11
+  },
+  {
+   "name": "food_protein_conversion_factor",
+   "rows": 130,
+   "columns": 2
+  },
+  {
+   "name": "food_update_log_entry",
+   "rows": 28795,
+   "columns": 3
+  },
+  {
+   "name": "foundation_food",
+   "rows": 133,
+   "columns": 3
+  },
+  {
+   "name": "input_food",
+   "rows": 3984,
+   "columns": 12
+  },
+  {
+   "name": "lab_method",
+   "rows": 305,
+   "columns": 3
+  },
+  {
+   "name": "lab_method_code",
+   "rows": 214,
+   "columns": 2
+  },
+  {
+   "name": "lab_method_nutrient",
+   "rows": 671,
+   "columns": 2
+  },
+  {
+   "name": "market_acquisition",
+   "rows": 5100,
+   "columns": 14
+  },
+  {
+   "name": "measure_unit",
+   "rows": 123,
+   "columns": 2
+  },
+  {
+   "name": "nutrient",
+   "rows": 477,
+   "columns": 5
+  },
+  {
+   "name": "sample_food",
+   "rows": 1906,
+   "columns": 1
+  },
+  {
+   "name": "sub_sample_food",
+   "rows": 20779,
+   "columns": 2
+  },
+  {
+   "name": "sub_sample_result",
+   "rows": 76948,
+   "columns": 4
+  }
+ ],
+ "edges": [
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "acquisition_samples",
+    "column": "fdc_id_of_sample_food",
+    "unique": false,
+    "rows": 5493
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.056666666666666664,
+   "perParent": 3.4
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "acquisition_samples",
+    "column": "fdc_id_of_acquisition_food",
+    "unique": false,
+    "rows": 5493
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.18333333333333332,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "agricultural_samples",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 810
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 810,
+   "matched": 810,
+   "matchRate": 1,
+   "coverage": 0.03,
+   "perParent": 0.9
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "food_attribute",
+    "column": "fdc_id",
+    "unique": false,
+    "rows": 5216
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.03333333333333333,
+   "perParent": 5.4
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "food_nutrient",
+    "column": "fdc_id",
+    "unique": false,
+    "rows": 104747
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.7366666666666667,
+   "perParent": 4.9
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "food_nutrient_conversion_factor",
+    "column": "fdc_id",
+    "unique": false,
+    "rows": 284
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 158,
+   "matched": 158,
+   "matchRate": 1,
+   "coverage": 0.0033333333333333335,
+   "perParent": 3
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "food_portion",
+    "column": "fdc_id",
+    "unique": false,
+    "rows": 9456
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.1,
+   "perParent": 3.3
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "food_update_log_entry",
+    "column": "id",
+    "unique": true,
+    "rows": 28795
+   },
+   "cardinality": "1:1",
+   "how": "declared",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 1,
+   "perParent": 1,
+   "note": "log entry id = fdc_id"
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "foundation_food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 133
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 133,
+   "matched": 133,
+   "matchRate": 1,
+   "coverage": 0.006666666666666667,
+   "perParent": 0.7
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "input_food",
+    "column": "fdc_of_input_food",
+    "unique": false,
+    "rows": 3984
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.09333333333333334,
+   "perParent": 1.5,
+   "note": "input (sample / SR) food of a food"
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "input_food",
+    "column": "fdc_id",
+    "unique": false,
+    "rows": 3984
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 200,
+   "matched": 200,
+   "matchRate": 1,
+   "coverage": 0.01,
+   "perParent": 13.8
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "market_acquisition",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 5100
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.16666666666666666,
+   "perParent": 1.1
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "sample_food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 1906
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.043333333333333335,
+   "perParent": 1.5
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "sub_sample_food",
+    "column": "fdc_id_of_sample_food",
+    "unique": false,
+    "rows": 20779
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 914,
+   "matched": 914,
+   "matchRate": 1,
+   "coverage": 0.08666666666666667,
+   "perParent": 8.3
+  },
+  {
+   "a": {
+    "table": "food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 28795
+   },
+   "b": {
+    "table": "sub_sample_food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 20779
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.7,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "food_attribute_type",
+    "column": "id",
+    "unique": true,
+    "rows": 5
+   },
+   "b": {
+    "table": "food_attribute",
+    "column": "food_attribute_type_id",
+    "unique": false,
+    "rows": 5216
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 2,
+   "matched": 2,
+   "matchRate": 1,
+   "coverage": 0.4,
+   "perParent": 2608
+  },
+  {
+   "a": {
+    "table": "food_category",
+    "column": "id",
+    "unique": true,
+    "rows": 28
+   },
+   "b": {
+    "table": "food",
+    "column": "food_category_id",
+    "unique": false,
+    "rows": 28795
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 18,
+   "matched": 18,
+   "matchRate": 1,
+   "coverage": 0.6428571428571429,
+   "perParent": 1599.7,
+   "note": "in the Full download, branded rows hold the branded category text here instead"
+  },
+  {
+   "a": {
+    "table": "food_nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 104747
+   },
+   "b": {
+    "table": "sub_sample_result",
+    "column": "food_nutrient_id",
+    "unique": true,
+    "rows": 76948
+   },
+   "cardinality": "1:1",
+   "how": "name pattern",
+   "sampled": 1000,
+   "matched": 1000,
+   "matchRate": 1,
+   "coverage": 0.74,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "food_nutrient_conversion_factor",
+    "column": "id",
+    "unique": true,
+    "rows": 284
+   },
+   "b": {
+    "table": "food_calorie_conversion_factor",
+    "column": "food_nutrient_conversion_factor_id",
+    "unique": true,
+    "rows": 154
+   },
+   "cardinality": "1:1",
+   "how": "name pattern",
+   "sampled": 154,
+   "matched": 154,
+   "matchRate": 1,
+   "coverage": 0.5422535211267606,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "food_nutrient_conversion_factor",
+    "column": "id",
+    "unique": true,
+    "rows": 284
+   },
+   "b": {
+    "table": "food_protein_conversion_factor",
+    "column": "food_nutrient_conversion_factor_id",
+    "unique": true,
+    "rows": 130
+   },
+   "cardinality": "1:1",
+   "how": "name pattern",
+   "sampled": 130,
+   "matched": 130,
+   "matchRate": 1,
+   "coverage": 0.45774647887323944,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "lab_method",
+    "column": "id",
+    "unique": true,
+    "rows": 305
+   },
+   "b": {
+    "table": "lab_method_code",
+    "column": "lab_method_id",
+    "unique": false,
+    "rows": 214
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 185,
+   "matched": 185,
+   "matchRate": 1,
+   "coverage": 0.6066666666666667,
+   "perParent": 1.2
+  },
+  {
+   "a": {
+    "table": "lab_method",
+    "column": "id",
+    "unique": true,
+    "rows": 305
+   },
+   "b": {
+    "table": "lab_method_nutrient",
+    "column": "lab_method_id",
+    "unique": false,
+    "rows": 671
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 185,
+   "matched": 185,
+   "matchRate": 1,
+   "coverage": 0.6033333333333334,
+   "perParent": 3.6
+  },
+  {
+   "a": {
+    "table": "lab_method",
+    "column": "id",
+    "unique": true,
+    "rows": 305
+   },
+   "b": {
+    "table": "sub_sample_result",
+    "column": "lab_method_id",
+    "unique": false,
+    "rows": 76948
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 114,
+   "matched": 114,
+   "matchRate": 1,
+   "coverage": 0.5133333333333333,
+   "perParent": 491.5
+  },
+  {
+   "a": {
+    "table": "measure_unit",
+    "column": "id",
+    "unique": true,
+    "rows": 123
+   },
+   "b": {
+    "table": "food_portion",
+    "column": "measure_unit_id",
+    "unique": false,
+    "rows": 9456
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 36,
+   "matched": 36,
+   "matchRate": 1,
+   "coverage": 0.2926829268292683,
+   "perParent": 262.7
+  },
+  {
+   "a": {
+    "table": "nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 477
+   },
+   "b": {
+    "table": "food_nutrient",
+    "column": "nutrient_id",
+    "unique": false,
+    "rows": 104747
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 186,
+   "matched": 186,
+   "matchRate": 1,
+   "coverage": 0.44666666666666666,
+   "perParent": 491.6
+  },
+  {
+   "a": {
+    "table": "nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 477
+   },
+   "b": {
+    "table": "lab_method_nutrient",
+    "column": "nutrient_id",
+    "unique": false,
+    "rows": 671
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 214,
+   "matched": 214,
+   "matchRate": 1,
+   "coverage": 0.46,
+   "perParent": 3.1
+  }
+ ],
+ "notes": [
+  "declared food_nutrient.nutrient_id -> nutrient.nutrient_nbr: 0% of sampled values match (legacy nutrient numbers (FNDDS))",
+  "food_component.fdc_id: declared join to food.fdc_id but the column is empty",
+  "food_component: no join found"
+ ]
+}

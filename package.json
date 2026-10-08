@@ -11,6 +11,14 @@
     "dev": "npm run dev --workspace=@fsv/api & npm run dev --workspace=@fsv/web && wait",
     "dev:api": "npm run dev --workspace=@fsv/api",
     "dev:web": "npm run dev --workspace=@fsv/web",
-    "ingest": "npm run start --workspace=@fsv/ingest --"
+    "ingest": "npm run start --workspace=@fsv/ingest --",
+    "sample": "npm run start --workspace=@fsv/ingest -- sample",
+    "build:vercel": "node scripts/vercel/build.mjs"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }

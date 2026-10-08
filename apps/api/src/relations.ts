@@ -2,13 +2,14 @@ import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "
 import { resolve } from "node:path";
 import { getSource } from "@fsv/shared";
 import { discoverRelations, RELATIONS_VERSION, type RelationsDoc } from "@fsv/shared/relations";
-import { dataRoot, httpError, openDb } from "./db.ts";
+import { dataRoot, httpError, openDb, readOnlyMode } from "./db.ts";
 
 /**
  * Relationship map of one source's tables, computed by `discoverRelations` (packages/shared/src/relations.ts).
  * Cached as data/_relations/<id>.json (also written by `npm run ingest -- relations <id>`); the cache is
  * reused while its version and the db's `loaded_at` match, otherwise recomputed on demand (a few seconds
- * for the largest dbs).
+ * for the largest dbs). Read-only deployments (the online sample) ship the cache prebuilt by `npm run sample` and
+ * never write it; a recompute there is returned without being cached.
  */
 export const relationsDir = resolve(dataRoot, "_relations");
 
@@ -41,6 +42,7 @@ export function relationsFor(sourceId: string, refresh: boolean): RelationsDoc &
     info.pins--;
     info.lastUsed = Date.now();
   }
+  if (readOnlyMode) return { ...doc, cached: false };
   mkdirSync(relationsDir, { recursive: true });
   writeFileSync(`${file}.tmp`, JSON.stringify(doc, null, 1));
   renameSync(`${file}.tmp`, file);

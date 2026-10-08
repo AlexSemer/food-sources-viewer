@@ -11,6 +11,7 @@ import { xlsxLoader, xlsxSourceIds } from "./xlsxSources.ts";
 import { prepareExisting } from "./compositePrep.ts";
 import { writeRelations } from "./relationsCache.ts";
 import { runStore } from "./store/run.ts";
+import { runSample } from "./sample.ts";
 
 const implemented: Partial<Record<SourceId, () => Promise<FinalizeResult>>> = {
   "usda-foundation": ingestUsdaFoundation,
@@ -56,6 +57,11 @@ async function main(): Promise<void> {
     if (!result.ok) process.exit(1);
     return;
   }
+  // Online sample (Vercel): sample [ids...] -> data-sample/<dbFile>, cut from the existing data/ dbs (read-only).
+  if (args[0] === "sample") {
+    runSample(args.slice(1));
+    return;
+  }
   // Maintenance subcommands on existing dbs (no re-ingest):
   //   prep <ids|all>       composite-view indexes / helper tables (compositePrep.ts)
   //   relations <ids|all>  recompute the relationship map cache data/_relations/<id>.json
@@ -83,6 +89,7 @@ async function main(): Promise<void> {
     console.log("       npm run ingest -- prep <source-id...|all>        (composite-view indexes on existing dbs)");
     console.log("       npm run ingest -- relations <source-id...|all>   (recompute the relationship maps)");
     console.log("       npm run ingest -- store [usda-foundation]        (NUTRI store, data/store.sqlite)");
+    console.log("       npm run ingest -- sample [source-id...]          (online sample, data-sample/)");
     console.log(
       sources.map((s) => `  ${s.id.padEnd(20)} ${implemented[s.id] ? "ready" : "stub"}`).join("\n"),
     );

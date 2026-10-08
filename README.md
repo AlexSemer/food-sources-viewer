@@ -132,6 +132,25 @@ for Excel with a comma-decimal locale. usda-branded exports at about 5,000–10,
 FooDB `mode=nutrients` (default; the 39 Nutrient rows) or `mode=compounds` (the 200 compounds quantified in the
 most foods); `agg=avg|min|max|n` sets how its several values per food × component are combined in a cell.
 
+## Online sample (Vercel)
+
+A password-protected copy with sample data runs on Vercel (project `food-sources-viewer`, personal account). It
+serves only the five main sources, `usda-foundation`, `wafct`, `frida`, `foodb` and `store`, each cut to its
+first 200 main foods. The full `data/` stays local.
+
+- `npm run sample [ids...]` writes `data-sample/<dbFile>` from `data/` (read-only), keeping the first 200 main foods
+  and only the rows that belong to them. It also rebuilds the composite helpers and `data-sample/_relations/`. The
+  rules for each source are at the top of `packages/ingest/src/sample.ts`. FooDB keeps all Nutrient rows plus at
+  most 5 quantified rows per food × compound, so the file stays under 50 MB. `data-sample/` is committed.
+- `npm run build:vercel` (`scripts/vercel/build.mjs`) writes `.vercel/output` (Build Output API). That holds the
+  Vite build as static files, `apps/api` bundled by esbuild into one function with `data-sample/` beside it, and a
+  Basic-auth middleware on every request. Any user name works. The password is the project env var `SITE_PASSWORD`,
+  which is never committed.
+- The function runs the same handler as `npm run dev:api` (`apps/api/src/app.ts`) with `FSV_SAMPLE=1`. In that
+  mode the API lists only the sampled sources, never writes (the relations cache comes prebuilt), and `/api/meta`
+  reports the sample, which turns on the banner in the web app. Locally nothing changes: `data/` and every source.
+- Pushes to `main` redeploy. After changing the data, run `npm run sample`, commit `data-sample/`, then push.
+
 ## Caveats
 
 - OFF has no units in its export header. Units follow OFF's documented `_100g` conventions.

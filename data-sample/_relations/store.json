@@ -1,0 +1,118 @@
+{
+ "version": 4,
+ "sourceId": "store",
+ "mainTable": "usda_foundation_food",
+ "mainId": "fdc_id",
+ "generatedAt": "2026-10-08T18:39:35.064Z",
+ "loadedAt": "2026-10-08T17:52:52.000Z",
+ "ms": 59,
+ "tables": [
+  {
+   "name": "nutrient",
+   "rows": 82,
+   "columns": 10
+  },
+  {
+   "name": "nutrient_code",
+   "rows": 996,
+   "columns": 12
+  },
+  {
+   "name": "usda_foundation_amount",
+   "rows": 12996,
+   "columns": 20
+  },
+  {
+   "name": "usda_foundation_food",
+   "rows": 200,
+   "columns": 8
+  }
+ ],
+ "edges": [
+  {
+   "a": {
+    "table": "nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 82
+   },
+   "b": {
+    "table": "nutrient_code",
+    "column": "nutrient_id",
+    "unique": false,
+    "rows": 996
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 81,
+   "matched": 81,
+   "matchRate": 1,
+   "coverage": 0.9878048780487805,
+   "perParent": 12.3
+  },
+  {
+   "a": {
+    "table": "nutrient",
+    "column": "id",
+    "unique": true,
+    "rows": 82
+   },
+   "b": {
+    "table": "usda_foundation_amount",
+    "column": "nutrient_id",
+    "unique": false,
+    "rows": 12996
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 72,
+   "matched": 72,
+   "matchRate": 1,
+   "coverage": 0.8780487804878049,
+   "perParent": 180.5
+  },
+  {
+   "a": {
+    "table": "nutrient_code",
+    "column": "compound_id",
+    "unique": true,
+    "rows": 996
+   },
+   "b": {
+    "table": "usda_foundation_amount",
+    "column": "compound_id",
+    "unique": false,
+    "rows": 12996
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 121,
+   "matched": 121,
+   "matchRate": 1,
+   "coverage": 0.19,
+   "perParent": 68.7
+  },
+  {
+   "a": {
+    "table": "usda_foundation_food",
+    "column": "fdc_id",
+    "unique": true,
+    "rows": 200
+   },
+   "b": {
+    "table": "usda_foundation_amount",
+    "column": "fdc_id",
+    "unique": false,
+    "rows": 12996
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 200,
+   "matched": 200,
+   "matchRate": 1,
+   "coverage": 1,
+   "perParent": 65
+  }
+ ],
+ "notes": []
+}

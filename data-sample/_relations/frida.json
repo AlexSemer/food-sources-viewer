@@ -1,0 +1,200 @@
+{
+ "version": 4,
+ "sourceId": "frida",
+ "mainTable": "Food",
+ "mainId": "FoodID",
+ "generatedAt": "2026-10-08T18:38:48.353Z",
+ "loadedAt": "2026-09-30T16:09:53.885Z",
+ "ms": 87,
+ "tables": [
+  {
+   "name": "Data_Normalised",
+   "rows": 20384,
+   "columns": 15
+  },
+  {
+   "name": "Data_Table",
+   "rows": 200,
+   "columns": 235
+  },
+  {
+   "name": "Food",
+   "rows": 200,
+   "columns": 15
+  },
+  {
+   "name": "FoodGroup",
+   "rows": 142,
+   "columns": 8
+  },
+  {
+   "name": "Parameter",
+   "rows": 228,
+   "columns": 25
+  },
+  {
+   "name": "Readme",
+   "rows": 15,
+   "columns": 3
+  },
+  {
+   "name": "Source",
+   "rows": 499,
+   "columns": 19
+  }
+ ],
+ "edges": [
+  {
+   "a": {
+    "table": "Food",
+    "column": "FoodID",
+    "unique": true,
+    "rows": 200
+   },
+   "b": {
+    "table": "Data_Normalised",
+    "column": "FoodID",
+    "unique": false,
+    "rows": 20384
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 200,
+   "matched": 200,
+   "matchRate": 1,
+   "coverage": 1,
+   "perParent": 101.9
+  },
+  {
+   "a": {
+    "table": "Food",
+    "column": "FoodID",
+    "unique": true,
+    "rows": 200
+   },
+   "b": {
+    "table": "Data_Table",
+    "column": "↓FoodID/→ParameterID",
+    "unique": true,
+    "rows": 200
+   },
+   "cardinality": "1:1",
+   "how": "declared",
+   "sampled": 200,
+   "matched": 200,
+   "matchRate": 1,
+   "coverage": 1,
+   "perParent": 1,
+   "note": "wide copy of Data_Normalised"
+  },
+  {
+   "a": {
+    "table": "FoodGroup",
+    "column": "FoodGroupID",
+    "unique": true,
+    "rows": 142
+   },
+   "b": {
+    "table": "Data_Table",
+    "column": "FoodGroupID",
+    "unique": false,
+    "rows": 200
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 64,
+   "matched": 64,
+   "matchRate": 1,
+   "coverage": 0.4507042253521127,
+   "perParent": 3.1
+  },
+  {
+   "a": {
+    "table": "FoodGroup",
+    "column": "FoodGroupID",
+    "unique": true,
+    "rows": 142
+   },
+   "b": {
+    "table": "Food",
+    "column": "FoodGroupID",
+    "unique": false,
+    "rows": 200
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 64,
+   "matched": 64,
+   "matchRate": 1,
+   "coverage": 0.4507042253521127,
+   "perParent": 3.1
+  },
+  {
+   "a": {
+    "table": "FoodGroup",
+    "column": "FoodGroupID",
+    "unique": true,
+    "rows": 142
+   },
+   "b": {
+    "table": "FoodGroup",
+    "column": "ParantFoodGroupID",
+    "unique": false,
+    "rows": 142
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 26,
+   "matched": 26,
+   "matchRate": 1,
+   "coverage": 0.18309859154929578,
+   "perParent": 5.5
+  },
+  {
+   "a": {
+    "table": "Parameter",
+    "column": "ParameterID",
+    "unique": true,
+    "rows": 228
+   },
+   "b": {
+    "table": "Data_Normalised",
+    "column": "ParameterID",
+    "unique": false,
+    "rows": 20384
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 187,
+   "matched": 187,
+   "matchRate": 1,
+   "coverage": 0.9427312775330396,
+   "perParent": 94.8,
+   "note": "Parameter.ParameterID is unique except 1 duplicated value"
+  },
+  {
+   "a": {
+    "table": "Source",
+    "column": "SourceID",
+    "unique": true,
+    "rows": 499
+   },
+   "b": {
+    "table": "Data_Normalised",
+    "column": "Source",
+    "unique": false,
+    "rows": 20384
+   },
+   "cardinality": "1:N",
+   "how": "name pattern",
+   "sampled": 200,
+   "matched": 127,
+   "matchRate": 0.635,
+   "coverage": 0.43,
+   "perParent": 95
+  }
+ ],
+ "notes": [
+  "Readme: no join found"
+ ]
+}

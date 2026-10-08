@@ -2,10 +2,20 @@ import { existsSync, statSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { DatabaseSync, type StatementSync } from "node:sqlite";
-import { getSource } from "@fsv/shared";
+import { getSource, SAMPLE_SOURCE_IDS } from "@fsv/shared";
 
 export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
-export const dataRoot = resolve(repoRoot, "data");
+/** Folder with the source dbs: data/ by default; FSV_DATA_DIR overrides it (the Vercel function's bundled data-sample/). */
+export const dataRoot = process.env.FSV_DATA_DIR ? resolve(process.env.FSV_DATA_DIR) : resolve(repoRoot, "data");
+/** FSV_SAMPLE=1: serving the online sample (`npm run sample`): only SAMPLE_SOURCE_IDS are listed and opened. */
+export const sampleMode = process.env.FSV_SAMPLE === "1";
+/** No writes next to the dbs (relations cache): the online sample, or FSV_READONLY=1. */
+export const readOnlyMode = sampleMode || process.env.FSV_READONLY === "1";
+
+/** Whether a source is served: every source locally, only the sampled ones in sample mode. */
+export function inSample(sourceId: string): boolean {
+  return !sampleMode || (SAMPLE_SOURCE_IDS as readonly string[]).includes(sourceId);
+}
 
 /** Filtered counts stop here and report `totalCapped`. */
 export const COUNT_CAP = 10_000;
@@ -116,13 +126,14 @@ export function dbPath(sourceId: string): string {
 export function openDb(sourceId: string): DbInfo {
   const source = getSource(sourceId);
   if (!source) throw httpError(404, "unknown source");
+  if (!inSample(sourceId)) throw httpError(404, `${sourceId} is not part of the online sample`);
   const cached = openDbs.get(sourceId);
   if (cached) {
     cached.lastUsed = Date.now();
     return cached;
   }
   const path = resolve(dataRoot, source.dbFile);
-  if (!existsSync(path)) throw httpError(404, `No database yet. Run: npm run ingest -- ${source.id}`);
+  if (!existsSync(path)) throw httpError(404, sampleMode ? `${source.id} is not in the sample` : `No database yet. Run: npm run ingest -- ${source.id}`);
   const db = new DatabaseSync(path, { readOnly: true });
   db.function("fsv_budget", { deterministic: false, directOnly: true }, budgetFn);
   const meta = metaOf(db);

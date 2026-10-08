@@ -1,0 +1,248 @@
+{
+ "version": 4,
+ "sourceId": "wafct",
+ "mainTable": "05_NV_sum_57_per_100g_EP",
+ "mainId": "Code",
+ "generatedAt": "2026-10-08T18:38:48.140Z",
+ "loadedAt": "2026-09-30T16:09:39.004Z",
+ "ms": 13,
+ "tables": [
+  {
+   "name": "01_Introduction",
+   "rows": 14,
+   "columns": 4
+  },
+  {
+   "name": "02_Components",
+   "rows": 58,
+   "columns": 11
+  },
+  {
+   "name": "03_NV_sum_39_per_100g_EP",
+   "rows": 202,
+   "columns": 46
+  },
+  {
+   "name": "04_NV_stat_39_per_100g_EP",
+   "rows": 654,
+   "columns": 46
+  },
+  {
+   "name": "05_NV_sum_57_per_100g_EP",
+   "rows": 202,
+   "columns": 64
+  },
+  {
+   "name": "06_NV_stat_57_per_100g_EP",
+   "rows": 654,
+   "columns": 64
+  },
+  {
+   "name": "07_Yield_factors_sing_ing",
+   "rows": 79,
+   "columns": 6
+  },
+  {
+   "name": "08_Retention_factors",
+   "rows": 69,
+   "columns": 25
+  },
+  {
+   "name": "09_Mixed_dishes",
+   "rows": 146,
+   "columns": 9
+  },
+  {
+   "name": "10_FoodEx2_codes",
+   "rows": 200,
+   "columns": 10
+  },
+  {
+   "name": "11_2012_vs_2019_names_and_codes",
+   "rows": 83,
+   "columns": 7
+  },
+  {
+   "name": "12_Data_sources_with_BiblioID",
+   "rows": 467,
+   "columns": 3
+  }
+ ],
+ "edges": [
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "03_NV_sum_39_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 202,
+   "matched": 202,
+   "matchRate": 1,
+   "coverage": 1,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "04_NV_stat_39_per_100g_EP",
+    "column": "Code",
+    "unique": false,
+    "rows": 654
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 208,
+   "matched": 202,
+   "matchRate": 0.9711538461538461,
+   "coverage": 1,
+   "perParent": 3.2
+  },
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "06_NV_stat_57_per_100g_EP",
+    "column": "Code",
+    "unique": false,
+    "rows": 654
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 208,
+   "matched": 202,
+   "matchRate": 0.9711538461538461,
+   "coverage": 1,
+   "perParent": 3.2
+  },
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "07_Yield_factors_sing_ing",
+    "column": "Code",
+    "unique": true,
+    "rows": 79
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 79,
+   "matched": 79,
+   "matchRate": 1,
+   "coverage": 0.3910891089108911,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "09_Mixed_dishes",
+    "column": "Code",
+    "unique": false,
+    "rows": 146
+   },
+   "cardinality": "1:N",
+   "how": "same name",
+   "sampled": 45,
+   "matched": 45,
+   "matchRate": 1,
+   "coverage": 0.22277227722772278,
+   "perParent": 3.2
+  },
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "10_FoodEx2_codes",
+    "column": "Code",
+    "unique": true,
+    "rows": 200
+   },
+   "cardinality": "1:1",
+   "how": "same name",
+   "sampled": 200,
+   "matched": 200,
+   "matchRate": 1,
+   "coverage": 0.9900990099009901,
+   "perParent": 1
+  },
+  {
+   "a": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "Code",
+    "unique": true,
+    "rows": 202
+   },
+   "b": {
+    "table": "11_2012_vs_2019_names_and_codes",
+    "column": "2019 Code",
+    "unique": false,
+    "rows": 83
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 79,
+   "matched": 79,
+   "matchRate": 1,
+   "coverage": 0.3910891089108911,
+   "perParent": 1.1
+  },
+  {
+   "a": {
+    "table": "12_Data_sources_with_BiblioID",
+    "column": "BiblioID",
+    "unique": true,
+    "rows": 467
+   },
+   "b": {
+    "table": "05_NV_sum_57_per_100g_EP",
+    "column": "BiblioID/Source",
+    "unique": false,
+    "rows": 202
+   },
+   "cardinality": "1:N",
+   "how": "declared",
+   "sampled": 383,
+   "matched": 66,
+   "matchRate": 0.17232375979112272,
+   "coverage": null,
+   "perParent": null,
+   "multiValued": true,
+   "note": "multi-valued (comma/semicolon separated); tokens matched"
+  }
+ ],
+ "notes": [
+  "01_Introduction: no join found",
+  "02_Components: no join found",
+  "08_Retention_factors: no join found"
+ ]
+}

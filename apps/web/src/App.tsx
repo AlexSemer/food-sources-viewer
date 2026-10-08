@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { getJson } from "./api";
 import { SourceList } from "./pages/SourceList";
 import { SourceHome } from "./pages/SourceHome";
 import { TableBrowser } from "./pages/TableBrowser";
@@ -15,9 +17,32 @@ function SourceBanner() {
   );
 }
 
+type ApiMeta = { sample: { foodsPerSource: number; sampledAt: string | null; sources: string[] } | null };
+
+/** Online sample deployment only (the API reports `sample`); nothing is shown locally. */
+function SampleBanner() {
+  const [meta, setMeta] = useState<ApiMeta | null>(null);
+  useEffect(() => {
+    getJson<ApiMeta>("/api/meta")
+      .then(setMeta)
+      .catch(() => setMeta(null));
+  }, []);
+  if (!meta?.sample) return null;
+  const s = meta.sample;
+  return (
+    <div className="sample-banner" role="note">
+      Sample: {s.foodsPerSource} foods per source — not the full data.{" "}
+      <span className="sub">
+        {s.sources.length} sources{s.sampledAt ? `, cut ${s.sampledAt.slice(0, 10)}` : ""}; related rows are only those of the sampled foods.
+      </span>
+    </div>
+  );
+}
+
 export function App() {
   return (
     <>
+      <SampleBanner />
       <SourceBanner />
       <main>
         <Routes>

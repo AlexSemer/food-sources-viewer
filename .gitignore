@@ -12,3 +12,8 @@ datasources/**
 *.sqlite-journal
 *.sqlite-wal
 *.sqlite-shm
+# Online sample (npm run sample): committed
+!data-sample/*.sqlite
+data-sample/*.tmp
+.vercel
+*.tsbuildinfo
